@@ -81,13 +81,11 @@
 		8D9D5DEB1A48A3ED007437B6 /* RichardsBar_iOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				8D9D5E151A48A5EC007437B6 /* viewcontrollers */,
+				8D9D5E141A48A5CF007437B6 /* assets */,
+				8D9D5E131A48A5BB007437B6 /* storyboards */,
 				8D9D5DF01A48A3ED007437B6 /* AppDelegate.h */,
 				8D9D5DF11A48A3ED007437B6 /* AppDelegate.m */,
-				8D9D5DF31A48A3ED007437B6 /* ViewController.h */,
-				8D9D5DF41A48A3ED007437B6 /* ViewController.m */,
-				8D9D5DF61A48A3ED007437B6 /* Main.storyboard */,
-				8D9D5DF91A48A3ED007437B6 /* Images.xcassets */,
-				8D9D5DFB1A48A3ED007437B6 /* LaunchScreen.xib */,
 				8D9D5DEC1A48A3ED007437B6 /* Supporting Files */,
 			);
 			path = RichardsBar_iOSApp;
@@ -117,6 +115,40 @@
 				8D9D5E071A48A3ED007437B6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8D9D5E121A48A5B1007437B6 /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = graphics;
+			sourceTree = "<group>";
+		};
+		8D9D5E131A48A5BB007437B6 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8D9D5DF61A48A3ED007437B6 /* Main.storyboard */,
+				8D9D5DFB1A48A3ED007437B6 /* LaunchScreen.xib */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
+		8D9D5E141A48A5CF007437B6 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				8D9D5E121A48A5B1007437B6 /* graphics */,
+				8D9D5DF91A48A3ED007437B6 /* Images.xcassets */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		8D9D5E151A48A5EC007437B6 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				8D9D5DF31A48A3ED007437B6 /* ViewController.h */,
+				8D9D5DF41A48A3ED007437B6 /* ViewController.m */,
+			);
+			name = viewcontrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

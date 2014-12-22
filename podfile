@@ -1,0 +1,3 @@
+pod 'MBProgressHUD' ,  '~> 0.8'
+pod 'SWTableViewCell', '~> 0.3.6'
+pod 'UICKeyChainStore'

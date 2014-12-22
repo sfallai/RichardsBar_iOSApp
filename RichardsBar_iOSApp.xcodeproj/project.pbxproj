@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
+		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D9D5DEF1A48A3ED007437B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D5DEE1A48A3ED007437B6 /* main.m */; };
 		8D9D5DF21A48A3ED007437B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D5DF11A48A3ED007437B6 /* AppDelegate.m */; };
 		8D9D5DF51A48A3ED007437B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D5DF41A48A3ED007437B6 /* ViewController.m */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
+		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D9D5DE91A48A3ED007437B6 /* RichardsBar_iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichardsBar_iOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D9D5DED1A48A3ED007437B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D9D5DEE1A48A3ED007437B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,9 +64,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D67C2941A48AFCA00BB6835 /* launchscreen */ = {
+			isa = PBXGroup;
+			children = (
+				8D67C2951A48AFE400BB6835 /* richards-bar.jpg */,
+			);
+			name = launchscreen;
+			sourceTree = "<group>";
+		};
 		8D9D5DE01A48A3ED007437B6 = {
 			isa = PBXGroup;
 			children = (
+				8D67C2971A48B26300BB6835 /* podfile */,
 				8D9D5DEB1A48A3ED007437B6 /* RichardsBar_iOSApp */,
 				8D9D5E051A48A3ED007437B6 /* RichardsBar_iOSAppTests */,
 				8D9D5DEA1A48A3ED007437B6 /* Products */,
@@ -120,6 +133,7 @@
 		8D9D5E121A48A5B1007437B6 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				8D67C2941A48AFCA00BB6835 /* launchscreen */,
 			);
 			name = graphics;
 			sourceTree = "<group>";
@@ -232,6 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D9D5DF81A48A3ED007437B6 /* Main.storyboard in Resources */,
+				8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */,
+				8D67C2981A48B26300BB6835 /* podfile in Resources */,
 				8D9D5DFD1A48A3ED007437B6 /* LaunchScreen.xib in Resources */,
 				8D9D5DFA1A48A3ED007437B6 /* Images.xcassets in Resources */,
 			);

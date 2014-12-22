@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.btnIDSong.layer.cornerRadius = 31;
     
 }
 
@@ -36,4 +35,8 @@
 }
 */
 
+- (IBAction)btnIDSong_Click:(id)sender {
+    
+    
+}
 @end

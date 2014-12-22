@@ -10,6 +10,5 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface StartScreenViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *btnIDSong;
 
 @end

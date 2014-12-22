@@ -84,8 +84,6 @@
 				8D9D5E151A48A5EC007437B6 /* viewcontrollers */,
 				8D9D5E141A48A5CF007437B6 /* assets */,
 				8D9D5E131A48A5BB007437B6 /* storyboards */,
-				8D9D5DF01A48A3ED007437B6 /* AppDelegate.h */,
-				8D9D5DF11A48A3ED007437B6 /* AppDelegate.m */,
 				8D9D5DEC1A48A3ED007437B6 /* Supporting Files */,
 			);
 			path = RichardsBar_iOSApp;
@@ -94,6 +92,8 @@
 		8D9D5DEC1A48A3ED007437B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D9D5DF01A48A3ED007437B6 /* AppDelegate.h */,
+				8D9D5DF11A48A3ED007437B6 /* AppDelegate.m */,
 				8D9D5DED1A48A3ED007437B6 /* Info.plist */,
 				8D9D5DEE1A48A3ED007437B6 /* main.m */,
 			);
@@ -444,6 +444,7 @@
 				8D9D5E0E1A48A3ED007437B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D9D5E0F1A48A3ED007437B6 /* Build configuration list for PBXNativeTarget "RichardsBar_iOSAppTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +453,7 @@
 				8D9D5E111A48A3ED007437B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

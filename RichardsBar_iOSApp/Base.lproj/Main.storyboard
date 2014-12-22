@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-2502" y="190.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="StartScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -48,6 +48,44 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fl-fM-eWE" customClass="IDSongButton">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="NOA-Uf-8Bq"/>
+                                    <constraint firstAttribute="width" constant="64" id="XuF-dg-did"/>
+                                </constraints>
+                                <state key="normal" image="audiowave.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NOA-Uf-8Bq"/>
+                                        <exclude reference="XuF-dg-did"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="NOA-Uf-8Bq"/>
+                                        <include reference="XuF-dg-did"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDs-qz-Hck">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="     Jukebox Browser     "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efr-gk-bgn">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,71 +98,73 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDs-qz-Hck">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="     Jukebox Browser     "/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Fl-fM-eWE" firstAttribute="centerX" secondItem="efr-gk-bgn" secondAttribute="centerX" id="0NU-p8-cGz"/>
+                            <constraint firstItem="YDs-qz-Hck" firstAttribute="trailing" secondItem="efr-gk-bgn" secondAttribute="trailing" id="18R-2s-EDx"/>
                             <constraint firstAttribute="trailing" secondItem="Ms0-ZQ-Aqe" secondAttribute="trailing" id="BkF-7w-4yB"/>
-                            <constraint firstItem="efr-gk-bgn" firstAttribute="top" secondItem="YDs-qz-Hck" secondAttribute="bottom" constant="20" id="EZ0-WF-eiy"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="efr-gk-bgn" secondAttribute="bottom" constant="45" id="GOo-hq-Ne9"/>
                             <constraint firstItem="Ms0-ZQ-Aqe" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Ge8-nd-YFJ"/>
+                            <constraint firstItem="efr-gk-bgn" firstAttribute="leading" secondItem="YDs-qz-Hck" secondAttribute="leading" id="N2w-Cb-gbR"/>
                             <constraint firstItem="Ms0-ZQ-Aqe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Uvx-q1-kj1"/>
-                            <constraint firstItem="YDs-qz-Hck" firstAttribute="centerX" secondItem="Ms0-ZQ-Aqe" secondAttribute="centerX" id="WbK-A6-pBt"/>
-                            <constraint firstItem="efr-gk-bgn" firstAttribute="leading" secondItem="YDs-qz-Hck" secondAttribute="leading" id="lJL-lY-Uwr"/>
-                            <constraint firstItem="YDs-qz-Hck" firstAttribute="trailing" secondItem="efr-gk-bgn" secondAttribute="trailing" id="sZt-GN-Mlf"/>
+                            <constraint firstItem="efr-gk-bgn" firstAttribute="top" secondItem="YDs-qz-Hck" secondAttribute="bottom" constant="20" id="Xk0-N0-ogN"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6Fl-fM-eWE" secondAttribute="bottom" constant="37" id="lPc-2r-lHh"/>
+                            <constraint firstItem="YDs-qz-Hck" firstAttribute="centerX" secondItem="Ms0-ZQ-Aqe" secondAttribute="centerX" id="pKC-FZ-xYR"/>
+                            <constraint firstItem="6Fl-fM-eWE" firstAttribute="top" secondItem="efr-gk-bgn" secondAttribute="bottom" constant="46" id="vdn-bp-aE4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ms0-ZQ-Aqe"/>
-                                <exclude reference="efr-gk-bgn"/>
+                                <exclude reference="6Fl-fM-eWE"/>
                                 <exclude reference="YDs-qz-Hck"/>
+                                <exclude reference="efr-gk-bgn"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="BkF-7w-4yB"/>
                                 <exclude reference="Ge8-nd-YFJ"/>
                                 <exclude reference="Uvx-q1-kj1"/>
-                                <exclude reference="WbK-A6-pBt"/>
-                                <exclude reference="sZt-GN-Mlf"/>
-                                <exclude reference="EZ0-WF-eiy"/>
-                                <exclude reference="lJL-lY-Uwr"/>
-                                <exclude reference="GOo-hq-Ne9"/>
+                                <exclude reference="18R-2s-EDx"/>
+                                <exclude reference="pKC-FZ-xYR"/>
+                                <exclude reference="N2w-Cb-gbR"/>
+                                <exclude reference="Xk0-N0-ogN"/>
+                                <exclude reference="0NU-p8-cGz"/>
+                                <exclude reference="vdn-bp-aE4"/>
+                                <exclude reference="lPc-2r-lHh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Ms0-ZQ-Aqe"/>
-                                <include reference="efr-gk-bgn"/>
+                                <include reference="6Fl-fM-eWE"/>
                                 <include reference="YDs-qz-Hck"/>
+                                <include reference="efr-gk-bgn"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="BkF-7w-4yB"/>
                                 <include reference="Ge8-nd-YFJ"/>
                                 <include reference="Uvx-q1-kj1"/>
-                                <include reference="WbK-A6-pBt"/>
-                                <include reference="sZt-GN-Mlf"/>
-                                <include reference="EZ0-WF-eiy"/>
-                                <include reference="lJL-lY-Uwr"/>
-                                <include reference="GOo-hq-Ne9"/>
+                                <include reference="18R-2s-EDx"/>
+                                <include reference="pKC-FZ-xYR"/>
+                                <include reference="N2w-Cb-gbR"/>
+                                <include reference="Xk0-N0-ogN"/>
+                                <include reference="0NU-p8-cGz"/>
+                                <include reference="vdn-bp-aE4"/>
+                                <include reference="lPc-2r-lHh"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="naW-J0-q1R"/>
+                    <connections>
+                        <outlet property="btnIDSong" destination="6Fl-fM-eWE" id="hVv-Mc-euD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1699.5" y="183.75"/>
+            <point key="canvasLocation" x="-1699.5" y="190.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="audiowave.png" width="32" height="32"/>
         <image name="richards-bar.jpg" width="640" height="478"/>
     </resources>
 </document>

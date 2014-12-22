@@ -30,6 +30,7 @@ enum {
 	MPFlipStyleOrientationVertical	= 1 << 1,
 	MPFlipStylePerspectiveReverse	= 1 << 2
 };
+typedef unsigned long NSUInteger;
 typedef NSUInteger MPFlipStyle;
 
 #define MPFlipStyleDirectionMask	MPFlipStyleDirectionBackward

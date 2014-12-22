@@ -8,6 +8,7 @@
 
 #import "MPAnimation.h"
 #import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
 
 @implementation MPAnimation
 

@@ -35,8 +35,4 @@
 }
 */
 
-- (IBAction)btnIDSong_Click:(id)sender {
-    
-    
-}
 @end

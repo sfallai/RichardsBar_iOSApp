@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E5F45B8151EC9C5BA57C1EB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FE449B7DE49B6B9E064A78 /* libPods.a */; };
+		853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D67C29A1A48B51B00BB6835 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		19FE449B7DE49B6B9E064A78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		710FBD4D1624C319E270BC2B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSongToolBar.h; sourceTree = "<group>"; };
+		853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongToolBar.m; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
 		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -159,6 +162,8 @@
 			children = (
 				8D67C3281A48D07100BB6835 /* IDSongButton.h */,
 				8D67C3291A48D07100BB6835 /* IDSongButton.m */,
+				853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */,
+				853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */,
 			);
 			name = customObjects;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 				8D9D5DF21A48A3ED007437B6 /* AppDelegate.m in Sources */,
 				8D9D5DEF1A48A3ED007437B6 /* main.m in Sources */,
 				8D67C2BC1A48CB0E00BB6835 /* MPFlipTransition.m in Sources */,
+				853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */,
 				8D67C2C11A48CB0E00BB6835 /* MPFoldNavPopSegue.m in Sources */,
 				8D67C3271A48CF4800BB6835 /* StartScreenViewController.m in Sources */,
 				8D67C2C31A48CB0E00BB6835 /* MPFoldSegue.m in Sources */,

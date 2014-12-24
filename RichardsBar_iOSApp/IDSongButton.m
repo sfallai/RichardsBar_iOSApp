@@ -35,7 +35,9 @@
 -(void)initialize {
     
     [self addTarget:self action:@selector(btnIDSong_click:) forControlEvents:UIControlEventTouchDown];
-    //self.layer.cornerRadius = 31;
+    self.layer.cornerRadius = 15;
+    [self setTitle:@"Help me" forState:UIControlStateNormal];
+    [self setImage:[[UIImage alloc] initWithContentsOfFile:@"audiowave.png"] forState:UIControlStateNormal];
 }
 
 -(IBAction)btnIDSong_click:(id)sender {

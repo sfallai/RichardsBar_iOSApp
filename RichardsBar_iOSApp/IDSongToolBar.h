@@ -10,5 +10,6 @@
 
 @interface IDSongToolBar : UIToolbar
 
+//- (void)drawRect:(CGRect)rect;
 
 @end

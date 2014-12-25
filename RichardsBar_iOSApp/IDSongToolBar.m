@@ -20,19 +20,21 @@
 */
 
 -(void) initialize {
-//    IDSongButton *button = [[IDSongButton alloc] init];
-//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-//    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-//    
-//    [self setItems:[[NSArray alloc] initWithObjects:spacer, barButton, spacer, nil] animated:YES];
+    //create the toolbar buttons
+    IDSongButton *button = [[IDSongButton alloc] init];
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Something" style:UIBarButtonItemStylePlain target:self action:nil];
+    //add the buttons to the toolbar
+    [self setItems:[[NSArray alloc] initWithObjects:spacer, button, spacer, nil] animated:YES];
     
-    [self setItems:[[NSArray alloc] initWithObjects:button, nil]];
+    //set the toolbar appearance
+    self.barTintColor = [UIColor blackColor];
+    self.translucent = YES;
+    [self setTintColor:[UIColor redColor]];
     
 }
 
-#pragma mark - toolbar initializers
+#pragma mark - toolbar initializer
 
 - (id)initWithCoder:(NSCoder*)aDecoder {
     self = [super initWithCoder:aDecoder];

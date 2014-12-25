@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IDSongButton : UIButton
+@interface IDSongButton : UIBarButtonItem
 
 
 @end

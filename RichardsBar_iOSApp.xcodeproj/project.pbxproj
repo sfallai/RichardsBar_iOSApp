@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E5F45B8151EC9C5BA57C1EB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FE449B7DE49B6B9E064A78 /* libPods.a */; };
+		851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 851775211A4B37A600FC124B /* NavigationControllerSubClass.m */; };
+		851775251A4B3D4700FC124B /* MyPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */; };
 		853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
@@ -52,6 +54,10 @@
 /* Begin PBXFileReference section */
 		19FE449B7DE49B6B9E064A78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		710FBD4D1624C319E270BC2B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		851775201A4B37A600FC124B /* NavigationControllerSubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerSubClass.h; sourceTree = "<group>"; };
+		851775211A4B37A600FC124B /* NavigationControllerSubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerSubClass.m; sourceTree = "<group>"; };
+		851775231A4B3D4700FC124B /* MyPlaylistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPlaylistsViewController.h; sourceTree = "<group>"; };
+		851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPlaylistsViewController.m; sourceTree = "<group>"; };
 		853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSongToolBar.h; sourceTree = "<group>"; };
 		853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongToolBar.m; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
@@ -164,6 +170,8 @@
 				8D67C3291A48D07100BB6835 /* IDSongButton.m */,
 				853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */,
 				853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */,
+				851775201A4B37A600FC124B /* NavigationControllerSubClass.h */,
+				851775211A4B37A600FC124B /* NavigationControllerSubClass.m */,
 			);
 			name = customObjects;
 			sourceTree = "<group>";
@@ -316,6 +324,8 @@
 				8D9D5DF41A48A3ED007437B6 /* ViewController.m */,
 				8D67C3251A48CF4800BB6835 /* StartScreenViewController.h */,
 				8D67C3261A48CF4800BB6835 /* StartScreenViewController.m */,
+				851775231A4B3D4700FC124B /* MyPlaylistsViewController.h */,
+				851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -477,6 +487,7 @@
 				8D67C2C01A48CB0E00BB6835 /* MPFoldModalSegue.m in Sources */,
 				8D67C2BF1A48CB0E00BB6835 /* MPFlipSegue.m in Sources */,
 				8D67C2BE1A48CB0E00BB6835 /* MPTransition.m in Sources */,
+				851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */,
 				8D67C2C21A48CB0E00BB6835 /* MPFoldNavPushSegue.m in Sources */,
 				8D67C2BB1A48CB0E00BB6835 /* MPAnimation.m in Sources */,
 				8D67C2BD1A48CB0E00BB6835 /* MPFoldTransition.m in Sources */,
@@ -486,6 +497,7 @@
 				8D67C2BC1A48CB0E00BB6835 /* MPFlipTransition.m in Sources */,
 				853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */,
 				8D67C2C11A48CB0E00BB6835 /* MPFoldNavPopSegue.m in Sources */,
+				851775251A4B3D4700FC124B /* MyPlaylistsViewController.m in Sources */,
 				8D67C3271A48CF4800BB6835 /* StartScreenViewController.m in Sources */,
 				8D67C2C31A48CB0E00BB6835 /* MPFoldSegue.m in Sources */,
 			);

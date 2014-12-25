@@ -17,12 +17,12 @@
     return self;
 }
 
--(id) initWithFrame:(CGRect)frame {
-    if(self = [super initWithFrame:frame]) {
-        [self initialize];
-    }
-    return self;
-}
+//-(id) initWithFrame:(CGRect)frame {
+//    if(self = [super initWithFrame:frame]) {
+//        [self initialize];
+//    }
+//    return self;
+//}
 
 -(id) initWithCoder:(NSCoder *)coder {
     if(self = [super initWithCoder:coder]) {
@@ -33,14 +33,15 @@
 }
 
 -(void)initialize {
+    //get the button image for the frame size
+    UIImage* buttonImage = [UIImage imageNamed:@"audiowave"];
+    [self setImage:buttonImage];
     
-    [self addTarget:self action:@selector(btnIDSong_click:) forControlEvents:UIControlEventTouchDown];
-    self.layer.cornerRadius = 15;
-    [self setTitle:@"Help me" forState:UIControlStateNormal];
-    [self setImage:[[UIImage alloc] initWithContentsOfFile:@"audiowave.png"] forState:UIControlStateNormal];
+    [self setAction:@selector(btnIDSong_Click)];
+    
 }
 
--(IBAction)btnIDSong_click:(id)sender {
+-(void) btnIDSong_Click {
     
 }
 

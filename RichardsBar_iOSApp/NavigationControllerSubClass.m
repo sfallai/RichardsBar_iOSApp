@@ -8,6 +8,7 @@
 
 #import "NavigationControllerSubClass.h"
 #import "IDSongToolBar.h"
+#import "IDSongButton.h"
 
 @implementation NavigationControllerSubClass
 
@@ -20,9 +21,41 @@
 */
 
 -(void) viewWillAppear:(BOOL)animated  {
+    [self createCommonToolbar];
+    
+}
+
+-(void) createCommonToolbar {
     //add a common toolbar for every view
-    IDSongToolBar *toolbar = [[IDSongToolBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44)];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44)];
+    
+    //
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] init];
+    UIImage* buttonImage = [UIImage imageNamed:@"audiowave"];
+    UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithImage:buttonImage style:UIBarButtonItemStylePlain target:self action:@selector(btnIDSong_Click:)];
+
+    
+    //set button appearance
+    [button setImage:buttonImage];
+    
+    //set button action
+    [button setAction:@selector(btnIDSong_Click:)];
+    
+    //add the buttons to the toolbar
+    [toolbar setItems:[[NSArray alloc] initWithObjects:spacer, b, spacer, nil] animated:YES];
+    
+    //set the toolbar appearance
+    toolbar.barTintColor = [UIColor blackColor];
+    toolbar.translucent = YES;
+    [toolbar setTintColor:[UIColor redColor]];
+    
     [self.view addSubview:toolbar];
+}
+
+-(void) btnIDSong_Click: (id) sender {
+    [self performSegueWithIdentifier:@"idSongResultSegue" sender:self];
+    
 }
 
 - (void)viewDidLoad {
@@ -34,26 +67,5 @@
     
 }
 
--(void) setToolBarAppearance {
-    //UIButton *button = [[UIButton alloc] init];
-    
-    //[button setBackgroundColor:[UIColor whiteColor]];
-    //button.layer.cornerRadius = 15;
-    //[button setTitle:@"Something" forState:UIControlStateNormal];
-    //[button setImage:[UIImage imageNamed:@"audiowave"] forState:UIControlStateNormal];
-    
-    //set click handler
-    //[button addTarget:self action:@selector(btnIDSong_click:) forControlEvents:UIControlEventTouchDown];
-    
-    UIBarButtonItem *barItemButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"audiowave"] landscapeImagePhone:[UIImage imageNamed:@"audiowave"] style:UIBarButtonItemStylePlain target:self action:nil];
-    //UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    
-    [self setToolbarItems:[[NSArray alloc] initWithObjects:spacer, barItemButton, spacer, nil]];
-    
-}
--(IBAction)btnIDSong_click:(id)sender {
-    
-}
 
 @end

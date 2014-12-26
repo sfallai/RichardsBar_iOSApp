@@ -37,11 +37,12 @@
     UIImage* buttonImage = [UIImage imageNamed:@"audiowave"];
     [self setImage:buttonImage];
     
-    [self setAction:@selector(btnIDSong_Click)];
+    [self setAction:@selector(btnIDSong_Click:)];
     
 }
 
--(void) btnIDSong_Click {
+-(void) btnIDSong_Click: (UIViewController *) sender {
+    [sender performSegueWithIdentifier:@"idSongResultSegue" sender:sender];
     
 }
 

@@ -9,11 +9,12 @@
         <scene sceneID="RWr-hW-DLe">
             <objects>
                 <navigationController id="Rod-TZ-rsV" customClass="NavigationControllerSubClass" sceneMemberID="viewController">
+                    <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="H1Y-ah-XlP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="b7U-aK-ACg" customClass="IDSongToolBar">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="b7U-aK-ACg">
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -127,10 +128,30 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="naW-J0-q1R"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="FJu-tS-EPn" kind="presentation" identifier="idSongResultSegue" id="nhz-s1-jQD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1699.5" y="190.5"/>
+        </scene>
+        <!--IDSongViewController-->
+        <scene sceneID="FLV-DG-df6">
+            <objects>
+                <viewController id="FJu-tS-EPn" userLabel="IDSongViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4bI-GN-Xbe"/>
+                        <viewControllerLayoutGuide type="bottom" id="dtD-Lr-POX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jYJ-0s-YjE">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4e-H9-4qR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2502" y="-473.25"/>
         </scene>
         <!--Playlist-->
         <scene sceneID="6x5-Cb-Ne2">

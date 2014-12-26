@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>088EBDB7-F317-419D-85D6-DE4FCF23ADD6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RichardsBar_iOSApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C95BF25FD00EBA396CB4954357AB77BC409C54C</key>
+		<string>https://github.com/sfallai/RichardsBar_iOSApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RichardsBar_iOSApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C95BF25FD00EBA396CB4954357AB77BC409C54C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sfallai/RichardsBar_iOSApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C95BF25FD00EBA396CB4954357AB77BC409C54C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C95BF25FD00EBA396CB4954357AB77BC409C54C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RichardsBar_iOSApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

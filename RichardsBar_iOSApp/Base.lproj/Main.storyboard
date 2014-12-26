@@ -19,6 +19,7 @@
                     </toolbar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="bgX-2f-uM7"/>
+                        <segue destination="FJu-tS-EPn" kind="show" identifier="idSongResultSegue" id="jAb-LA-i0x"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBK-fx-v5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,14 +98,14 @@
                                 <exclude reference="Ms0-ZQ-Aqe"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0SB-4c-khX"/>
-                                <exclude reference="IFR-lD-lVZ"/>
-                                <exclude reference="TM3-kg-hp0"/>
                                 <exclude reference="pE4-mR-8bI"/>
                                 <exclude reference="wgR-4r-yqo"/>
                                 <exclude reference="cdx-oH-tdU"/>
                                 <exclude reference="k4V-PZ-3bx"/>
                                 <exclude reference="Gav-te-2Ln"/>
+                                <exclude reference="0SB-4c-khX"/>
+                                <exclude reference="IFR-lD-lVZ"/>
+                                <exclude reference="TM3-kg-hp0"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -114,23 +115,20 @@
                                 <include reference="Ms0-ZQ-Aqe"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0SB-4c-khX"/>
-                                <include reference="IFR-lD-lVZ"/>
-                                <include reference="TM3-kg-hp0"/>
                                 <include reference="pE4-mR-8bI"/>
                                 <include reference="wgR-4r-yqo"/>
                                 <include reference="cdx-oH-tdU"/>
                                 <include reference="k4V-PZ-3bx"/>
                                 <include reference="Gav-te-2Ln"/>
+                                <include reference="0SB-4c-khX"/>
+                                <include reference="IFR-lD-lVZ"/>
+                                <include reference="TM3-kg-hp0"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="naW-J0-q1R"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="FJu-tS-EPn" kind="presentation" identifier="idSongResultSegue" id="nhz-s1-jQD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,6 +143,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dtD-Lr-POX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jYJ-0s-YjE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

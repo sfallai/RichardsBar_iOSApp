@@ -11,6 +11,7 @@
 		851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 851775211A4B37A600FC124B /* NavigationControllerSubClass.m */; };
 		851775251A4B3D4700FC124B /* MyPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */; };
 		853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */; };
+		85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B46B1A4D8421005273A0 /* IDSongResult.m */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D67C29A1A48B51B00BB6835 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */; };
@@ -60,6 +61,8 @@
 		851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPlaylistsViewController.m; sourceTree = "<group>"; };
 		853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSongToolBar.h; sourceTree = "<group>"; };
 		853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongToolBar.m; sourceTree = "<group>"; };
+		85C2B46A1A4D8421005273A0 /* IDSongResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSongResult.h; sourceTree = "<group>"; };
+		85C2B46B1A4D8421005273A0 /* IDSongResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongResult.m; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
 		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -170,8 +173,6 @@
 				8D67C3291A48D07100BB6835 /* IDSongButton.m */,
 				853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */,
 				853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */,
-				851775201A4B37A600FC124B /* NavigationControllerSubClass.h */,
-				851775211A4B37A600FC124B /* NavigationControllerSubClass.m */,
 			);
 			name = customObjects;
 			sourceTree = "<group>";
@@ -320,12 +321,16 @@
 		8D9D5E151A48A5EC007437B6 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				851775201A4B37A600FC124B /* NavigationControllerSubClass.h */,
+				851775211A4B37A600FC124B /* NavigationControllerSubClass.m */,
 				8D9D5DF31A48A3ED007437B6 /* ViewController.h */,
 				8D9D5DF41A48A3ED007437B6 /* ViewController.m */,
 				8D67C3251A48CF4800BB6835 /* StartScreenViewController.h */,
 				8D67C3261A48CF4800BB6835 /* StartScreenViewController.m */,
 				851775231A4B3D4700FC124B /* MyPlaylistsViewController.h */,
 				851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */,
+				85C2B46A1A4D8421005273A0 /* IDSongResult.h */,
+				85C2B46B1A4D8421005273A0 /* IDSongResult.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 			files = (
 				8D9D5DF51A48A3ED007437B6 /* ViewController.m in Sources */,
 				8D67C2C01A48CB0E00BB6835 /* MPFoldModalSegue.m in Sources */,
+				85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */,
 				8D67C2BF1A48CB0E00BB6835 /* MPFlipSegue.m in Sources */,
 				8D67C2BE1A48CB0E00BB6835 /* MPTransition.m in Sources */,
 				851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */,

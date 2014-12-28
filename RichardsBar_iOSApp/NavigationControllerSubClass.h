@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIEffectDesignerView.h"
 
 @interface NavigationControllerSubClass : UINavigationController
+
+@property(nonatomic, strong) UIEffectDesignerView* effectView;
 
 @end

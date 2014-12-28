@@ -22,7 +22,17 @@
 
 -(void) viewWillAppear:(BOOL)animated  {
     [self createCommonToolbar];
+    //lets make the background color black so we can see the smoke
+    self.view.backgroundColor = [UIColor blackColor];
     
+    //initialize the instance of UIEffectDesignerView with the .ped we created earlier
+    _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped"];
+    
+    //you can adjust the alpha of the effect to make it more or less pronounced
+    _effectView.alpha = .7;
+    
+    //add the effect to the screen
+    [self.view addSubview:_effectView];
     
 }
 
@@ -55,7 +65,8 @@
     
     //if(![vc isEqualToString:@"Song Info"]) {
         [self performSegueWithIdentifier:@"idSongResultSegue" sender:self];
-    //}
+    // *chooseKind = [[UISearchDisplayController alloc] init];
+        //}
     
     
 }

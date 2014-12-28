@@ -137,7 +137,7 @@
         <!--IDSongViewController-->
         <scene sceneID="FLV-DG-df6">
             <objects>
-                <viewController title="Song Info" id="FJu-tS-EPn" userLabel="IDSongViewController" customClass="IDSongResult" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SongIDDisplay" title="Song Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FJu-tS-EPn" userLabel="IDSongViewController" customClass="IDSongResult" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4bI-GN-Xbe"/>
                         <viewControllerLayoutGuide type="bottom" id="dtD-Lr-POX"/>

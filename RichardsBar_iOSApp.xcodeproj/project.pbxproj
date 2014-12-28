@@ -12,6 +12,10 @@
 		851775251A4B3D4700FC124B /* MyPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */; };
 		853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */; };
 		85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B46B1A4D8421005273A0 /* IDSongResult.m */; };
+		85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C2B4721A5067AA005273A0 /* SmokeShape.png */; };
+		85C2B4791A5067D1005273A0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B4761A5067D1005273A0 /* NSData+Base64.m */; };
+		85C2B47A1A5067D1005273A0 /* UIEffectDesignerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B4781A5067D1005273A0 /* UIEffectDesignerView.m */; };
+		85C2B47C1A50686E005273A0 /* smoke.ped in Resources */ = {isa = PBXBuildFile; fileRef = 85C2B47B1A50686E005273A0 /* smoke.ped */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D67C29A1A48B51B00BB6835 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */; };
@@ -63,6 +67,12 @@
 		853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongToolBar.m; sourceTree = "<group>"; };
 		85C2B46A1A4D8421005273A0 /* IDSongResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSongResult.h; sourceTree = "<group>"; };
 		85C2B46B1A4D8421005273A0 /* IDSongResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongResult.m; sourceTree = "<group>"; };
+		85C2B4721A5067AA005273A0 /* SmokeShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SmokeShape.png; path = images/SmokeShape.png; sourceTree = SOURCE_ROOT; };
+		85C2B4751A5067D1005273A0 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		85C2B4761A5067D1005273A0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		85C2B4771A5067D1005273A0 /* UIEffectDesignerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEffectDesignerView.h; sourceTree = "<group>"; };
+		85C2B4781A5067D1005273A0 /* UIEffectDesignerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEffectDesignerView.m; sourceTree = "<group>"; };
+		85C2B47B1A50686E005273A0 /* smoke.ped */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoke.ped; sourceTree = SOURCE_ROOT; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
 		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -149,6 +159,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		85C2B4741A5067D1005273A0 /* UIEffectDesignerView */ = {
+			isa = PBXGroup;
+			children = (
+				85C2B4751A5067D1005273A0 /* NSData+Base64.h */,
+				85C2B4761A5067D1005273A0 /* NSData+Base64.m */,
+				85C2B4771A5067D1005273A0 /* UIEffectDesignerView.h */,
+				85C2B4781A5067D1005273A0 /* UIEffectDesignerView.m */,
+			);
+			name = UIEffectDesignerView;
+			path = Libraries/UIEffectDesignerView;
+			sourceTree = SOURCE_ROOT;
+		};
 		8D67C2941A48AFCA00BB6835 /* launchscreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +202,7 @@
 		8D67C2A11A48C88B00BB6835 /* ExternalLibs */ = {
 			isa = PBXGroup;
 			children = (
+				85C2B4741A5067D1005273A0 /* UIEffectDesignerView */,
 				8D67C2A21A48CADE00BB6835 /* MPFoldTransition */,
 			);
 			name = ExternalLibs;
@@ -266,6 +289,7 @@
 		8D9D5DEC1A48A3ED007437B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				85C2B47B1A50686E005273A0 /* smoke.ped */,
 				8D9D5DF01A48A3ED007437B6 /* AppDelegate.h */,
 				8D9D5DF11A48A3ED007437B6 /* AppDelegate.m */,
 				8D9D5DED1A48A3ED007437B6 /* Info.plist */,
@@ -294,6 +318,7 @@
 		8D9D5E121A48A5B1007437B6 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				85C2B4721A5067AA005273A0 /* SmokeShape.png */,
 				8D67C3231A48CCE500BB6835 /* audiowave@2x.png */,
 				8D67C2941A48AFCA00BB6835 /* launchscreen */,
 			);
@@ -434,11 +459,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D9D5DF81A48A3ED007437B6 /* Main.storyboard in Resources */,
+				85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */,
 				8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */,
 				8D67C2981A48B26300BB6835 /* podfile in Resources */,
 				8D67C3241A48CCE500BB6835 /* audiowave@2x.png in Resources */,
 				8D9D5DFD1A48A3ED007437B6 /* LaunchScreen.xib in Resources */,
 				8D9D5DFA1A48A3ED007437B6 /* Images.xcassets in Resources */,
+				85C2B47C1A50686E005273A0 /* smoke.ped in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C2B4791A5067D1005273A0 /* NSData+Base64.m in Sources */,
 				8D9D5DF51A48A3ED007437B6 /* ViewController.m in Sources */,
 				8D67C2C01A48CB0E00BB6835 /* MPFoldModalSegue.m in Sources */,
 				85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */,
@@ -496,6 +524,7 @@
 				8D67C2BE1A48CB0E00BB6835 /* MPTransition.m in Sources */,
 				851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */,
 				8D67C2C21A48CB0E00BB6835 /* MPFoldNavPushSegue.m in Sources */,
+				85C2B47A1A5067D1005273A0 /* UIEffectDesignerView.m in Sources */,
 				8D67C2BB1A48CB0E00BB6835 /* MPAnimation.m in Sources */,
 				8D67C2BD1A48CB0E00BB6835 /* MPFoldTransition.m in Sources */,
 				8D67C32A1A48D07100BB6835 /* IDSongButton.m in Sources */,

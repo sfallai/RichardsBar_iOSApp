@@ -20,11 +20,10 @@
 }
 */
 
--(void) viewWillAppear:(BOOL)animated  {
-    [self createCommonToolbar];
+-(void) createSmokeOverlay {
     //lets make the background color black so we can see the smoke
     self.view.backgroundColor = [UIColor blackColor];
-    
+    //self.topViewController.view.backgroundColor = [UIColor blackColor];
     //initialize the instance of UIEffectDesignerView with the .ped we created earlier
     _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped"];
     
@@ -32,7 +31,13 @@
     _effectView.alpha = .7;
     
     //add the effect to the screen
-    [self.view addSubview:_effectView];
+    //[self.view addSubview:_effectView];
+
+}
+
+-(void) viewWillAppear:(BOOL)animated  {
+    [self createCommonToolbar];
+    [self createSmokeOverlay];
     
 }
 
@@ -56,7 +61,7 @@
 }
 
 -(void) btnIDSong_Click: (id) sender {
-    UIViewController *currentVC = self.navigationController.visibleViewController;
+    UIViewController *currentVC = [self presentedViewController]; //self.navigationController.visibleViewController;
     
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:@"Your current view controller:" message:NSStringFromClass([currentVC class]) delegate:nil

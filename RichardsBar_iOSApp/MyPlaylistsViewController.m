@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIViewController *currentVC = self.navigationController.visibleViewController;
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Your current view controller:" message:NSStringFromClass([currentVC class]) delegate:nil
+                          cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
 }
 
 - (void)didReceiveMemoryWarning {

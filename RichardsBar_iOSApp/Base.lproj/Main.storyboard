@@ -173,7 +173,7 @@
         <!--My Playlists-->
         <scene sceneID="aBr-RD-dIC">
             <objects>
-                <viewController title="My Playlists" id="lJ3-X4-aCr" sceneMemberID="viewController">
+                <viewController title="My Playlists" id="lJ3-X4-aCr" customClass="MyPlaylistsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u2l-sj-05q"/>
                         <viewControllerLayoutGuide type="bottom" id="f7Z-iE-gL9"/>

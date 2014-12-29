@@ -346,8 +346,7 @@
 		8D9D5E151A48A5EC007437B6 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				851775201A4B37A600FC124B /* NavigationControllerSubClass.h */,
-				851775211A4B37A600FC124B /* NavigationControllerSubClass.m */,
+				8DDB2CE41A51A50500B1317B /* SubClasses */,
 				8D9D5DF31A48A3ED007437B6 /* ViewController.h */,
 				8D9D5DF41A48A3ED007437B6 /* ViewController.m */,
 				8D67C3251A48CF4800BB6835 /* StartScreenViewController.h */,
@@ -358,6 +357,15 @@
 				85C2B46B1A4D8421005273A0 /* IDSongResult.m */,
 			);
 			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		8DDB2CE41A51A50500B1317B /* SubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				851775201A4B37A600FC124B /* NavigationControllerSubClass.h */,
+				851775211A4B37A600FC124B /* NavigationControllerSubClass.m */,
+			);
+			name = SubClasses;
 			sourceTree = "<group>";
 		};
 		F603768498E9AABB1E207DC7 /* Frameworks */ = {

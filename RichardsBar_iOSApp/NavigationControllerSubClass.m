@@ -31,7 +31,7 @@
     _effectView.alpha = .7;
     
     //add the effect to the screen
-    //[self.view addSubview:_effectView];
+    [self.view addSubview:_effectView];
 
 }
 

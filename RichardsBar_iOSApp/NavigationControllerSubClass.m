@@ -9,8 +9,13 @@
 #import "NavigationControllerSubClass.h"
 #import "IDSongToolBar.h"
 #import "IDSongButton.h"
+#import "Utilities.h"
+#import "MyPlaylistsViewController.h"
 
-@implementation NavigationControllerSubClass
+@implementation NavigationControllerSubClass {
+    Utilities *u;
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -19,7 +24,6 @@
     // Drawing code
 }
 */
-
 -(void) createSmokeOverlay {
     //lets make the background color black so we can see the smoke
     self.view.backgroundColor = [UIColor blackColor];
@@ -37,7 +41,7 @@
 
 -(void) viewWillAppear:(BOOL)animated  {
     [self createCommonToolbar];
-    [self createSmokeOverlay];
+    //[self createSmokeOverlay];
     
 }
 
@@ -48,39 +52,34 @@
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     UIImage* buttonImage = [UIImage imageNamed:@"audiowave"];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:buttonImage style:UIBarButtonItemStylePlain target:self action:@selector(btnIDSong_Click:)];
-
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    UIBarButtonItem *info = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
     //add the buttons to the toolbar
-    [toolbar setItems:[[NSArray alloc] initWithObjects:spacer, button, spacer, nil] animated:YES];
+    [toolbar setItems:[[NSArray alloc] initWithObjects:spacer, button, spacer, info, nil] animated:YES];
     
     //set the toolbar appearance
     toolbar.barTintColor = [UIColor blackColor];
     toolbar.translucent = YES;
     [toolbar setTintColor:[UIColor redColor]];
-    
+
     [self.view addSubview:toolbar];
+    
 }
 
 -(void) btnIDSong_Click: (id) sender {
-    UIViewController *currentVC = [self presentedViewController]; //self.navigationController.visibleViewController;
+    UIViewController *vc = [self.viewControllers objectAtIndex:(self.viewControllers.count - 1)];
     
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Your current view controller:" message:NSStringFromClass([currentVC class]) delegate:nil
-                          cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    
-    //if(![vc isEqualToString:@"Song Info"]) {
+    if(![NSStringFromClass([vc class]) isEqualToString:@"IDSongResult"]) {
         [self performSegueWithIdentifier:@"idSongResultSegue" sender:self];
-    // *chooseKind = [[UISearchDisplayController alloc] init];
-        //}
-    
-    
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[self setToolBarAppearance];
+    u = [[Utilities alloc] init];
     
     
 }

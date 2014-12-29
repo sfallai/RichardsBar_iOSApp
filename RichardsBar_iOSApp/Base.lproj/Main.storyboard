@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller Sub Class-->
@@ -29,7 +30,7 @@
         <!--Start Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="StartScreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartScreenViewController" id="vXZ-lx-hvc" customClass="StartScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -47,6 +48,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="kQG-Hm-9hn" kind="show" id="9g9-eV-Rt2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efr-gk-bgn">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -134,6 +138,66 @@
             </objects>
             <point key="canvasLocation" x="-1699.5" y="190.5"/>
         </scene>
+        <!--Jukebox-->
+        <scene sceneID="rqQ-LF-f7M">
+            <objects>
+                <viewController title="Jukebox" id="kQG-Hm-9hn" customClass="JukeboxViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bTK-ro-xPq"/>
+                        <viewControllerLayoutGuide type="bottom" id="QT9-ex-5C9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cp1-DS-7wg">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHN-ug-iWK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="QT9-ex-5C9" firstAttribute="top" secondItem="dHN-ug-iWK" secondAttribute="bottom" constant="78" id="aET-ze-iyt"/>
+                            <constraint firstItem="dHN-ug-iWK" firstAttribute="trailing" secondItem="cp1-DS-7wg" secondAttribute="trailingMargin" id="q8o-jk-QGK"/>
+                            <constraint firstItem="dHN-ug-iWK" firstAttribute="top" secondItem="bTK-ro-xPq" secondAttribute="bottom" constant="19" id="tBF-OM-umc"/>
+                            <constraint firstItem="dHN-ug-iWK" firstAttribute="leading" secondItem="cp1-DS-7wg" secondAttribute="leadingMargin" id="woG-82-Pfb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dHN-ug-iWK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="q8o-jk-QGK"/>
+                                <exclude reference="tBF-OM-umc"/>
+                                <exclude reference="woG-82-Pfb"/>
+                                <exclude reference="aET-ze-iyt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dHN-ug-iWK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="q8o-jk-QGK"/>
+                                <include reference="tBF-OM-umc"/>
+                                <include reference="woG-82-Pfb"/>
+                                <include reference="aET-ze-iyt"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pPd-MB-oYO" appends="YES" id="ZDy-PN-MN1"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="dHN-ug-iWK" id="LzO-BY-cpi"/>
+                        <outlet property="parentView" destination="cp1-DS-7wg" id="xrw-JY-hkE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UqW-dt-HKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="pPd-MB-oYO"/>
+            </objects>
+            <point key="canvasLocation" x="-930" y="190.5"/>
+        </scene>
         <!--IDSongViewController-->
         <scene sceneID="FLV-DG-df6">
             <objects>
@@ -170,10 +234,10 @@
             </objects>
             <point key="canvasLocation" x="-2502" y="867"/>
         </scene>
-        <!--My Playlists-->
+        <!--Playlists-->
         <scene sceneID="aBr-RD-dIC">
             <objects>
-                <viewController title="My Playlists" id="lJ3-X4-aCr" customClass="MyPlaylistsViewController" sceneMemberID="viewController">
+                <viewController title="Playlists" id="lJ3-X4-aCr" customClass="MyPlaylistsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u2l-sj-05q"/>
                         <viewControllerLayoutGuide type="bottom" id="f7Z-iE-gL9"/>

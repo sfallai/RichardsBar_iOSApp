@@ -44,6 +44,10 @@
 		8D9D5DFA1A48A3ED007437B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D5DF91A48A3ED007437B6 /* Images.xcassets */; };
 		8D9D5DFD1A48A3ED007437B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D5DFB1A48A3ED007437B6 /* LaunchScreen.xib */; };
 		8D9D5E091A48A3ED007437B6 /* RichardsBar_iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D5E081A48A3ED007437B6 /* RichardsBar_iOSAppTests.m */; };
+		8DDB2CE61A51DF0800B1317B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB2CE51A51DF0800B1317B /* settings@2x.png */; };
+		8DDB2CE91A51E32E00B1317B /* DefaultAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CE81A51E32E00B1317B /* DefaultAppearanceViewController.m */; };
+		8DDB2CEC1A51EA2900B1317B /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CEB1A51EA2900B1317B /* Utilities.m */; };
+		8DDB2CEF1A51FC0F00B1317B /* JukeboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,13 @@
 		8D9D5E021A48A3ED007437B6 /* RichardsBar_iOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RichardsBar_iOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D9D5E071A48A3ED007437B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D9D5E081A48A3ED007437B6 /* RichardsBar_iOSAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichardsBar_iOSAppTests.m; sourceTree = "<group>"; };
+		8DDB2CE51A51DF0800B1317B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "images/settings@2x.png"; sourceTree = SOURCE_ROOT; };
+		8DDB2CE71A51E32E00B1317B /* DefaultAppearanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAppearanceViewController.h; sourceTree = "<group>"; };
+		8DDB2CE81A51E32E00B1317B /* DefaultAppearanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAppearanceViewController.m; sourceTree = "<group>"; };
+		8DDB2CEA1A51EA2900B1317B /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		8DDB2CEB1A51EA2900B1317B /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		8DDB2CED1A51FC0F00B1317B /* JukeboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxViewController.h; sourceTree = "<group>"; };
+		8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxViewController.m; sourceTree = "<group>"; };
 		ADA8A63F77827A32619E3D6B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +195,8 @@
 			children = (
 				8D67C2A01A48B96800BB6835 /* customObjects */,
 				8D9D5E151A48A5EC007437B6 /* viewcontrollers */,
+				8DDB2CEA1A51EA2900B1317B /* Utilities.h */,
+				8DDB2CEB1A51EA2900B1317B /* Utilities.m */,
 			);
 			name = customClasses;
 			sourceTree = "<group>";
@@ -318,6 +331,7 @@
 		8D9D5E121A48A5B1007437B6 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				8DDB2CE51A51DF0800B1317B /* settings@2x.png */,
 				85C2B4721A5067AA005273A0 /* SmokeShape.png */,
 				8D67C3231A48CCE500BB6835 /* audiowave@2x.png */,
 				8D67C2941A48AFCA00BB6835 /* launchscreen */,
@@ -355,6 +369,8 @@
 				851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */,
 				85C2B46A1A4D8421005273A0 /* IDSongResult.h */,
 				85C2B46B1A4D8421005273A0 /* IDSongResult.m */,
+				8DDB2CED1A51FC0F00B1317B /* JukeboxViewController.h */,
+				8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -364,6 +380,8 @@
 			children = (
 				851775201A4B37A600FC124B /* NavigationControllerSubClass.h */,
 				851775211A4B37A600FC124B /* NavigationControllerSubClass.m */,
+				8DDB2CE71A51E32E00B1317B /* DefaultAppearanceViewController.h */,
+				8DDB2CE81A51E32E00B1317B /* DefaultAppearanceViewController.m */,
 			);
 			name = SubClasses;
 			sourceTree = "<group>";
@@ -467,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D9D5DF81A48A3ED007437B6 /* Main.storyboard in Resources */,
+				8DDB2CE61A51DF0800B1317B /* settings@2x.png in Resources */,
 				85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */,
 				8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */,
 				8D67C2981A48B26300BB6835 /* podfile in Resources */,
@@ -528,11 +547,14 @@
 				8D9D5DF51A48A3ED007437B6 /* ViewController.m in Sources */,
 				8D67C2C01A48CB0E00BB6835 /* MPFoldModalSegue.m in Sources */,
 				85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */,
+				8DDB2CE91A51E32E00B1317B /* DefaultAppearanceViewController.m in Sources */,
 				8D67C2BF1A48CB0E00BB6835 /* MPFlipSegue.m in Sources */,
+				8DDB2CEC1A51EA2900B1317B /* Utilities.m in Sources */,
 				8D67C2BE1A48CB0E00BB6835 /* MPTransition.m in Sources */,
 				851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */,
 				8D67C2C21A48CB0E00BB6835 /* MPFoldNavPushSegue.m in Sources */,
 				85C2B47A1A5067D1005273A0 /* UIEffectDesignerView.m in Sources */,
+				8DDB2CEF1A51FC0F00B1317B /* JukeboxViewController.m in Sources */,
 				8D67C2BB1A48CB0E00BB6835 /* MPAnimation.m in Sources */,
 				8D67C2BD1A48CB0E00BB6835 /* MPFoldTransition.m in Sources */,
 				8D67C32A1A48D07100BB6835 /* IDSongButton.m in Sources */,

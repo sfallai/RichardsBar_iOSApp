@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "DefaultAppearanceViewController.h"
 
-@interface StartScreenViewController : UIViewController
+@interface StartScreenViewController : DefaultAppearanceViewController
 
 @end

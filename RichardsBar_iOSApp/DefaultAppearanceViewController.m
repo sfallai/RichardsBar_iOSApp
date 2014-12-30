@@ -7,9 +7,11 @@
 //
 
 #import "DefaultAppearanceViewController.h"
+#import "AppDelegate.h"
 
 @interface DefaultAppearanceViewController () {
     Utilities *u;
+    AppDelegate *ad;
 }
 
 
@@ -25,8 +27,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     u = [[Utilities alloc] init];
+    ad = [[UIApplication sharedApplication] delegate];
     
     [self initNavigationBar];
+    
 }
 
 - (void)didReceiveMemoryWarning {

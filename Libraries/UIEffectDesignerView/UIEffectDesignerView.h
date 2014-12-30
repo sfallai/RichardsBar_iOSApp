@@ -35,8 +35,9 @@
 #endif
 
 @property (strong, nonatomic) CAEmitterLayer* emitter;
+@property int birthRate;
 
--(instancetype)initWithFile:(NSString*)fileName;
-+(instancetype)effectWithFile:(NSString*)fileName;
+-(instancetype)initWithFile:(NSString*)fileName withBirthRate:(int) birthRate;
++(instancetype)effectWithFile:(NSString*)fileName withBirthRate:(int) birthRate;
 
 @end

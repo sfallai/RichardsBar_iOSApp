@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rod-TZ-rsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rod-TZ-rsV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -213,11 +213,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoke Effects:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-FE-o4q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoke effects:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-FE-o4q">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="46" y="119" width="116" height="21"/>
+                                </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZa-8w-mVj">
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
@@ -225,40 +228,69 @@
                                     <action selector="swSmokeEffects_Change:" destination="rnC-Lx-kDe" eventType="valueChanged" id="PMa-XQ-fnd"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progressive smoke:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCk-Ut-Ivp">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3un-G3-Ewo">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="pZa-8w-mVj" secondAttribute="trailing" constant="29" id="8yh-nv-O32"/>
+                            <constraint firstItem="3un-G3-Ewo" firstAttribute="leading" secondItem="pZa-8w-mVj" secondAttribute="leading" id="McZ-ev-SVJ"/>
+                            <constraint firstItem="3un-G3-Ewo" firstAttribute="top" secondItem="pZa-8w-mVj" secondAttribute="bottom" constant="20" id="Q1J-28-d0P"/>
+                            <constraint firstItem="wCk-Ut-Ivp" firstAttribute="centerY" secondItem="3un-G3-Ewo" secondAttribute="centerY" id="fem-AO-8Df"/>
                             <constraint firstItem="pZa-8w-mVj" firstAttribute="top" secondItem="w54-cE-in9" secondAttribute="bottom" constant="94" id="saX-tV-oVM"/>
                             <constraint firstItem="pZa-8w-mVj" firstAttribute="centerY" secondItem="0ZT-FE-o4q" secondAttribute="centerY" id="sjA-1f-eFg"/>
                             <constraint firstItem="0ZT-FE-o4q" firstAttribute="leading" secondItem="ysl-SL-lLb" secondAttribute="leadingMargin" constant="30" id="y9P-fi-crt"/>
+                            <constraint firstItem="wCk-Ut-Ivp" firstAttribute="leading" secondItem="0ZT-FE-o4q" secondAttribute="leading" id="zpe-NR-kDy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="0ZT-FE-o4q"/>
                                 <exclude reference="pZa-8w-mVj"/>
+                                <exclude reference="wCk-Ut-Ivp"/>
+                                <exclude reference="3un-G3-Ewo"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="y9P-fi-crt"/>
+                                <exclude reference="fem-AO-8Df"/>
+                                <exclude reference="zpe-NR-kDy"/>
                                 <exclude reference="8yh-nv-O32"/>
                                 <exclude reference="saX-tV-oVM"/>
                                 <exclude reference="sjA-1f-eFg"/>
+                                <exclude reference="McZ-ev-SVJ"/>
+                                <exclude reference="Q1J-28-d0P"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="0ZT-FE-o4q"/>
                                 <include reference="pZa-8w-mVj"/>
+                                <include reference="wCk-Ut-Ivp"/>
+                                <include reference="3un-G3-Ewo"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="y9P-fi-crt"/>
+                                <include reference="fem-AO-8Df"/>
+                                <include reference="zpe-NR-kDy"/>
                                 <include reference="8yh-nv-O32"/>
                                 <include reference="saX-tV-oVM"/>
                                 <include reference="sjA-1f-eFg"/>
+                                <include reference="McZ-ev-SVJ"/>
+                                <include reference="Q1J-28-d0P"/>
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="lblProgressiveSmoke" destination="wCk-Ut-Ivp" id="VW7-M7-UQM"/>
+                        <outlet property="swProgressiveSmoke" destination="3un-G3-Ewo" id="Aa1-wt-leO"/>
                         <outlet property="swSmokeEffects" destination="pZa-8w-mVj" id="Ph5-W9-Oq4"/>
                     </connections>
                 </viewController>

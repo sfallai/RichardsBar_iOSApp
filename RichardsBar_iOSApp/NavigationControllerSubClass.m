@@ -11,10 +11,11 @@
 #import "IDSongButton.h"
 #import "Utilities.h"
 #import "MyPlaylistsViewController.h"
+#import "AppDelegate.h"
 
 @implementation NavigationControllerSubClass {
     Utilities *u;
-    
+    AppDelegate *ad;
 }
 
 /*
@@ -25,14 +26,12 @@
 }
 */
 -(void) createSmokeOverlay {
-    //lets make the background color black so we can see the smoke
-    self.view.backgroundColor = [UIColor blackColor];
     //self.topViewController.view.backgroundColor = [UIColor blackColor];
     //initialize the instance of UIEffectDesignerView with the .ped we created earlier
-    _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped"];
+    _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped" withBirthRate:5];
     
     //you can adjust the alpha of the effect to make it more or less pronounced
-    _effectView.alpha = .7;
+    _effectView.alpha = .5;
     
     //add the effect to the screen
     [self.view addSubview:_effectView];
@@ -41,7 +40,15 @@
 
 -(void) viewWillAppear:(BOOL)animated  {
     [self createCommonToolbar];
-    //[self createSmokeOverlay];
+
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"SmokeEffects"]) {
+        if(![self.view.subviews containsObject:_effectView]) {
+            [self createSmokeOverlay];
+        }
+    } else {
+        [_effectView removeFromSuperview];
+    }
+    
     
 }
 
@@ -85,6 +92,13 @@
     // Do any additional setup after loading the view.
     
     u = [[Utilities alloc] init];
+    ad = [[UIApplication sharedApplication] delegate];
+    
+    //set a timer to check what time it is and change the smoke.ped file used to generate the smoke effects based on hour
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(setSmokeSettingFile) userInfo:nil repeats:YES];
+}
+
+-(void) setSmokeSettingFile {
     
     
 }

@@ -27,6 +27,9 @@ static float kFileFormatVersionExpected = 0.1;
 
     //emitter and effect data
     NSDictionary* effect;
+    
+    int rate;
+    
 }
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
@@ -38,13 +41,13 @@ static float kFileFormatVersionExpected = 0.1;
 #endif
 
 //class factory method
-+(instancetype)effectWithFile:(NSString*)fileName
++(instancetype)effectWithFile:(NSString*)fileName withBirthRate:(int) birthRate
 {
-    return [[UIEffectDesignerView alloc] initWithFile:fileName];
+    return [[UIEffectDesignerView alloc] initWithFile:fileName withBirthRate:birthRate];
 }
 
 //custom initializer
--(instancetype)initWithFile:(NSString*)fileName
+-(instancetype)initWithFile:(NSString*)fileName withBirthRate:(int) birthRate
 {
     self = [super init];
     
@@ -123,7 +126,8 @@ static float kFileFormatVersionExpected = 0.1;
         emitterCell.color = color.CGColor;
         
         //copy all the settings to the emitter cell
-        emitterCell.birthRate = [effect[@"birthRate"] floatValue];
+//        emitterCell.birthRate = [effect[@"birthRate"] floatValue];
+        emitterCell.birthRate = birthRate;
         emitterCell.lifetime = [effect[@"lifetime"] floatValue];
         emitterCell.lifetimeRange = [effect[@"lifetimeRange"] floatValue];
         emitterCell.velocity = [effect[@"velocity"] floatValue];

@@ -12,4 +12,8 @@
 @interface SettingsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISwitch *swSmokeEffects;
 @property(nonatomic, strong) UIEffectDesignerView* effectView;
+@property (weak, nonatomic) IBOutlet UISwitch *swProgressiveSmoke;
+@property (weak, nonatomic) IBOutlet UILabel *lblProgressiveSmoke;
+
+
 @end

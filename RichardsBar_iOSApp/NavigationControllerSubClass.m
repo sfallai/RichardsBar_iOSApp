@@ -54,9 +54,10 @@
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:buttonImage style:UIBarButtonItemStylePlain target:self action:@selector(btnIDSong_Click:)];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeInfoLight];
     UIBarButtonItem *info = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    UIBarButtonItem *settings = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain target:self action:@selector(btnShowSettings_Click:)];
     
     //add the buttons to the toolbar
-    [toolbar setItems:[[NSArray alloc] initWithObjects:spacer, button, spacer, info, nil] animated:YES];
+    [toolbar setItems:[[NSArray alloc] initWithObjects:settings, spacer, button, spacer, info, nil] animated:YES];
     
     //set the toolbar appearance
     toolbar.barTintColor = [UIColor blackColor];
@@ -65,6 +66,10 @@
 
     [self.view addSubview:toolbar];
     
+}
+
+-(void) btnShowSettings_Click: (id) sender {
+    [self performSegueWithIdentifier:@"showSettingsSegue" sender:self];
 }
 
 -(void) btnIDSong_Click: (id) sender {

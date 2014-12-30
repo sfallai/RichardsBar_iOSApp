@@ -16,6 +16,7 @@
 		85C2B4791A5067D1005273A0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B4761A5067D1005273A0 /* NSData+Base64.m */; };
 		85C2B47A1A5067D1005273A0 /* UIEffectDesignerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B4781A5067D1005273A0 /* UIEffectDesignerView.m */; };
 		85C2B47C1A50686E005273A0 /* smoke.ped in Resources */ = {isa = PBXBuildFile; fileRef = 85C2B47B1A50686E005273A0 /* smoke.ped */; };
+		85C2B47F1A526265005273A0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B47E1A526265005273A0 /* SettingsViewController.m */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D67C29A1A48B51B00BB6835 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */; };
@@ -77,6 +78,8 @@
 		85C2B4771A5067D1005273A0 /* UIEffectDesignerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEffectDesignerView.h; sourceTree = "<group>"; };
 		85C2B4781A5067D1005273A0 /* UIEffectDesignerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEffectDesignerView.m; sourceTree = "<group>"; };
 		85C2B47B1A50686E005273A0 /* smoke.ped */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoke.ped; sourceTree = SOURCE_ROOT; };
+		85C2B47D1A526265005273A0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		85C2B47E1A526265005273A0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
 		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -371,6 +374,8 @@
 				85C2B46B1A4D8421005273A0 /* IDSongResult.m */,
 				8DDB2CED1A51FC0F00B1317B /* JukeboxViewController.h */,
 				8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */,
+				85C2B47D1A526265005273A0 /* SettingsViewController.h */,
+				85C2B47E1A526265005273A0 /* SettingsViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -546,6 +551,7 @@
 				85C2B4791A5067D1005273A0 /* NSData+Base64.m in Sources */,
 				8D9D5DF51A48A3ED007437B6 /* ViewController.m in Sources */,
 				8D67C2C01A48CB0E00BB6835 /* MPFoldModalSegue.m in Sources */,
+				85C2B47F1A526265005273A0 /* SettingsViewController.m in Sources */,
 				85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */,
 				8DDB2CE91A51E32E00B1317B /* DefaultAppearanceViewController.m in Sources */,
 				8D67C2BF1A48CB0E00BB6835 /* MPFlipSegue.m in Sources */,

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rod-TZ-rsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rod-TZ-rsV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,6 +22,7 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="bgX-2f-uM7"/>
                         <segue destination="FJu-tS-EPn" kind="show" identifier="idSongResultSegue" id="jAb-LA-i0x"/>
+                        <segue destination="rnC-Lx-kDe" kind="presentation" identifier="showSettingsSegue" id="0Yg-Sm-3PA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBK-fx-v5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,6 +149,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QT9-ex-5C9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cp1-DS-7wg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHN-ug-iWK">
@@ -167,10 +170,10 @@
                                 <exclude reference="dHN-ug-iWK"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="aET-ze-iyt"/>
                                 <exclude reference="q8o-jk-QGK"/>
                                 <exclude reference="tBF-OM-umc"/>
                                 <exclude reference="woG-82-Pfb"/>
-                                <exclude reference="aET-ze-iyt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -178,10 +181,10 @@
                                 <include reference="dHN-ug-iWK"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="aET-ze-iyt"/>
                                 <include reference="q8o-jk-QGK"/>
                                 <include reference="tBF-OM-umc"/>
                                 <include reference="woG-82-Pfb"/>
-                                <include reference="aET-ze-iyt"/>
                             </mask>
                         </variation>
                         <connections>
@@ -197,6 +200,71 @@
                 <swipeGestureRecognizer direction="right" id="pPd-MB-oYO"/>
             </objects>
             <point key="canvasLocation" x="-930" y="190.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Y5J-sH-xq9">
+            <objects>
+                <viewController title="Settings" id="rnC-Lx-kDe" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w54-cE-in9"/>
+                        <viewControllerLayoutGuide type="bottom" id="GJW-kE-7Yw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ysl-SL-lLb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoke Effects:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-FE-o4q">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZa-8w-mVj">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <connections>
+                                    <action selector="swSmokeEffects_Change:" destination="rnC-Lx-kDe" eventType="valueChanged" id="PMa-XQ-fnd"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pZa-8w-mVj" secondAttribute="trailing" constant="29" id="8yh-nv-O32"/>
+                            <constraint firstItem="pZa-8w-mVj" firstAttribute="top" secondItem="w54-cE-in9" secondAttribute="bottom" constant="94" id="saX-tV-oVM"/>
+                            <constraint firstItem="pZa-8w-mVj" firstAttribute="centerY" secondItem="0ZT-FE-o4q" secondAttribute="centerY" id="sjA-1f-eFg"/>
+                            <constraint firstItem="0ZT-FE-o4q" firstAttribute="leading" secondItem="ysl-SL-lLb" secondAttribute="leadingMargin" constant="30" id="y9P-fi-crt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0ZT-FE-o4q"/>
+                                <exclude reference="pZa-8w-mVj"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="y9P-fi-crt"/>
+                                <exclude reference="8yh-nv-O32"/>
+                                <exclude reference="saX-tV-oVM"/>
+                                <exclude reference="sjA-1f-eFg"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="0ZT-FE-o4q"/>
+                                <include reference="pZa-8w-mVj"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="y9P-fi-crt"/>
+                                <include reference="8yh-nv-O32"/>
+                                <include reference="saX-tV-oVM"/>
+                                <include reference="sjA-1f-eFg"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="swSmokeEffects" destination="pZa-8w-mVj" id="Ph5-W9-Oq4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxX-o2-pqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3274.5" y="-473.25"/>
         </scene>
         <!--IDSongViewController-->
         <scene sceneID="FLV-DG-df6">

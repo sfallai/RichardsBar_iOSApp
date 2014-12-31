@@ -26,6 +26,8 @@
     int trackNumber;
     int minDiscNumber;
     int maxDiscNumber;
+    AppDelegate *ad;
+    NSDictionary *disc;
 }
 
 @end
@@ -40,12 +42,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.contentView addSubview:[self getLabelForIndex:0]];
-    
-    discNumber = 0;
-    trackNumber = 0;
-    minDiscNumber = 0;
-    maxDiscNumber = 10;
     
     [self doInit];
     
@@ -88,11 +84,23 @@
 
 - (void)doInit
 {
+    [self.contentView addSubview:[self getLabelForIndex:0]];
+    
+    discNumber = 1;
+    trackNumber = 1;
+    minDiscNumber = 1;
+    maxDiscNumber = 10;
+    
     _mode = MPTransitionModeFold;
     _foldStyle = MPFoldStyleCubic;
     _flipStyle = MPFlipStyleDefault;
     
+    ad = [[UIApplication sharedApplication] delegate];
     [self initGestureRecognizer];
+    
+    UIView *previousView = [[self.contentView subviews] objectAtIndex:0];
+    [previousView addSubview:[self getTrackListingForIndex:0]];
+    
 }
 
 - (void)updateClipsToBounds
@@ -104,7 +112,7 @@
 }
 
 - (void) handleSwipe: (UISwipeGestureRecognizer *) swipe {
-    if(swipe.direction == UISwipeGestureRecognizerDirectionLeft && discNumber < maxDiscNumber - 1) {
+    if(swipe.direction == UISwipeGestureRecognizerDirectionLeft && discNumber < maxDiscNumber) {
         discNumber += 1;
         [self flipPage: YES];
     } else if (swipe.direction == UISwipeGestureRecognizerDirectionRight && discNumber > minDiscNumber) {
@@ -115,7 +123,7 @@
 
 -(void) flipPage:(BOOL) forwards {
     UIView *previousView = [[self.contentView subviews] objectAtIndex:0];
-    UIView *nextView = [self getLabelForIndex:discNumber];
+    UIView *nextView = [self getTrackListingForIndex:discNumber];
     
     // execute the transition
     [MPFlipTransition transitionFromView:previousView
@@ -129,13 +137,22 @@
      ];
 }
 
-- (UIView *)getDiscContentForIndex:(NSUInteger) index {
-    UIView *disc = [[UIView alloc] initWithFrame:self.contentView.bounds];
-    disc.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [disc setBackgroundColor:[UIColor whiteColor]];
-
-    return disc;
+-(UIView *) getTrackListingForIndex: (NSUInteger) index {
+    UIView *container = [[UIView alloc] initWithFrame:self.contentView.bounds];
+    container.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
+    UITableView *tableView = [[UITableView alloc] initWithFrame: CGRectMake(0, 0, container.frame.size.width, container.frame.size.height) style: UITableViewStylePlain];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [tableView setBackgroundColor:[UIColor blackColor]];
+    [[UITableViewCell appearance] setBackgroundColor:[UIColor clearColor]];
+    
+    [tableView reloadData];
+    
+    [container addSubview:tableView];
+    
+    return container;
 }
 
 - (UIView *)getLabelForIndex:(NSUInteger)index
@@ -147,7 +164,6 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(container.bounds, 10, 10)];
     label.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [label setFont:[UIFont boldSystemFontOfSize:84]];
-    [label setTextAlignment:UITextAlignmentCenter];
     [label setTextColor:[UIColor lightTextColor]];
     label.text = [NSString stringWithFormat:@"%d", index + 1];
     
@@ -188,6 +204,38 @@
     [container.layer setBorderWidth:2];
     
     return container;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Number of rows is the number of time zones in the region for the specified section.
+    return 5;
+}
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    // The header for the section is the region name -- get this from the region at the section index.
+    //Region *region = [regions objectAtIndex:section];
+    return [@"Disc " stringByAppendingString:[@(discNumber) stringValue]];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *MyIdentifier = @"MyReuseIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:MyIdentifier];
+    }
+    cell.textLabel.text = [[@(discNumber) stringValue] stringByAppendingString:@": Night Moves"];
+    cell.detailTextLabel.text = @"Bob Seger & The Silver Bullet Band";
+
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+    return cell;
 }
 
 @end

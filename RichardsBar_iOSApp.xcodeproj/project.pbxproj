@@ -49,6 +49,7 @@
 		8DDB2CE91A51E32E00B1317B /* DefaultAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CE81A51E32E00B1317B /* DefaultAppearanceViewController.m */; };
 		8DDB2CEC1A51EA2900B1317B /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CEB1A51EA2900B1317B /* Utilities.m */; };
 		8DDB2CEF1A51FC0F00B1317B /* JukeboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */; };
+		8DDB2CF51A53469A00B1317B /* JukeboxListing.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB2CF41A53469A00B1317B /* JukeboxListing.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		8DDB2CEB1A51EA2900B1317B /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		8DDB2CED1A51FC0F00B1317B /* JukeboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxViewController.h; sourceTree = "<group>"; };
 		8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxViewController.m; sourceTree = "<group>"; };
+		8DDB2CF41A53469A00B1317B /* JukeboxListing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JukeboxListing.json; sourceTree = "<group>"; };
 		ADA8A63F77827A32619E3D6B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -310,6 +312,7 @@
 				8D9D5DF11A48A3ED007437B6 /* AppDelegate.m */,
 				8D9D5DED1A48A3ED007437B6 /* Info.plist */,
 				8D9D5DEE1A48A3ED007437B6 /* main.m */,
+				8DDB2CF41A53469A00B1317B /* JukeboxListing.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D9D5DF81A48A3ED007437B6 /* Main.storyboard in Resources */,
+				8DDB2CF51A53469A00B1317B /* JukeboxListing.json in Resources */,
 				8DDB2CE61A51DF0800B1317B /* settings@2x.png in Resources */,
 				85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */,
 				8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */,

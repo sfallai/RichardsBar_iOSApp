@@ -14,6 +14,7 @@
     Utilities *u;
     AppDelegate *ad;
     BOOL smokeEffectState;
+    BOOL progressiveSmokeState;
 }
 
 @end
@@ -55,6 +56,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     smokeEffectState = [userDefaults boolForKey:@"SmokeEffects"];
+    progressiveSmokeState = [userDefaults boolForKey:@"ProgressiveSmoke"];
     
 }
 
@@ -78,6 +80,8 @@
 
 -(void) setProgressiveSmokeSwitchState {
     [self.swSmokeEffects setOn:smokeEffectState animated:YES];
+    //[self.swProgressiveSmoke setOn: progressiveSmokeState animated:YES];
+    
     [self.swProgressiveSmoke setEnabled:[self.swSmokeEffects isOn]];
     [self.lblProgressiveSmoke setEnabled:[self.swSmokeEffects isOn]];
 
@@ -86,10 +90,10 @@
 -(void) createSmokeOverlay {
     //self.topViewController.view.backgroundColor = [UIColor blackColor];
     //initialize the instance of UIEffectDesignerView with the .ped we created earlier
-    _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped" withBirthRate:2];
+    _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped" withBirthRate:ad.birthRate];
     
     //you can adjust the alpha of the effect to make it more or less pronounced
-    _effectView.alpha = .7;
+    _effectView.alpha = ad.smokeAlpha;
     
     //add the effect to the screen
     [self.view addSubview:_effectView];
@@ -104,6 +108,7 @@
 -(void) initSettingsView {
     [self getUserSettings];
     [self setSettingsValues];
+    [self.swProgressiveSmoke setEnabled:progressiveSmokeState];
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44)];
     
@@ -138,6 +143,7 @@
 }
 
 -(void) closeSettings_Click {
+    [self removeSmokeOverlay];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

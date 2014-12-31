@@ -12,4 +12,7 @@
 
 @interface StartScreenViewController : DefaultAppearanceViewController
 
+@property (nonatomic, strong) UIViewController *jukeboxViewController;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnJukeboxBrowser;
 @end

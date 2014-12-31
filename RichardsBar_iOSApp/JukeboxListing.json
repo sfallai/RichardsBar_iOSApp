@@ -1,0 +1,32 @@
+{
+    "discs": [
+              {
+                "discNumber": 1,
+                "songs": [
+                        {
+                          "trackNumber": 1,
+                          "artist": "Bob Seger & The Silver Bullet Band",
+                          "songName": "Night Moves",
+                          "album": ""
+                        },
+                        {
+                          "trackNumber": 2,
+                          "artist": "Lionel Richie",
+                          "songName": "Dancing on the Ceiling",
+                          "album": ""
+                        }
+                ]
+              },
+              {
+                "discNumber": 2,
+                "songs": [
+                        {
+                          "trackNumber": 1,
+                          "artist": "Michael Jackson",
+                          "songName": "Smooth Criminal",
+                          "album": ""
+                        }
+                ]
+              }
+            ]
+}

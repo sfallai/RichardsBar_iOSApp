@@ -17,7 +17,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //set how fast the smoke gets generated if enabled
+    _birthRate = 2;
     
+    //load the jukebox albums/songs
+    NSString* filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JukeboxListing.json"];
+    NSData* fileData = [NSData dataWithContentsOfFile:filePath];
+    _dict = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableContainers error:nil];
     
     return YES;
 }

@@ -16,6 +16,7 @@
 @implementation NavigationControllerSubClass {
     Utilities *u;
     AppDelegate *ad;
+    float smokeAlpha;
 }
 
 /*
@@ -28,10 +29,10 @@
 -(void) createSmokeOverlay {
     //self.topViewController.view.backgroundColor = [UIColor blackColor];
     //initialize the instance of UIEffectDesignerView with the .ped we created earlier
-    _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped" withBirthRate:5];
+    _effectView = [UIEffectDesignerView effectWithFile:@"smoke.ped" withBirthRate:ad.birthRate];
     
     //you can adjust the alpha of the effect to make it more or less pronounced
-    _effectView.alpha = .5;
+    _effectView.alpha = ad.smokeAlpha;
     
     //add the effect to the screen
     [self.view addSubview:_effectView];
@@ -40,7 +41,8 @@
 
 -(void) viewWillAppear:(BOOL)animated  {
     [self createCommonToolbar];
-
+    [self getSmokeOverlayAlpha];
+    
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"SmokeEffects"]) {
         if(![self.view.subviews containsObject:_effectView]) {
             [self createSmokeOverlay];
@@ -94,13 +96,65 @@
     u = [[Utilities alloc] init];
     ad = [[UIApplication sharedApplication] delegate];
     
-    //set a timer to check what time it is and change the smoke.ped file used to generate the smoke effects based on hour
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(setSmokeSettingFile) userInfo:nil repeats:YES];
+    //set a timer to check what time it is and change the smokeAlpha used to generate the smoke effects based on hour
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setSmokeOverlayAlpha) userInfo:nil repeats:YES];
 }
 
--(void) setSmokeSettingFile {
+-(float) getSmokeOverlayAlpha {
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+    timeFormatter.dateFormat = @"HH";
     
+    int hour = [[timeFormatter stringFromDate: [NSDate date]] intValue];
     
+    //as the night gets later the display gets smokier
+    switch (hour) {
+        case 21:
+            ad.smokeAlpha = 0.5;
+            break;
+            
+        case 22:
+            ad.smokeAlpha = 0.6;
+            break;
+            
+        case 23:
+            ad.smokeAlpha = 0.7;
+            break;
+            
+        case 0:
+            ad.smokeAlpha = 0.8;
+            break;
+            
+        case 1:
+            ad.smokeAlpha = 0.9;
+            break;
+            
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            ad.smokeAlpha = 1.0;
+            break;
+            
+        default:
+            ad.smokeAlpha = 0.4;
+            
+            break;
+    }
+
+    return ad.smokeAlpha;
+    
+}
+
+-(void) setSmokeOverlayAlpha {
+    float newAlpha = [self getSmokeOverlayAlpha];
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"SmokeEffects"] && [[NSUserDefaults standardUserDefaults] boolForKey:@"ProgressiveSmoke"]) {
+        if(smokeAlpha != newAlpha) {
+            smokeAlpha = newAlpha;
+            [_effectView removeFromSuperview];
+            [self createSmokeOverlay];
+        }
+    }
 }
 
 

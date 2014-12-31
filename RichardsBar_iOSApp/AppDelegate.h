@@ -13,6 +13,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic, strong) UIEffectDesignerView* effectView;
+@property float smokeAlpha;
+@property int birthRate;
+@property (strong, nonatomic) NSMutableDictionary* dict;
 
 @end
 

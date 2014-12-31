@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MPFoldEnumerations.h"
 #import "MPFlipEnumerations.h"
+#import "DefaultAppearanceViewController.h"
 
 enum {
     MPTransitionModeFold,
@@ -16,7 +17,8 @@ enum {
 } typedef MPTransitionMode;
 
 
-@interface JukeboxViewController : UIViewController
+@interface JukeboxViewController : DefaultAppearanceViewController <UITableViewDelegate, UITableViewDataSource>
+
 
 @property (assign, nonatomic) MPTransitionMode mode;
 @property (assign, nonatomic) NSUInteger style;

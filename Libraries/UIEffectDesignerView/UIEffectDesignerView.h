@@ -35,7 +35,7 @@
 #endif
 
 @property (strong, nonatomic) CAEmitterLayer* emitter;
-@property int birthRate;
+@property float smokeAlpha;
 
 -(instancetype)initWithFile:(NSString*)fileName withBirthRate:(int) birthRate;
 +(instancetype)effectWithFile:(NSString*)fileName withBirthRate:(int) birthRate;

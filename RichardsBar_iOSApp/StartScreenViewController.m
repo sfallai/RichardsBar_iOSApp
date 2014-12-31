@@ -52,11 +52,16 @@
     
 }
 
+- (IBAction)btnJukeboxBrowser_Click:(id)sender {
+    [[self navigationController] pushViewController:self.jukeboxViewController animated:YES];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    self.jukeboxViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"jukeboxViewController"];
 }
 
 - (void)didReceiveMemoryWarning {

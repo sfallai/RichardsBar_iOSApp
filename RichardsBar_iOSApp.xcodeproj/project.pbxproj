@@ -50,6 +50,7 @@
 		8DDB2CEC1A51EA2900B1317B /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CEB1A51EA2900B1317B /* Utilities.m */; };
 		8DDB2CEF1A51FC0F00B1317B /* JukeboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */; };
 		8DDB2CF51A53469A00B1317B /* JukeboxListing.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB2CF41A53469A00B1317B /* JukeboxListing.json */; };
+		8DDB2CF81A570DF100B1317B /* JukeboxContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CF71A570DF100B1317B /* JukeboxContent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,8 @@
 		8DDB2CED1A51FC0F00B1317B /* JukeboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxViewController.h; sourceTree = "<group>"; };
 		8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxViewController.m; sourceTree = "<group>"; };
 		8DDB2CF41A53469A00B1317B /* JukeboxListing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JukeboxListing.json; sourceTree = "<group>"; };
+		8DDB2CF61A570DF100B1317B /* JukeboxContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxContent.h; sourceTree = "<group>"; };
+		8DDB2CF71A570DF100B1317B /* JukeboxContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxContent.m; sourceTree = "<group>"; };
 		ADA8A63F77827A32619E3D6B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +205,8 @@
 				8D9D5E151A48A5EC007437B6 /* viewcontrollers */,
 				8DDB2CEA1A51EA2900B1317B /* Utilities.h */,
 				8DDB2CEB1A51EA2900B1317B /* Utilities.m */,
+				8DDB2CF61A570DF100B1317B /* JukeboxContent.h */,
+				8DDB2CF71A570DF100B1317B /* JukeboxContent.m */,
 			);
 			name = customClasses;
 			sourceTree = "<group>";
@@ -571,6 +576,7 @@
 				8D9D5DF21A48A3ED007437B6 /* AppDelegate.m in Sources */,
 				8D9D5DEF1A48A3ED007437B6 /* main.m in Sources */,
 				8D67C2BC1A48CB0E00BB6835 /* MPFlipTransition.m in Sources */,
+				8DDB2CF81A570DF100B1317B /* JukeboxContent.m in Sources */,
 				853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */,
 				8D67C2C11A48CB0E00BB6835 /* MPFoldNavPopSegue.m in Sources */,
 				851775251A4B3D4700FC124B /* MyPlaylistsViewController.m in Sources */,

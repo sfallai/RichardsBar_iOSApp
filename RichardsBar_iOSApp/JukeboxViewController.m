@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "MPFoldSegue.h"
 #import <QuartzCore/QuartzCore.h>
+#import "JukeboxContent.h"
 
 #define ABOUT_IDENTIFIER		@"AboutID"
 #define DETAILS_IDENTIFIER		@"DetailsID"
@@ -61,6 +62,8 @@
     [self.parentView addGestureRecognizer:swipeLeft];
     [self.parentView addGestureRecognizer:swipeRight];
     
+    JukeboxContent *jc = [[JukeboxContent alloc] initWithJSONData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +103,7 @@
     
     UIView *previousView = [[self.contentView subviews] objectAtIndex:0];
     [previousView addSubview:[self getTrackListingForIndex:0]];
+    
     
 }
 

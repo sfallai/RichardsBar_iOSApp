@@ -1,32 +1,49 @@
 {
     "discs": [
               {
-                "discNumber": 1,
-                "songs": [
-                        {
-                          "trackNumber": 1,
-                          "artist": "Bob Seger & The Silver Bullet Band",
-                          "songName": "Night Moves",
-                          "album": ""
-                        },
-                        {
-                          "trackNumber": 2,
-                          "artist": "Lionel Richie",
-                          "songName": "Dancing on the Ceiling",
-                          "album": ""
-                        }
-                ]
+              "discNumber": "1",
+              "tracks": [
+                         {
+                         "albumImg": "",
+                         "artist": "Bob Seger & the Silver Bullet Band",
+                         "song": "Night Moves",
+                         "trackNumber": "1"
+                         },
+                         {
+                         "albumImg": "",
+                         "artist": "Lionel Richie",
+                         "song": "Dancing on the Ceiling",
+                         "trackNumber": "2"
+                         },
+                         {
+                         "albumImg": "",
+                         "artist": "Elton John",
+                         "song": "Rocket Man",
+                         "trackNumber": "3"
+                         }
+                         ]
               },
               {
-                "discNumber": 2,
-                "songs": [
-                        {
-                          "trackNumber": 1,
-                          "artist": "Michael Jackson",
-                          "songName": "Smooth Criminal",
-                          "album": ""
-                        }
-                ]
+              "discNumber": "2",
+              "tracks": [
+                         {
+                         "albumImg": "",
+                         "artist": "The Rolling Stones",
+                         "song": "Brown Sugar",
+                         "trackNumber": "1"
+                         }
+                         ]
+              },
+              {
+              "discNumber": "3",
+              "tracks": [
+                         {
+                         "albumImg": "",
+                         "artist": "Frank Sinatra",
+                         "song": "My Way",
+                         "trackNumber": "1"
+                         }
+                         ]
               }
-            ]
+              ]
 }

@@ -13,6 +13,8 @@
 #import "MPFoldSegue.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JukeboxContent.h"
+#import "disc.h"
+#import "track.h"
 
 #define ABOUT_IDENTIFIER		@"AboutID"
 #define DETAILS_IDENTIFIER		@"DetailsID"
@@ -28,7 +30,8 @@
     int minDiscNumber;
     int maxDiscNumber;
     AppDelegate *ad;
-    NSDictionary *disc;
+    NSMutableArray *dictDisc;
+    JukeboxContent *jc;
 }
 
 @end
@@ -62,8 +65,6 @@
     [self.parentView addGestureRecognizer:swipeLeft];
     [self.parentView addGestureRecognizer:swipeRight];
     
-    JukeboxContent *jc = [[JukeboxContent alloc] initWithJSONData];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,12 +88,14 @@
 
 - (void)doInit
 {
+    jc = [[JukeboxContent alloc] initWithJSONData];
+    
     [self.contentView addSubview:[self getLabelForIndex:0]];
     
     discNumber = 1;
     trackNumber = 1;
     minDiscNumber = 1;
-    maxDiscNumber = 10;
+    maxDiscNumber = jc.discs.count;
     
     _mode = MPTransitionModeFold;
     _foldStyle = MPFoldStyleCubic;
@@ -127,7 +130,7 @@
 
 -(void) flipPage:(BOOL) forwards {
     UIView *previousView = [[self.contentView subviews] objectAtIndex:0];
-    UIView *nextView = [self getTrackListingForIndex:discNumber];
+    UIView *nextView = [self getTrackListingForIndex:discNumber - 1];
     
     // execute the transition
     [MPFlipTransition transitionFromView:previousView
@@ -142,6 +145,12 @@
 }
 
 -(UIView *) getTrackListingForIndex: (NSUInteger) index {
+    disc *disc = [jc getDiscFromIndex:index];
+    
+    for(track *t in disc.tracks) {
+        [dictDisc addObject:t];
+    }
+    
     UIView *container = [[UIView alloc] initWithFrame:self.contentView.bounds];
     container.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
@@ -216,7 +225,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Number of rows is the number of time zones in the region for the specified section.
-    return 5;
+    disc *disc = [jc getDiscFromIndex:discNumber - 1];
+    
+    return disc.tracks.count;
 }
 
 
@@ -233,8 +244,14 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:MyIdentifier];
     }
-    cell.textLabel.text = [[@(discNumber) stringValue] stringByAppendingString:@": Night Moves"];
-    cell.detailTextLabel.text = @"Bob Seger & The Silver Bullet Band";
+    
+    disc *disc = [jc getDiscFromIndex:discNumber - 1];
+    track *track = [disc.tracks objectAtIndex:indexPath.row];
+    
+    //cell.textLabel.text = [[@(discNumber) stringValue] stringByAppendingString:track.song];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", track.trackNumber, track.song];
+    
+    cell.detailTextLabel.text = track.artist;
 
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.textLabel.textColor = [UIColor whiteColor];

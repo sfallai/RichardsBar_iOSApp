@@ -10,8 +10,14 @@
 
 @implementation JukeboxContent
 
+-(disc *) getDiscFromIndex: (int) index{
+    return [_discs objectAtIndex: index];
+}
+
 -(id) initWithJSONData {
     if(self = [self init]) {
+        _discs = [[NSMutableArray alloc] init];
+        
         NSString* filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JukeboxListing.json"];
         NSData* fileData = [NSData dataWithContentsOfFile:filePath];
         NSMutableDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:fileData options:kNilOptions error:nil];
@@ -26,42 +32,4 @@
     return self;
 }
 
-@end
-
-@implementation disc
-
--(id) initWithDisc: (NSDictionary *) disc {
-    if (self = [self init]) {
-        NSArray *ary = [disc allValues];
-        _discNumber = [ary objectAtIndex:0];
-        
-        for (NSDictionary *dict in [ary objectAtIndex:1]) {
-            [_tracks addObject:[[track alloc] initWithTrack:dict]];
-            
-        }
-    }
-    
-    return self;
-}
-
-@end
-
-@implementation track
-
--(id) initWithTrack:(NSDictionary *) track {
-    if (self = [self init]) {
-        NSArray *ary = [track allValues];
-        NSArray *a0 = [ary objectAtIndex:0];
-        NSArray *a1 = [ary objectAtIndex:0];
-        
-        _albumImg = [a0 objectAtIndex:1];
-        
-//        _albumImg = track.albumImg;
-//        _artist = track.artist;
-//        _song = track.song;
-//        _trackNumber = track.trackNumber;
-    }
-    
-    return self;
-}
 @end

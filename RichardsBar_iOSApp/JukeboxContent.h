@@ -7,37 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "disc.h"
 
 @interface JukeboxContent : NSObject
 
 -(id) initWithJSONData;
+-(disc *) getDiscFromIndex: (int) index;
 
 @property (strong, nonatomic) NSMutableArray *discs;
 
 @end
 
-//////////////////////////////////////////////////////////////////////////
-
-@interface disc : JukeboxContent
-
--(id) initWithDisc: (NSDictionary*) disc;
-
-@property (strong, nonatomic) NSString *discNumber;
-@property (strong, nonatomic) NSMutableArray *tracks;
-
-@end
-
-//////////////////////////////////////////////////////////////////////////
-
-@interface track : disc
-
--(id) initWithTrack: (NSDictionary*) track;
-
-@property (strong, nonatomic) NSString *albumImg;
-@property (strong, nonatomic) NSString *artist;
-@property (strong, nonatomic) NSString *song;
-@property (strong, nonatomic) NSString *trackNumber;
-
-@end
 
 

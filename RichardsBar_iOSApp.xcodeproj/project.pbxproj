@@ -19,6 +19,7 @@
 		85C2B47F1A526265005273A0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B47E1A526265005273A0 /* SettingsViewController.m */; };
 		85D477CB1A586670002A28B5 /* disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D477CA1A586670002A28B5 /* disc.m */; };
 		85D477CE1A5866ED002A28B5 /* track.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D477CD1A5866ED002A28B5 /* track.m */; };
+		85D477D11A599FF6002A28B5 /* JukeboxTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D477D01A599FF6002A28B5 /* JukeboxTrackCell.m */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D67C29A1A48B51B00BB6835 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */; };
@@ -88,6 +89,8 @@
 		85D477CA1A586670002A28B5 /* disc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = disc.m; sourceTree = "<group>"; };
 		85D477CC1A5866ED002A28B5 /* track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = track.h; sourceTree = "<group>"; };
 		85D477CD1A5866ED002A28B5 /* track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = track.m; sourceTree = "<group>"; };
+		85D477CF1A599FF6002A28B5 /* JukeboxTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxTrackCell.h; sourceTree = "<group>"; };
+		85D477D01A599FF6002A28B5 /* JukeboxTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxTrackCell.m; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
 		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -205,6 +208,8 @@
 				85D477CA1A586670002A28B5 /* disc.m */,
 				85D477CC1A5866ED002A28B5 /* track.h */,
 				85D477CD1A5866ED002A28B5 /* track.m */,
+				85D477CF1A599FF6002A28B5 /* JukeboxTrackCell.h */,
+				85D477D01A599FF6002A28B5 /* JukeboxTrackCell.m */,
 			);
 			name = jukebox;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				8D67C2BF1A48CB0E00BB6835 /* MPFlipSegue.m in Sources */,
 				8DDB2CEC1A51EA2900B1317B /* Utilities.m in Sources */,
 				8D67C2BE1A48CB0E00BB6835 /* MPTransition.m in Sources */,
+				85D477D11A599FF6002A28B5 /* JukeboxTrackCell.m in Sources */,
 				851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */,
 				8D67C2C21A48CB0E00BB6835 /* MPFoldNavPushSegue.m in Sources */,
 				85C2B47A1A5067D1005273A0 /* UIEffectDesignerView.m in Sources */,

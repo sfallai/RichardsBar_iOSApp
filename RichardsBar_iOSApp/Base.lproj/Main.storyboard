@@ -15,6 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="H1Y-ah-XlP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="b7U-aK-ACg">
                         <autoresizingMask key="autoresizingMask"/>
@@ -158,76 +159,52 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHN-ug-iWK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="116" width="368" height="606"/>
+                                </variation>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="oB6-he-OiJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <color key="barTintColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="kQG-Hm-9hn" id="9NT-my-FcS"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="oB6-he-OiJ" firstAttribute="top" secondItem="bTK-ro-xPq" secondAttribute="bottom" id="ZIk-4m-L4x"/>
-                            <constraint firstItem="oB6-he-OiJ" firstAttribute="centerX" secondItem="dHN-ug-iWK" secondAttribute="centerX" id="ZWA-qQ-2rg"/>
-                            <constraint firstItem="QT9-ex-5C9" firstAttribute="top" secondItem="dHN-ug-iWK" secondAttribute="bottom" constant="78" id="aET-ze-iyt"/>
+                            <constraint firstItem="QT9-ex-5C9" firstAttribute="top" secondItem="dHN-ug-iWK" secondAttribute="bottom" constant="78" id="aET-ze-iyt">
+                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                            </constraint>
                             <constraint firstItem="dHN-ug-iWK" firstAttribute="trailing" secondItem="cp1-DS-7wg" secondAttribute="trailingMargin" id="q8o-jk-QGK"/>
                             <constraint firstItem="dHN-ug-iWK" firstAttribute="top" secondItem="bTK-ro-xPq" secondAttribute="bottom" constant="19" id="tBF-OM-umc">
-                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="52"/>
                             </constraint>
-                            <constraint firstItem="oB6-he-OiJ" firstAttribute="leading" secondItem="cp1-DS-7wg" secondAttribute="leading" id="wdg-Wz-EiR"/>
                             <constraint firstItem="dHN-ug-iWK" firstAttribute="leading" secondItem="cp1-DS-7wg" secondAttribute="leadingMargin" id="woG-82-Pfb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="dHN-ug-iWK"/>
-                                <exclude reference="oB6-he-OiJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="aET-ze-iyt"/>
-                                <exclude reference="ZIk-4m-L4x"/>
-                                <exclude reference="ZWA-qQ-2rg"/>
-                                <exclude reference="wdg-Wz-EiR"/>
                                 <exclude reference="q8o-jk-QGK"/>
                                 <exclude reference="tBF-OM-umc"/>
                                 <exclude reference="woG-82-Pfb"/>
+                                <exclude reference="aET-ze-iyt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="dHN-ug-iWK"/>
-                                <include reference="oB6-he-OiJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="aET-ze-iyt"/>
-                                <include reference="ZIk-4m-L4x"/>
-                                <include reference="ZWA-qQ-2rg"/>
-                                <include reference="wdg-Wz-EiR"/>
                                 <include reference="q8o-jk-QGK"/>
                                 <include reference="tBF-OM-umc"/>
                                 <include reference="woG-82-Pfb"/>
+                                <include reference="aET-ze-iyt"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="dHN-ug-iWK" id="LzO-BY-cpi"/>
                         <outlet property="parentView" destination="cp1-DS-7wg" id="xrw-JY-hkE"/>
-                        <outlet property="searchDisplayController" destination="RGE-M7-QDQ" id="9o8-RS-4WP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqW-dt-HKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="RGE-M7-QDQ">
-                    <connections>
-                        <outlet property="delegate" destination="kQG-Hm-9hn" id="dS3-sM-fPF"/>
-                        <outlet property="searchBar" destination="oB6-he-OiJ" id="R4h-EY-NCR"/>
-                        <outlet property="searchContentsController" destination="kQG-Hm-9hn" id="Iv4-Eg-mHr"/>
-                        <outlet property="searchResultsDataSource" destination="kQG-Hm-9hn" id="LIa-KO-CA5"/>
-                        <outlet property="searchResultsDelegate" destination="kQG-Hm-9hn" id="XuX-u8-Loy"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-930" y="190.5"/>
         </scene>

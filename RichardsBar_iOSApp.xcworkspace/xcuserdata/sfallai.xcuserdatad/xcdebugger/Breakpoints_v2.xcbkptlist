@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "-btnIDSong_Click:"
+            landmarkName = "-createCommonToolbar"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -64,6 +64,22 @@
             startingLineNumber = "67"
             endingLineNumber = "67"
             landmarkName = "-saveUserSettings"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RichardsBar_iOSApp/JukeboxTrackCell.m"
+            timestampString = "442081805.331932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "-initWithStyle:reuseIdentifier:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

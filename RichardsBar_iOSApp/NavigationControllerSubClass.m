@@ -104,7 +104,7 @@
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
     timeFormatter.dateFormat = @"HH";
     
-    int hour = [[timeFormatter stringFromDate: [NSDate date]] intValue];
+    int hour = [[NSUserDefaults standardUserDefaults] boolForKey:@"ProgressiveSmoke"] ? [[timeFormatter stringFromDate: [NSDate date]] intValue] : 20;
     
     //as the night gets later the display gets smokier
     switch (hour) {

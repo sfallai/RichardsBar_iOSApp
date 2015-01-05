@@ -15,6 +15,7 @@
 #import "JukeboxContent.h"
 #import "disc.h"
 #import "track.h"
+#import "JukeboxTrackCell.h"
 
 #define ABOUT_IDENTIFIER		@"AboutID"
 #define DETAILS_IDENTIFIER		@"DetailsID"
@@ -32,6 +33,7 @@
     AppDelegate *ad;
     NSMutableArray *dictDisc;
     JukeboxContent *jc;
+    UIView *searchResults;
 }
 
 @end
@@ -107,7 +109,6 @@
     UIView *previousView = [[self.contentView subviews] objectAtIndex:0];
     [previousView addSubview:[self getTrackListingForIndex:0]];
     
-    
 }
 
 - (void)updateClipsToBounds
@@ -146,6 +147,7 @@
 
 -(UIView *) getTrackListingForIndex: (NSUInteger) index {
     disc *disc = [jc getDiscFromIndex:index];
+    [dictDisc removeAllObjects];
     
     for(track *t in disc.tracks) {
         [dictDisc addObject:t];
@@ -159,6 +161,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     [tableView setBackgroundColor:[UIColor blackColor]];
+    
     [[UITableViewCell appearance] setBackgroundColor:[UIColor clearColor]];
     
     [tableView reloadData];
@@ -172,49 +175,49 @@
 {
     UIView *container = [[UIView alloc] initWithFrame:self.contentView.bounds];
     container.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [container setBackgroundColor:[UIColor whiteColor]];
+    //[container setBackgroundColor:[UIColor whiteColor]];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(container.bounds, 10, 10)];
-    label.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [label setFont:[UIFont boldSystemFontOfSize:84]];
-    [label setTextColor:[UIColor lightTextColor]];
-    label.text = [NSString stringWithFormat:@"%d", index + 1];
-    
-    switch (index % 6) {
-        case 0:
-            [label setBackgroundColor:[UIColor redColor]];
-            break;
-            
-        case 1:
-            [label setBackgroundColor:[UIColor orangeColor]];
-            break;
-            
-        case 2:
-            [label setBackgroundColor:[UIColor yellowColor]];
-            [label setTextColor:[UIColor darkTextColor]];
-            break;
-            
-        case 3:
-            [label setBackgroundColor:[UIColor greenColor]];
-            [label setTextColor:[UIColor darkTextColor]];
-            break;
-            
-        case 4:
-            [label setBackgroundColor:[UIColor blueColor]];
-            break;
-            
-        case 5:
-            [label setBackgroundColor:[UIColor purpleColor]];
-            break;
-            
-        default:
-            break;
-    }
-    
-    [container addSubview:label];
-    container.tag = index;
-    [container.layer setBorderColor:[[UIColor colorWithWhite:0.85 alpha:1] CGColor]];
-    [container.layer setBorderWidth:2];
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(container.bounds, 10, 10)];
+//    label.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    [label setFont:[UIFont boldSystemFontOfSize:84]];
+//    //[label setTextColor:[UIColor lightTextColor]];
+//    label.text = [NSString stringWithFormat:@"%d", index + 1];
+//    
+//    switch (index % 6) {
+//        case 0:
+//            [label setBackgroundColor:[UIColor redColor]];
+//            break;
+//            
+//        case 1:
+//            [label setBackgroundColor:[UIColor orangeColor]];
+//            break;
+//            
+//        case 2:
+//            [label setBackgroundColor:[UIColor yellowColor]];
+//            [label setTextColor:[UIColor darkTextColor]];
+//            break;
+//            
+//        case 3:
+//            [label setBackgroundColor:[UIColor greenColor]];
+//            [label setTextColor:[UIColor darkTextColor]];
+//            break;
+//            
+//        case 4:
+//            [label setBackgroundColor:[UIColor blueColor]];
+//            break;
+//            
+//        case 5:
+//            [label setBackgroundColor:[UIColor purpleColor]];
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    
+//    [container addSubview:label];
+//    container.tag = index;
+//    [container.layer setBorderColor:[[UIColor colorWithWhite:0.85 alpha:1] CGColor]];
+//    [container.layer setBorderWidth:2];
     
     return container;
 }
@@ -237,6 +240,23 @@
     return [@"Disc " stringByAppendingString:[@(discNumber) stringValue]];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    static NSString *header = @"customHeader";
+    
+    UITableViewHeaderFooterView *vHeader;
+    
+    vHeader = [tableView dequeueReusableHeaderFooterViewWithIdentifier:header];
+    
+    if (!vHeader) {
+        vHeader = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:header];
+        vHeader.textLabel.textColor = [UIColor whiteColor];
+    }
+    
+    vHeader.textLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    
+    return vHeader;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *MyIdentifier = @"MyReuseIdentifier";
@@ -249,10 +269,11 @@
     track *track = [disc.tracks objectAtIndex:indexPath.row];
     
     //cell.textLabel.text = [[@(discNumber) stringValue] stringByAppendingString:track.song];
+    //UIImage *img = [[UIImage alloc] initWithContentsOfFile:@"audiowave"];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", track.trackNumber, track.song];
-    
     cell.detailTextLabel.text = track.artist;
-
+    //[cell.textLabel addSubview:img];
+    
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     

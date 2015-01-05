@@ -7,8 +7,11 @@
 //
 
 #import "Utilities.h"
+#import "AppDelegate.h"
 
-@implementation Utilities
+@implementation Utilities {
+    AppDelegate *ad;
+}
 
 -(UIColor*)colorWithHexString:(NSString*)hex
 {

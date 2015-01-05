@@ -33,7 +33,6 @@
     AppDelegate *ad;
     NSMutableArray *dictDisc;
     JukeboxContent *jc;
-    UIView *searchResults;
 }
 
 @end
@@ -51,6 +50,39 @@
     
     [self doInit];
     
+}
+
+-(void) searchTracks: (NSString*) searchText scope:(NSString*) scope{
+    [_searchResults removeAllObjects];
+    
+    for(int i = 0; i < maxDiscNumber; i++) {
+        disc *d = [jc getDiscFromIndex:i];
+        
+        for(track *t in d.tracks) {
+            if([t.song rangeOfString:searchText options:NSCaseInsensitiveSearch].location != NSNotFound
+               || [t.artist rangeOfString:searchText options:NSCaseInsensitiveSearch].location != NSNotFound
+               ) {
+                [_searchResults addObject:t];
+            }
+        }
+    }
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    // Tells the table data source to reload when text changes
+    [self searchTracks:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    // Tells the table data source to reload when scope bar selection changes
+    [self searchTracks:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 - (void) initGestureRecognizer {
@@ -91,6 +123,8 @@
 - (void)doInit
 {
     jc = [[JukeboxContent alloc] initWithJSONData];
+    
+    _searchResults = [[NSMutableArray alloc] init];
     
     [self.contentView addSubview:[self getLabelForIndex:0]];
     
@@ -222,22 +256,52 @@
     return container;
 }
 
+-(NSString *) getAlbumCode: (NSString *) trackNum {
+    NSString *discCode = [@(discNumber) stringValue];
+    
+    if(discCode.length == 1) {
+        discCode = [@"0" stringByAppendingString:discCode];
+    }
+    
+    if(trackNum.length == 1) {
+        trackNum = [@"0" stringByAppendingString:trackNum];
+    }
+    
+    return [discCode stringByAppendingString:trackNum];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Number of rows is the number of time zones in the region for the specified section.
-    disc *disc = [jc getDiscFromIndex:discNumber - 1];
     
-    return disc.tracks.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return _searchResults.count;
+    } else {
+        disc *disc = [jc getDiscFromIndex:discNumber - 1];
+        
+        return disc.tracks.count;
+
+    }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 78;
+}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     // The header for the section is the region name -- get this from the region at the section index.
     //Region *region = [regions objectAtIndex:section];
-    return [@"Disc " stringByAppendingString:[@(discNumber) stringValue]];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return @"Search Results";
+    } else {
+        return [@"Disc " stringByAppendingString:[@(discNumber) stringValue]];
+    }
+
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -260,22 +324,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *MyIdentifier = @"MyReuseIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    JukeboxTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:MyIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"JukeboxPrototypeCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:MyIdentifier];
     }
     
-    disc *disc = [jc getDiscFromIndex:discNumber - 1];
-    track *track = [disc.tracks objectAtIndex:indexPath.row];
+    if(tableView == self.searchDisplayController.searchResultsTableView) {
+        track *track = [_searchResults objectAtIndex:indexPath.row];
+        
+        cell.artist.text = track.artist;
+        cell.song.text = track.song;
+        cell.code.text = [self getAlbumCode:track.trackNumber];
+        cell.albumImg.image = [UIImage imageNamed:track.albumImg];
+        
+    } else {
+        disc *disc = [jc getDiscFromIndex:discNumber - 1];
+        track *track = [disc.tracks objectAtIndex:indexPath.row];
+        
+        cell.artist.text = track.artist;
+        cell.song.text = track.song;
+        cell.code.text = [self getAlbumCode:track.trackNumber];
+        cell.albumImg.image = [UIImage imageNamed:track.albumImg];
+    }
     
     //cell.textLabel.text = [[@(discNumber) stringValue] stringByAppendingString:track.song];
     //UIImage *img = [[UIImage alloc] initWithContentsOfFile:@"audiowave"];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", track.trackNumber, track.song];
-    cell.detailTextLabel.text = track.artist;
+    //cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", track.trackNumber, track.song];
+    //cell.detailTextLabel.text = track.artist;
     //[cell.textLabel addSubview:img];
     
-    cell.detailTextLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    //cell.detailTextLabel.textColor = [UIColor whiteColor];
+    //cell.textLabel.textColor = [UIColor whiteColor];
     
     return cell;
 }

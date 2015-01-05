@@ -96,6 +96,8 @@
     u = [[Utilities alloc] init];
     ad = [[UIApplication sharedApplication] delegate];
     
+    self.navigationBar.barTintColor = [UIColor blackColor];
+    
     //set a timer to check what time it is and change the smokeAlpha used to generate the smoke effects based on hour
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setSmokeOverlayAlpha) userInfo:nil repeats:YES];
 }

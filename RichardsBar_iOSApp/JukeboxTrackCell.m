@@ -10,8 +10,14 @@
 
 @implementation JukeboxTrackCell
 
+@synthesize code = _code;
+@synthesize song = _song;
+@synthesize artist = _artist;
+@synthesize albumImg = _albumImg;
+
 - (void)awakeFromNib {
     // Initialization code
+        
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -14,10 +14,13 @@
     if (self = [self init]) {
         NSArray *ary = [track allValues];
         
-        _albumImg = [ary objectAtIndex:1];
-        _song = [ary objectAtIndex:2];
-        _artist = [ary objectAtIndex:3];
-        _trackNumber = [ary objectAtIndex:0];
+        _albumImg = [track objectForKey:@"albumImg"];
+        _song = [track objectForKey:@"song"];
+        _artist = [track objectForKey:@"artist"];
+        _trackNumber = [track objectForKey:@"trackNumber"];
+        _album = [track objectForKey:@"album"];
+        _iTunesLink = [track objectForKey:@"iTunesLink"];
+        _lyricsId = [track objectForKey:@"lyricsId"];
         
         //        _albumImg = track.albumImg;
         //        _artist = track.artist;

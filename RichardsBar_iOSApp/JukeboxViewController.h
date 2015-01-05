@@ -17,7 +17,7 @@ enum {
 } typedef MPTransitionMode;
 
 
-@interface JukeboxViewController : DefaultAppearanceViewController <UITableViewDelegate, UITableViewDataSource>
+@interface JukeboxViewController : DefaultAppearanceViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
 
 
 @property (assign, nonatomic) MPTransitionMode mode;
@@ -25,8 +25,11 @@ enum {
 @property (assign, nonatomic) MPFoldStyle foldStyle;
 @property (assign, nonatomic) MPFlipStyle flipStyle;
 @property (readonly, nonatomic) BOOL isFold;
+@property (strong, nonatomic) NSMutableArray *searchResults;
+@property (strong, nonatomic) NSMutableArray *allTracks;
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UIView *parentView;
+@property (weak, nonatomic) IBOutlet UISearchBar *JukeboxSearchBar;
 
 @end

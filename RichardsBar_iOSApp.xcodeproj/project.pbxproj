@@ -20,6 +20,12 @@
 		85D477CB1A586670002A28B5 /* disc.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D477CA1A586670002A28B5 /* disc.m */; };
 		85D477CE1A5866ED002A28B5 /* track.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D477CD1A5866ED002A28B5 /* track.m */; };
 		85D477D11A599FF6002A28B5 /* JukeboxTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D477D01A599FF6002A28B5 /* JukeboxTrackCell.m */; };
+		8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */; };
+		8D4D70A31A5AE4E6000356A5 /* 0101.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A21A5AE4E6000356A5 /* 0101.jpg */; };
+		8D4D70A61A5AEA7F000356A5 /* 0102.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A51A5AEA7F000356A5 /* 0102.jpg */; };
+		8D4D70A81A5AEB13000356A5 /* 0103.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A71A5AEB13000356A5 /* 0103.jpg */; };
+		8D4D70AA1A5B0FE4000356A5 /* 0201.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A91A5B0FE4000356A5 /* 0201.jpg */; };
+		8D4D70AC1A5B1047000356A5 /* 0301.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70AB1A5B1047000356A5 /* 0301.jpg */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D67C29A1A48B51B00BB6835 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */; };
@@ -91,6 +97,12 @@
 		85D477CD1A5866ED002A28B5 /* track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = track.m; sourceTree = "<group>"; };
 		85D477CF1A599FF6002A28B5 /* JukeboxTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxTrackCell.h; sourceTree = "<group>"; };
 		85D477D01A599FF6002A28B5 /* JukeboxTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxTrackCell.m; sourceTree = "<group>"; };
+		8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JukeboxPrototypeCell.xib; sourceTree = "<group>"; };
+		8D4D70A21A5AE4E6000356A5 /* 0101.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0101.jpg; sourceTree = "<group>"; };
+		8D4D70A51A5AEA7F000356A5 /* 0102.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0102.jpg; sourceTree = "<group>"; };
+		8D4D70A71A5AEB13000356A5 /* 0103.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0103.jpg; sourceTree = "<group>"; };
+		8D4D70A91A5B0FE4000356A5 /* 0201.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0201.jpg; sourceTree = "<group>"; };
+		8D4D70AB1A5B1047000356A5 /* 0301.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0301.jpg; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
 		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -214,6 +226,60 @@
 			name = jukebox;
 			sourceTree = "<group>";
 		};
+		8D4D709A1A5ADCD0000356A5 /* albumImages */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D70A41A5AEA64000356A5 /* 100x100 */,
+			);
+			name = albumImages;
+			sourceTree = "<group>";
+		};
+		8D4D709B1A5ADCE0000356A5 /* buttonImages */ = {
+			isa = PBXGroup;
+			children = (
+				8D67C3231A48CCE500BB6835 /* audiowave@2x.png */,
+				8DDB2CE51A51DF0800B1317B /* settings@2x.png */,
+			);
+			name = buttonImages;
+			sourceTree = "<group>";
+		};
+		8D4D709C1A5ADD04000356A5 /* vfx */ = {
+			isa = PBXGroup;
+			children = (
+				85C2B4721A5067AA005273A0 /* SmokeShape.png */,
+			);
+			name = vfx;
+			sourceTree = "<group>";
+		};
+		8D4D709E1A5ADDA6000356A5 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8D9D5DF61A48A3ED007437B6 /* Main.storyboard */,
+				8D9D5DFB1A48A3ED007437B6 /* LaunchScreen.xib */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
+		8D4D709F1A5ADDB9000356A5 /* customObjects */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */,
+			);
+			name = customObjects;
+			sourceTree = "<group>";
+		};
+		8D4D70A41A5AEA64000356A5 /* 100x100 */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D70AB1A5B1047000356A5 /* 0301.jpg */,
+				8D4D70A91A5B0FE4000356A5 /* 0201.jpg */,
+				8D4D70A71A5AEB13000356A5 /* 0103.jpg */,
+				8D4D70A51A5AEA7F000356A5 /* 0102.jpg */,
+				8D4D70A21A5AE4E6000356A5 /* 0101.jpg */,
+			);
+			name = 100x100;
+			sourceTree = "<group>";
+		};
 		8D67C2941A48AFCA00BB6835 /* launchscreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,7 +392,7 @@
 				8D67C2A11A48C88B00BB6835 /* ExternalLibs */,
 				8D67C29F1A48B95B00BB6835 /* customClasses */,
 				8D9D5E141A48A5CF007437B6 /* assets */,
-				8D9D5E131A48A5BB007437B6 /* storyboards */,
+				8D9D5E131A48A5BB007437B6 /* xibs */,
 				8D9D5DEC1A48A3ED007437B6 /* Supporting Files */,
 			);
 			path = RichardsBar_iOSApp;
@@ -365,21 +431,21 @@
 		8D9D5E121A48A5B1007437B6 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
-				8DDB2CE51A51DF0800B1317B /* settings@2x.png */,
-				85C2B4721A5067AA005273A0 /* SmokeShape.png */,
-				8D67C3231A48CCE500BB6835 /* audiowave@2x.png */,
+				8D4D709C1A5ADD04000356A5 /* vfx */,
+				8D4D709B1A5ADCE0000356A5 /* buttonImages */,
+				8D4D709A1A5ADCD0000356A5 /* albumImages */,
 				8D67C2941A48AFCA00BB6835 /* launchscreen */,
 			);
 			name = graphics;
 			sourceTree = "<group>";
 		};
-		8D9D5E131A48A5BB007437B6 /* storyboards */ = {
+		8D9D5E131A48A5BB007437B6 /* xibs */ = {
 			isa = PBXGroup;
 			children = (
-				8D9D5DF61A48A3ED007437B6 /* Main.storyboard */,
-				8D9D5DFB1A48A3ED007437B6 /* LaunchScreen.xib */,
+				8D4D709F1A5ADDB9000356A5 /* customObjects */,
+				8D4D709E1A5ADDA6000356A5 /* storyboards */,
 			);
-			name = storyboards;
+			name = xibs;
 			sourceTree = "<group>";
 		};
 		8D9D5E141A48A5CF007437B6 /* assets */ = {
@@ -522,14 +588,20 @@
 			files = (
 				8D9D5DF81A48A3ED007437B6 /* Main.storyboard in Resources */,
 				8DDB2CF51A53469A00B1317B /* JukeboxListing.json in Resources */,
+				8D4D70A61A5AEA7F000356A5 /* 0102.jpg in Resources */,
 				8DDB2CE61A51DF0800B1317B /* settings@2x.png in Resources */,
 				85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */,
 				8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */,
 				8D67C2981A48B26300BB6835 /* podfile in Resources */,
+				8D4D70A81A5AEB13000356A5 /* 0103.jpg in Resources */,
+				8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */,
+				8D4D70AA1A5B0FE4000356A5 /* 0201.jpg in Resources */,
 				8D67C3241A48CCE500BB6835 /* audiowave@2x.png in Resources */,
+				8D4D70AC1A5B1047000356A5 /* 0301.jpg in Resources */,
 				8D9D5DFD1A48A3ED007437B6 /* LaunchScreen.xib in Resources */,
 				8D9D5DFA1A48A3ED007437B6 /* Images.xcassets in Resources */,
 				85C2B47C1A50686E005273A0 /* smoke.ped in Resources */,
+				8D4D70A31A5AE4E6000356A5 /* 0101.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

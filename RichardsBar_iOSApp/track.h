@@ -17,5 +17,9 @@
 @property (strong, nonatomic) NSString *artist;
 @property (strong, nonatomic) NSString *song;
 @property (strong, nonatomic) NSString *trackNumber;
+@property (strong, nonatomic) NSString *album;
+@property (strong, nonatomic) NSString *iTunesLink;
+@property (strong, nonatomic) NSString *lyricsId;
+
 
 @end

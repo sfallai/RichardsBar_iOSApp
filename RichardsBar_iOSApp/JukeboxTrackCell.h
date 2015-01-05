@@ -11,10 +11,9 @@
 @interface JukeboxTrackCell : UITableViewCell
 
 @property (strong, nonatomic) UILabel *mainLabel;
-@property (strong, nonatomic) NSString *text;
-@property (strong, nonatomic) NSString *detailText;
-@property (strong, nonatomic) NSString *discNumber;
-@property (strong, nonatomic) NSString *trackNumber;
-@property (strong, nonatomic) NSData *albumImg;
+@property (weak, nonatomic) IBOutlet UILabel *code;
+@property (weak, nonatomic) IBOutlet UILabel *song;
+@property (weak, nonatomic) IBOutlet UILabel *artist;
+@property (weak, nonatomic) IBOutlet UIImageView *albumImg;
 
 @end

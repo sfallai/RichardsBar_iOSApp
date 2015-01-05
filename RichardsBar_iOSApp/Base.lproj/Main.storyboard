@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rod-TZ-rsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rod-TZ-rsV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -15,7 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="H1Y-ah-XlP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="b7U-aK-ACg">
                         <autoresizingMask key="autoresizingMask"/>
@@ -159,28 +159,39 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHN-ug-iWK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="116" width="368" height="606"/>
-                                </variation>
                             </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eMd-KK-h89">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kQG-Hm-9hn" id="oZN-0D-hKO"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="eMd-KK-h89" firstAttribute="centerX" secondItem="dHN-ug-iWK" secondAttribute="centerX" id="2OI-DT-kYB"/>
+                            <constraint firstItem="eMd-KK-h89" firstAttribute="leading" secondItem="cp1-DS-7wg" secondAttribute="leading" id="Jch-q2-4xe"/>
                             <constraint firstItem="QT9-ex-5C9" firstAttribute="top" secondItem="dHN-ug-iWK" secondAttribute="bottom" constant="78" id="aET-ze-iyt">
-                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
                             </constraint>
+                            <constraint firstItem="eMd-KK-h89" firstAttribute="top" secondItem="bTK-ro-xPq" secondAttribute="bottom" id="nhJ-1j-Psi"/>
                             <constraint firstItem="dHN-ug-iWK" firstAttribute="trailing" secondItem="cp1-DS-7wg" secondAttribute="trailingMargin" id="q8o-jk-QGK"/>
                             <constraint firstItem="dHN-ug-iWK" firstAttribute="top" secondItem="bTK-ro-xPq" secondAttribute="bottom" constant="19" id="tBF-OM-umc">
-                                <variation key="heightClass=regular-widthClass=compact" constant="52"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="62"/>
                             </constraint>
                             <constraint firstItem="dHN-ug-iWK" firstAttribute="leading" secondItem="cp1-DS-7wg" secondAttribute="leadingMargin" id="woG-82-Pfb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="dHN-ug-iWK"/>
+                                <exclude reference="eMd-KK-h89"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="2OI-DT-kYB"/>
+                                <exclude reference="Jch-q2-4xe"/>
+                                <exclude reference="nhJ-1j-Psi"/>
                                 <exclude reference="q8o-jk-QGK"/>
                                 <exclude reference="tBF-OM-umc"/>
                                 <exclude reference="woG-82-Pfb"/>
@@ -190,8 +201,12 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="dHN-ug-iWK"/>
+                                <include reference="eMd-KK-h89"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="2OI-DT-kYB"/>
+                                <include reference="Jch-q2-4xe"/>
+                                <include reference="nhJ-1j-Psi"/>
                                 <include reference="q8o-jk-QGK"/>
                                 <include reference="tBF-OM-umc"/>
                                 <include reference="woG-82-Pfb"/>
@@ -200,11 +215,22 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="JukeboxSearchBar" destination="eMd-KK-h89" id="fr9-aC-6XL"/>
                         <outlet property="contentView" destination="dHN-ug-iWK" id="LzO-BY-cpi"/>
                         <outlet property="parentView" destination="cp1-DS-7wg" id="xrw-JY-hkE"/>
+                        <outlet property="searchDisplayController" destination="U6f-px-5qo" id="2yT-yU-mpu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqW-dt-HKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="U6f-px-5qo">
+                    <connections>
+                        <outlet property="delegate" destination="kQG-Hm-9hn" id="Vkj-tE-RRy"/>
+                        <outlet property="searchBar" destination="eMd-KK-h89" id="ifr-fY-pvj"/>
+                        <outlet property="searchContentsController" destination="kQG-Hm-9hn" id="9I7-9N-P6F"/>
+                        <outlet property="searchResultsDataSource" destination="kQG-Hm-9hn" id="k0F-s1-avR"/>
+                        <outlet property="searchResultsDelegate" destination="kQG-Hm-9hn" id="6nn-Nd-ebc"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-930" y="190.5"/>
         </scene>

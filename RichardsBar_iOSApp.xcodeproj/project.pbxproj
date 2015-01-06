@@ -26,6 +26,9 @@
 		8D4D70A81A5AEB13000356A5 /* 0103.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A71A5AEB13000356A5 /* 0103.jpg */; };
 		8D4D70AA1A5B0FE4000356A5 /* 0201.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A91A5B0FE4000356A5 /* 0201.jpg */; };
 		8D4D70AC1A5B1047000356A5 /* 0301.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70AB1A5B1047000356A5 /* 0301.jpg */; };
+		8D4D70AF1A5B49C4000356A5 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D70AE1A5B49C4000356A5 /* SongInfo.m */; };
+		8D4D70B41A5C2F28000356A5 /* 0301lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70B31A5C2F28000356A5 /* 0301lrg.jpg */; };
+		8D4D70BF1A5C7360000356A5 /* JukeboxDiscPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D70BE1A5C7360000356A5 /* JukeboxDiscPickerView.m */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
 		8D67C29A1A48B51B00BB6835 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */; };
@@ -103,6 +106,11 @@
 		8D4D70A71A5AEB13000356A5 /* 0103.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0103.jpg; sourceTree = "<group>"; };
 		8D4D70A91A5B0FE4000356A5 /* 0201.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0201.jpg; sourceTree = "<group>"; };
 		8D4D70AB1A5B1047000356A5 /* 0301.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0301.jpg; sourceTree = "<group>"; };
+		8D4D70AD1A5B49C4000356A5 /* SongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfo.h; sourceTree = "<group>"; };
+		8D4D70AE1A5B49C4000356A5 /* SongInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfo.m; sourceTree = "<group>"; };
+		8D4D70B31A5C2F28000356A5 /* 0301lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0301lrg.jpg; sourceTree = "<group>"; };
+		8D4D70BD1A5C7360000356A5 /* JukeboxDiscPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxDiscPickerView.h; sourceTree = "<group>"; };
+		8D4D70BE1A5C7360000356A5 /* JukeboxDiscPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxDiscPickerView.m; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
 		8D67C2971A48B26300BB6835 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
 		8D67C2991A48B51B00BB6835 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -229,6 +237,7 @@
 		8D4D709A1A5ADCD0000356A5 /* albumImages */ = {
 			isa = PBXGroup;
 			children = (
+				8D4D70B01A5C2EBF000356A5 /* songDetail */,
 				8D4D70A41A5AEA64000356A5 /* 100x100 */,
 			);
 			name = albumImages;
@@ -280,6 +289,14 @@
 			name = 100x100;
 			sourceTree = "<group>";
 		};
+		8D4D70B01A5C2EBF000356A5 /* songDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D70B31A5C2F28000356A5 /* 0301lrg.jpg */,
+			);
+			name = songDetail;
+			sourceTree = "<group>";
+		};
 		8D67C2941A48AFCA00BB6835 /* launchscreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +324,8 @@
 				8D67C3291A48D07100BB6835 /* IDSongButton.m */,
 				853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */,
 				853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */,
+				8D4D70BD1A5C7360000356A5 /* JukeboxDiscPickerView.h */,
+				8D4D70BE1A5C7360000356A5 /* JukeboxDiscPickerView.m */,
 			);
 			name = customObjects;
 			sourceTree = "<group>";
@@ -473,6 +492,8 @@
 				8DDB2CEE1A51FC0F00B1317B /* JukeboxViewController.m */,
 				85C2B47D1A526265005273A0 /* SettingsViewController.h */,
 				85C2B47E1A526265005273A0 /* SettingsViewController.m */,
+				8D4D70AD1A5B49C4000356A5 /* SongInfo.h */,
+				8D4D70AE1A5B49C4000356A5 /* SongInfo.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -593,6 +614,7 @@
 				85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */,
 				8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */,
 				8D67C2981A48B26300BB6835 /* podfile in Resources */,
+				8D4D70B41A5C2F28000356A5 /* 0301lrg.jpg in Resources */,
 				8D4D70A81A5AEB13000356A5 /* 0103.jpg in Resources */,
 				8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */,
 				8D4D70AA1A5B0FE4000356A5 /* 0201.jpg in Resources */,
@@ -657,7 +679,9 @@
 				8D9D5DF51A48A3ED007437B6 /* ViewController.m in Sources */,
 				8D67C2C01A48CB0E00BB6835 /* MPFoldModalSegue.m in Sources */,
 				85C2B47F1A526265005273A0 /* SettingsViewController.m in Sources */,
+				8D4D70AF1A5B49C4000356A5 /* SongInfo.m in Sources */,
 				85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */,
+				8D4D70BF1A5C7360000356A5 /* JukeboxDiscPickerView.m in Sources */,
 				8DDB2CE91A51E32E00B1317B /* DefaultAppearanceViewController.m in Sources */,
 				8D67C2BF1A48CB0E00BB6835 /* MPFlipSegue.m in Sources */,
 				8DDB2CEC1A51EA2900B1317B /* Utilities.m in Sources */,

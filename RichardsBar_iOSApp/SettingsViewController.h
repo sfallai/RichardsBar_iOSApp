@@ -15,5 +15,4 @@
 @property (weak, nonatomic) IBOutlet UISwitch *swProgressiveSmoke;
 @property (weak, nonatomic) IBOutlet UILabel *lblProgressiveSmoke;
 
-
 @end

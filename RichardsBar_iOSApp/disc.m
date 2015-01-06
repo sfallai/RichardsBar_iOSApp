@@ -14,6 +14,13 @@
     return [_tracks objectAtIndex:index];
 }
 
+-(id) init {
+    _tracks = [[NSMutableArray alloc] init];
+    
+    return self;
+    
+}
+
 -(id) initWithDisc: (NSDictionary *) disc {
     if (self = [self init]) {
         _tracks = [[NSMutableArray alloc] init];

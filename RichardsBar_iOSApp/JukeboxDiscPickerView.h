@@ -10,6 +10,15 @@
 
 @interface JukeboxDiscPicker : UIView
 
--(id) initWithFrame:(CGRect)frame;
+@property (strong, nonatomic) NSString *strokeHexCol;
+@property (strong, nonatomic) NSString *fillHexCol;
+@property float HEIGHTOFPOPUPTRIANGLE;
+@property float WIDTHOFPOPUPTRIANGLE;
+@property float borderRadius;
+@property float strokeWidth;
+@property (strong, nonatomic) NSString *arrowDirection;
+
+
+-(id) initWithFrame:(CGRect)frame andArrowDirection:(NSString*) direction andStrokeColor:(NSString*) strokeHexColor andFillColor:(NSString*) fillHexColor andTriangleHeight:(float) triangleHgt andTriangleWidth:(float) triangleWdt andBorderWidth:(float) borderWdt andStrokeWidth: (float) strokeWdt;
 
 @end

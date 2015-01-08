@@ -17,7 +17,7 @@ enum {
 } typedef MPTransitionMode;
 
 
-@interface JukeboxViewController : DefaultAppearanceViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface JukeboxViewController : DefaultAppearanceViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
 
 
 @property (assign, nonatomic) MPTransitionMode mode;

@@ -25,11 +25,23 @@
     [self initSettingsView];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //NSLog(trackCode);
     [self doInit];
+    
+    UIView *rect = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
+    UIImageView *img = [[UIImageView alloc] initWithFrame:rect.bounds];
+    [img setImage:[UIImage imageNamed:@"0301lrg.jpg"]];
+    
+    [rect addSubview:img];
+    [self.view addSubview:rect];
 }
 
 -(void) doInit {
@@ -74,7 +86,7 @@
     
     UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     [topBar setBackgroundColor:[UIColor blackColor]];
-    [topBar setAlpha:.7];
+    [topBar setAlpha:.8];
     
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 40, 10, 80, 44)];
     title.text = @"Settings";

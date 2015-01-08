@@ -222,6 +222,8 @@
 		85D477C81A586640002A28B5 /* jukebox */ = {
 			isa = PBXGroup;
 			children = (
+				8D4D70BD1A5C7360000356A5 /* JukeboxDiscPickerView.h */,
+				8D4D70BE1A5C7360000356A5 /* JukeboxDiscPickerView.m */,
 				8DDB2CF61A570DF100B1317B /* JukeboxContent.h */,
 				8DDB2CF71A570DF100B1317B /* JukeboxContent.m */,
 				85D477C91A586670002A28B5 /* disc.h */,
@@ -324,8 +326,6 @@
 				8D67C3291A48D07100BB6835 /* IDSongButton.m */,
 				853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */,
 				853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */,
-				8D4D70BD1A5C7360000356A5 /* JukeboxDiscPickerView.h */,
-				8D4D70BE1A5C7360000356A5 /* JukeboxDiscPickerView.m */,
 			);
 			name = customObjects;
 			sourceTree = "<group>";

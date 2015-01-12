@@ -57,6 +57,7 @@
 		8D9D5DFA1A48A3ED007437B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D5DF91A48A3ED007437B6 /* Images.xcassets */; };
 		8D9D5DFD1A48A3ED007437B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D5DFB1A48A3ED007437B6 /* LaunchScreen.xib */; };
 		8D9D5E091A48A3ED007437B6 /* RichardsBar_iOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D5E081A48A3ED007437B6 /* RichardsBar_iOSAppTests.m */; };
+		8DC5311C1A645E7400ABDD70 /* 0202.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8DC5311B1A645E7400ABDD70 /* 0202.jpg */; };
 		8DDB2CE61A51DF0800B1317B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB2CE51A51DF0800B1317B /* settings@2x.png */; };
 		8DDB2CE91A51E32E00B1317B /* DefaultAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CE81A51E32E00B1317B /* DefaultAppearanceViewController.m */; };
 		8DDB2CEC1A51EA2900B1317B /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB2CEB1A51EA2900B1317B /* Utilities.m */; };
@@ -159,6 +160,7 @@
 		8D9D5E021A48A3ED007437B6 /* RichardsBar_iOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RichardsBar_iOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D9D5E071A48A3ED007437B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D9D5E081A48A3ED007437B6 /* RichardsBar_iOSAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichardsBar_iOSAppTests.m; sourceTree = "<group>"; };
+		8DC5311B1A645E7400ABDD70 /* 0202.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0202.jpg; sourceTree = "<group>"; };
 		8DDB2CE51A51DF0800B1317B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "images/settings@2x.png"; sourceTree = SOURCE_ROOT; };
 		8DDB2CE71A51E32E00B1317B /* DefaultAppearanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAppearanceViewController.h; sourceTree = "<group>"; };
 		8DDB2CE81A51E32E00B1317B /* DefaultAppearanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAppearanceViewController.m; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		8D4D70A41A5AEA64000356A5 /* 100x100 */ = {
 			isa = PBXGroup;
 			children = (
+				8DC5311B1A645E7400ABDD70 /* 0202.jpg */,
 				8D4D70AB1A5B1047000356A5 /* 0301.jpg */,
 				8D4D70A91A5B0FE4000356A5 /* 0201.jpg */,
 				8D4D70A71A5AEB13000356A5 /* 0103.jpg */,
@@ -618,6 +621,7 @@
 				8D4D70A81A5AEB13000356A5 /* 0103.jpg in Resources */,
 				8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */,
 				8D4D70AA1A5B0FE4000356A5 /* 0201.jpg in Resources */,
+				8DC5311C1A645E7400ABDD70 /* 0202.jpg in Resources */,
 				8D67C3241A48CCE500BB6835 /* audiowave@2x.png in Resources */,
 				8D4D70AC1A5B1047000356A5 /* 0301.jpg in Resources */,
 				8D9D5DFD1A48A3ED007437B6 /* LaunchScreen.xib in Resources */,

@@ -12,21 +12,16 @@
 
 -(id) initWithTrack:(NSDictionary *) track {
     if (self = [self init]) {
-        NSArray *ary = [track allValues];
-        
         _albumImg = [track objectForKey:@"albumImg"];
+        _albumImgLarge = [track objectForKey:@"albumImgLarge"];
         _song = [track objectForKey:@"song"];
         _artist = [track objectForKey:@"artist"];
         _trackNumber = [track objectForKey:@"trackNumber"];
         _album = [track objectForKey:@"album"];
         _iTunesLink = [track objectForKey:@"iTunesLink"];
+        _iTunesRadioLink = [track objectForKey:@"iTunesRadioLink"];
         _lyricsId = [track objectForKey:@"lyricsId"];
-        
-        //        _albumImg = track.albumImg;
-        //        _artist = track.artist;
-        //        _song = track.song;
-        //        _trackNumber = track.trackNumber;
-    }
+}
     
     return self;
 }

@@ -5,29 +5,35 @@
               "tracks": [
                          {
                          "albumImg": "0101.jpg",
+                         "albumImgLarge": "",
                          "artist": "Bob Seger & the Silver Bullet Band",
                          "song": "Night Moves",
                          "trackNumber": "1",
                          "album": "Ultimate Hits: Rock and Roll Never Forgets",
                          "iTunesLink": "https://itunes.apple.com/us/album/night-moves/id766439510?i=766439521&uo=4",
+                         "iTunesRadioLink": "",
                          "lyricsId": ""
                          },
                          {
                          "albumImg": "0102.jpg",
+                         "albumImgLarge": "",
                          "artist": "Lionel Richie",
                          "song": "Dancing on the Ceiling",
                          "trackNumber": "2",
                          "album": "20th Century Masters - The Millennium Collection: The Best of Lionel Richie",
                          "iTunesLink": "https://itunes.apple.com/us/album/dancing-on-the-ceiling/id2872246?i=2872210&uo=4",
+                         "iTunesRadioLink": "",
                          "lyricsId": ""
                          },
                          {
                          "albumImg": "0103.jpg",
+                         "albumImgLarge": "",
                          "artist": "Elton John",
                          "song": "Rocket Man",
                          "trackNumber": "3",
-                         "album": "https://itunes.apple.com/us/album/rocket-man-i-think-its-going/id3451744?i=3451732&uo=4",
-                         "iTunesLink": "Elton John: Greatest Hits",
+                         "album": "Elton John: Greatest Hits",
+                         "iTunesLink": "https://itunes.apple.com/us/album/rocket-man-i-think-its-going/id3451744?i=3451732&uo=4",
+                         "iTunesRadioLink": "",
                          "lyricsId": ""
                          }
                          ]
@@ -37,13 +43,27 @@
               "tracks": [
                          {
                          "albumImg": "0201.jpg",
+                         "albumImgLarge": "",
                          "artist": "The Rolling Stones",
                          "song": "Brown Sugar",
                          "trackNumber": "1",
                          "album": "Hot Rocks 1964-1971",
                          "iTunesLink": "https://itunes.apple.com/us/album/brown-sugar/id656801179?i=656801383&uo=4",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "0202.jpg",
+                         "albumImgLarge": "",
+                         "artist": "Billy Joel",
+                         "song": "Piano Man",
+                         "trackNumber": "1",
+                         "album": "The Essential Billy Joel",
+                         "iTunesLink": "https://itunes.apple.com/us/album/piano-man/id158815463?i=158815547&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.158815547",
                          "lyricsId": ""
                          }
+
                          ]
               },
               {
@@ -51,11 +71,13 @@
               "tracks": [
                          {
                          "albumImg": "0301.jpg",
+                         "albumImgLarge": "0301lrg.jpg",
                          "artist": "Frank Sinatra",
                          "song": "My Way",
                          "trackNumber": "1",
                          "album": "Nothing But the Best (Remastered)",
                          "iTunesLink": "https://itunes.apple.com/us/album/my-way/id717552717?i=717552739&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.717552739",
                          "lyricsId": ""
                          }
                          ]

@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSString *album;
 @property (strong, nonatomic) NSString *iTunesLink;
 @property (strong, nonatomic) NSString *lyricsId;
+@property (strong, nonatomic) NSString *albumImgLarge;
+@property (strong, nonatomic) NSString *iTunesRadioLink;
 
 
 @end

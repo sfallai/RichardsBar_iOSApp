@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlphaGradientView.h"
 
 @interface SongInfo : UIViewController
 
 @property(weak, nonatomic)  NSString* trackCode;
-@property (weak, nonatomic) IBOutlet UIImageView *albumImg;
+@property (strong, nonatomic) UIImage *albumImg;
+@property (strong, nonatomic) UITableView *tableView;
+@property (nonatomic, strong) UIImageView *placeholderImageView;
+@property (nonatomic, assign) CGFloat placeholderMinimumY;
+@property (nonatomic, assign) CGPoint lastContentOffset;
+@property (nonatomic, strong) UILabel *topSongLabel;
+@property (nonatomic, strong) AlphaGradientView *gradient;
 
 @end

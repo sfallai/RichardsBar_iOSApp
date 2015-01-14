@@ -57,12 +57,12 @@ typedef NS_ENUM(NSInteger, UICKeyChainStoreErrorCode) {
 + (BOOL)setData:(NSData *)data forKey:(NSString *)key service:(NSString *)service accessGroup:(NSString *)accessGroup error:(NSError * __autoreleasing *)error;
 
 - (void)setString:(NSString *)string forKey:(NSString *)key;
-- (BOOL)setString:(NSString *)string forKey:(NSString *)key error:(NSError * __autoreleasing *)error;
+- (void)setString:(NSString *)string forKey:(NSString *)key error:(NSError * __autoreleasing *)error;
 - (NSString *)stringForKey:(NSString *)key;
 - (NSString *)stringForKey:(NSString *)key error:(NSError * __autoreleasing *)error;
 
 - (void)setData:(NSData *)data forKey:(NSString *)key;
-- (BOOL)setData:(NSData *)data forKey:(NSString *)key error:(NSError * __autoreleasing *)error;
+- (void)setData:(NSData *)data forKey:(NSString *)key error:(NSError * __autoreleasing *)error;
 - (NSData *)dataForKey:(NSString *)key;
 - (NSData *)dataForKey:(NSString *)key error:(NSError * __autoreleasing *)error;
 
@@ -80,12 +80,12 @@ typedef NS_ENUM(NSInteger, UICKeyChainStoreErrorCode) {
 + (BOOL)removeAllItemsForService:(NSString *)service accessGroup:(NSString *)accessGroup error:(NSError * __autoreleasing *)error;
 
 - (void)removeItemForKey:(NSString *)key;
-- (BOOL)removeItemForKey:(NSString *)key error:(NSError * __autoreleasing *)error;
+- (void)removeItemForKey:(NSString *)key error:(NSError * __autoreleasing *)error;
 - (void)removeAllItems;
-- (BOOL)removeAllItemsWithError:(NSError * __autoreleasing *)error;
+- (void)removeAllItemsWithError:(NSError * __autoreleasing *)error;
 
 - (void)synchronize;
-- (BOOL)synchronizeWithError:(NSError *__autoreleasing *)error;
+- (void)synchronizeWithError:(NSError *__autoreleasing *)error;
 
 // object subscripting
 

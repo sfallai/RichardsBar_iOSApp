@@ -44,41 +44,19 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //NSLog(trackCode);
+
     [self doInit];
     
     self.placeholderMinimumY = CGRectGetMinY(self.placeholderImageView.frame);
     
 }
 
--(void) initAlbumCover {
-    _albumImg = [UIImage imageNamed:t.albumImgLarge];
-    
-    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.view.frame.size.width, [self getAlbumImageHeight])];
-    [_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
-    [_placeholderImageView setImage:_albumImg];
-    
-    _gradient = [[UIView alloc] initWithFrame:_placeholderImageView.bounds];
-    
-    AlphaGradientView *grad = [[AlphaGradientView alloc] initWithFrame:
-                 CGRectMake(0, [self getAlbumImageHeight] - 200, self.view.frame.size.width, 200)];
-    [grad setDirection:GRADIENT_DOWN];
-    grad.color = [UIColor blackColor];
-    //[_gradient setAlpha:.75];
-    [_gradient addSubview:grad];
-    
-    _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self getAlbumImageHeight])];
-    _blurView.blurRadius = 0.0;
-    _blurView.hidden = YES;
-    
-    [_placeholderImageView addSubview:_blurView];
-    [_placeholderImageView addSubview:_gradient];
-    
-    [self.view addSubview:_placeholderImageView];
-    //[self.view addSubview:_gradient];
-    
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Helper methods
 -(float) getAlbumImageHeight {
     UIImage *img = [UIImage imageNamed:t.albumImgLarge];
     
@@ -88,15 +66,6 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     return (h / w) * self.view.frame.size.width;
     
-}
-
--(void) doInit {
-    jc = [[JukeboxContent alloc] initWithJSONData];
-    t = [self getTrackFromCode:trackCode];
-    u = [[Utilities alloc] init];
-    
-    [self initAlbumCover];
-    [self initTableView];
 }
 
 -(track *) getTrackFromCode:(NSString *) code {
@@ -109,9 +78,14 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     return track;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Initializers
+-(void) doInit {
+    jc = [[JukeboxContent alloc] initWithJSONData];
+    t = [self getTrackFromCode:trackCode];
+    u = [[Utilities alloc] init];
+    
+    [self initAlbumCover];
+    [self initTableView];
 }
 
 -(void) initTableView {
@@ -164,8 +138,38 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
 }
 
+-(void) initAlbumCover {
+    _albumImg = [UIImage imageNamed:t.albumImgLarge];
+    
+    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.view.frame.size.width, [self getAlbumImageHeight])];
+    [_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
+    [_placeholderImageView setImage:_albumImg];
+    
+    _gradient = [[UIView alloc] initWithFrame:_placeholderImageView.bounds];
+    
+    AlphaGradientView *grad = [[AlphaGradientView alloc] initWithFrame:
+                               CGRectMake(0, [self getAlbumImageHeight] - 200, self.view.frame.size.width, 200)];
+    [grad setDirection:GRADIENT_DOWN];
+    grad.color = [UIColor blackColor];
+    
+    //HAVE TO ADD THE AlphaGradientView TO A REGULAR VIEW
+    //IF YOU DON'T THEN WHEN YOU ADJUST THE ALPHA ON THE AlphaGradientView MEMORY USAGE BALLOONS AND CRASHES THE DEVICE
+    [_gradient addSubview:grad];
+    
+    //INITIALIZED BUT CURRENTLY NOT BEING USED
+    _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self getAlbumImageHeight])];
+    _blurView.blurRadius = 0.0;
+    _blurView.hidden = YES;
+    
+    [_placeholderImageView addSubview:_blurView];
+    [_placeholderImageView addSubview:_gradient];
+    
+    [self.view addSubview:_placeholderImageView];
+    
+}
+
 -(void) closeSettings_Click {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 /*
@@ -281,9 +285,9 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     if (contentMovingOffScreen) {
         CGFloat alpha = MAX(1 - (scrollView.contentOffset.y / kHeightHeaderCell), 0.0f);
-        CGFloat blur = (1.0f - alpha) * 10;
+        CGFloat blur = (1 - alpha) * 10;
         
-        headerCell.alpha = alpha;
+        [_topSongLabel setAlpha: (fabsf(scrollView.contentOffset.y) * .01)];
         
         if (alpha > 0.0f) {
             scrollView.clipsToBounds = NO;
@@ -291,16 +295,14 @@ static CGFloat const kHeightHeaderCell = 140.0f;
             scrollView.clipsToBounds = YES;
         }
         
-        if (blur < 2.5) {
-            _blurView.hidden = YES;
-        } else {
-            _blurView.hidden = NO;
-        }
-        
-        NSLog(@"blur: %f", blur);
-        
-        _blurView.blurRadius = blur;
-        [_topSongLabel setAlpha:blur * .1 - .1];
+        //NOT SURE IF I LIKE THE BLUR EFFECT OR NOT, A LITTLE JUMPY
+//        if (blur < 2) {
+//            _blurView.hidden = YES;
+//        } else {
+//            _blurView.hidden = NO;
+//        }
+//        
+//        _blurView.blurRadius = blur;
         
         originY = CGRectGetMinY(self.placeholderImageView.frame);
     } else if (scrollDiff < 0.0f) {
@@ -308,8 +310,13 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         
     } else {
         originY = MIN(originY, 0.0f);
-        headerCell.alpha = 1.0f;
+
+        [_topSongLabel setAlpha: 0.0];
+        
     }
+    
+    headerCell.alpha = 1 - (fabsf(scrollView.contentOffset.y) * .01);
+    [_gradient setAlpha:fabsf(_placeholderImageView.frame.origin.y * .01) * 2];
     
     CGRect newRect = CGRectMake(CGRectGetMinX(self.placeholderImageView.frame),
                                 originY,
@@ -319,10 +326,6 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     self.placeholderImageView.frame = newRect;
     self.lastContentOffset = scrollView.contentOffset;
     
-    //NSLog(@"gradientAlpha: %f", fabsf(originY * .01));
-    [_gradient setAlpha:fabsf(originY * .01) + .5];
-    
-    //[headerCell setAlpha:1 - (fabsf(originY * .01))];
 }
 
 @end

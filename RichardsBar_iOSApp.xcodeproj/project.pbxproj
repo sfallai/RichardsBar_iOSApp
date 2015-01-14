@@ -11,7 +11,6 @@
 		851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 851775211A4B37A600FC124B /* NavigationControllerSubClass.m */; };
 		851775251A4B3D4700FC124B /* MyPlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */; };
 		853AF4551A4A2E4B003A5A33 /* IDSongToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */; };
-		85ADD23B1A661C6F00C54C60 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85ADD23A1A661C6F00C54C60 /* FXBlurView.m */; };
 		85C2B46C1A4D8421005273A0 /* IDSongResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B46B1A4D8421005273A0 /* IDSongResult.m */; };
 		85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C2B4721A5067AA005273A0 /* SmokeShape.png */; };
 		85C2B4791A5067D1005273A0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2B4761A5067D1005273A0 /* NSData+Base64.m */; };
@@ -25,6 +24,7 @@
 		8D4156D21A65BDFE00D3091A /* SongInfoHeaderPrototypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4156D11A65BDFE00D3091A /* SongInfoHeaderPrototypeCell.xib */; };
 		8D4156D41A65CD6900D3091A /* SongInfoDetailsPrototypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4156D31A65CD6900D3091A /* SongInfoDetailsPrototypeCell.xib */; };
 		8D4156D71A65CD9D00D3091A /* SongInfoDetailsPrototypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4156D61A65CD9D00D3091A /* SongInfoDetailsPrototypeCell.m */; };
+		8D44C0AF1A66A9AB0011B40C /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44C0AE1A66A9AB0011B40C /* FXBlurView.m */; };
 		8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */; };
 		8D4D70A31A5AE4E6000356A5 /* 0101.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A21A5AE4E6000356A5 /* 0101.jpg */; };
 		8D4D70A61A5AEA7F000356A5 /* 0102.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A51A5AEA7F000356A5 /* 0102.jpg */; };
@@ -93,8 +93,6 @@
 		851775241A4B3D4700FC124B /* MyPlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPlaylistsViewController.m; sourceTree = "<group>"; };
 		853AF4531A4A2E4B003A5A33 /* IDSongToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSongToolBar.h; sourceTree = "<group>"; };
 		853AF4541A4A2E4B003A5A33 /* IDSongToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongToolBar.m; sourceTree = "<group>"; };
-		85ADD2391A661C6F00C54C60 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXBlurView.h; path = "../../../Downloads/FXBlurView-master/FXBlurView/FXBlurView.h"; sourceTree = "<group>"; };
-		85ADD23A1A661C6F00C54C60 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXBlurView.m; path = "../../../Downloads/FXBlurView-master/FXBlurView/FXBlurView.m"; sourceTree = "<group>"; };
 		85C2B46A1A4D8421005273A0 /* IDSongResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSongResult.h; sourceTree = "<group>"; };
 		85C2B46B1A4D8421005273A0 /* IDSongResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSongResult.m; sourceTree = "<group>"; };
 		85C2B4721A5067AA005273A0 /* SmokeShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SmokeShape.png; path = images/SmokeShape.png; sourceTree = SOURCE_ROOT; };
@@ -117,6 +115,8 @@
 		8D4156D31A65CD6900D3091A /* SongInfoDetailsPrototypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongInfoDetailsPrototypeCell.xib; sourceTree = "<group>"; };
 		8D4156D51A65CD9D00D3091A /* SongInfoDetailsPrototypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfoDetailsPrototypeCell.h; sourceTree = "<group>"; };
 		8D4156D61A65CD9D00D3091A /* SongInfoDetailsPrototypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfoDetailsPrototypeCell.m; sourceTree = "<group>"; };
+		8D44C0AD1A66A9AB0011B40C /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		8D44C0AE1A66A9AB0011B40C /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JukeboxPrototypeCell.xib; sourceTree = "<group>"; };
 		8D4D70A21A5AE4E6000356A5 /* 0101.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0101.jpg; sourceTree = "<group>"; };
 		8D4D70A51A5AEA7F000356A5 /* 0102.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0102.jpg; sourceTree = "<group>"; };
@@ -234,8 +234,8 @@
 		85ADD2381A661C4600C54C60 /* FXBlurView */ = {
 			isa = PBXGroup;
 			children = (
-				85ADD2391A661C6F00C54C60 /* FXBlurView.h */,
-				85ADD23A1A661C6F00C54C60 /* FXBlurView.m */,
+				8D44C0AD1A66A9AB0011B40C /* FXBlurView.h */,
+				8D44C0AE1A66A9AB0011B40C /* FXBlurView.m */,
 			);
 			name = FXBlurView;
 			sourceTree = "<group>";
@@ -741,7 +741,6 @@
 			files = (
 				85D477CB1A586670002A28B5 /* disc.m in Sources */,
 				85C2B4791A5067D1005273A0 /* NSData+Base64.m in Sources */,
-				85ADD23B1A661C6F00C54C60 /* FXBlurView.m in Sources */,
 				8D9D5DF51A48A3ED007437B6 /* ViewController.m in Sources */,
 				8D67C2C01A48CB0E00BB6835 /* MPFoldModalSegue.m in Sources */,
 				85C2B47F1A526265005273A0 /* SettingsViewController.m in Sources */,
@@ -756,6 +755,7 @@
 				85D477D11A599FF6002A28B5 /* JukeboxTrackCell.m in Sources */,
 				851775221A4B37A600FC124B /* NavigationControllerSubClass.m in Sources */,
 				8D67C2C21A48CB0E00BB6835 /* MPFoldNavPushSegue.m in Sources */,
+				8D44C0AF1A66A9AB0011B40C /* FXBlurView.m in Sources */,
 				8D69BC741A65D50B0062C7BF /* sad.m in Sources */,
 				85C2B47A1A5067D1005273A0 /* UIEffectDesignerView.m in Sources */,
 				8DDB2CEF1A51FC0F00B1317B /* JukeboxViewController.m in Sources */,

@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Accelerate/Accelerate.h>
 
 @interface Utilities : NSObject
 
 -(UIColor*)colorWithHexString:(NSString*)hex;
+- (UIImage *)applyBlurOnImage: (UIImage *)imageToBlur withRadius:(CGFloat)blurRadius;
 
 @end

@@ -10,6 +10,10 @@
 #import "JukeboxContent.h"
 #import "disc.h"
 #import "track.h"
+#import "Utilities.h"
+#import "SongDetailHeaderPrototypeCell.h"
+#import "SongInfoDetailsPrototypeCell.h"
+#import "AlphaGradientView.h"
 
 static NSInteger const kTagHeaderCell = 999;
 static CGFloat const kHeightHeaderCell = 140.0f;
@@ -18,14 +22,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 @interface SongInfo () <UITableViewDelegate, UITableViewDataSource> {
     JukeboxContent *jc;
     track *t;
+    Utilities *u;
 }
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIImageView *placeholderImageView;
-
-@property (nonatomic, assign) CGFloat placeholderMinimumY;
-@property (nonatomic, assign) CGPoint lastContentOffset;
-
 
 @end
 
@@ -48,26 +46,28 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     //NSLog(trackCode);
     [self doInit];
     
-    [self initAlbumCover];
     self.placeholderMinimumY = CGRectGetMinY(self.placeholderImageView.frame);
-    
-//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-//    self.navigationController.navigationBar.translucent = YES;
-
     
 }
 
--(void) initAlbumCover {
-    UIView *rect = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self getAlbumImageHeight])];
-    UIImageView *img = [[UIImageView alloc] initWithFrame:rect.bounds];
-    //_placeholderImageView = img;
-    //[_placeholderImageView setFrame:rect.bounds];
-    //[_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
-    [_placeholderImageView setImage:[UIImage imageNamed:t.albumImgLarge]];
+-(void) initAlbumImgGradient {
+    AlphaGradientView* gradient = [[AlphaGradientView alloc] initWithFrame:
+                                   CGRectMake(0, 0, self.view.frame.size.width, 150)];
     
-    //[rect addSubview:_placeholderImageView];
-    //[self.view addSubview:rect];
+    gradient.color = [UIColor purpleColor];
+    [self.view addSubview:gradient];
+}
+
+-(void) initAlbumCover {
+    _albumImg = [UIImage imageNamed:t.albumImgLarge];
+    
+    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -75, self.view.frame.size.width, [self getAlbumImageHeight])];
+    [_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
+    [_placeholderImageView setImage:_albumImg];
+    
+    [self.view addSubview:_placeholderImageView];
+    [self.view addSubview:_gradient];
+    
 }
 
 -(float) getAlbumImageHeight {
@@ -75,6 +75,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     float w = img.size.width;
     float h = img.size.height;
+    NSLog(@"w:%f h:%f screenw: %f imgH:%f", w, h, self.view.frame.size.width, (h / w) * self.view.frame.size.width );
     
     return (h / w) * self.view.frame.size.width;
     
@@ -83,7 +84,11 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 -(void) doInit {
     jc = [[JukeboxContent alloc] initWithJSONData];
     t = [self getTrackFromCode:trackCode];
+    u = [[Utilities alloc] init];
     
+    [self initAlbumImgGradient];
+    [self initAlbumCover];
+    [self initTableView];
 }
 
 -(track *) getTrackFromCode:(NSString *) code {
@@ -99,6 +104,21 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) initTableView {
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [_tableView setBackgroundColor:[UIColor clearColor]];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    [_tableView reloadData];
+    
+    [self.view addSubview:_tableView];
+    
 }
 
 -(void) initSettingsView {
@@ -119,18 +139,20 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [self.view addSubview:toolbar];
     
     UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
-    [topBar setBackgroundColor:[UIColor blackColor]];
-    [topBar setAlpha:.8];
+    [topBar setBackgroundColor:[UIColor clearColor]];
+    //[topBar setAlpha:.8];
     
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 40, 10, 80, 44)];
-    title.text = @"Settings";
-    title.textColor = [UIColor whiteColor];
-    title.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+    _topSongLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 40, 10, 80, 44)];
+    //title.text = @"Settings";
+    _topSongLabel.text = t.song;
+    _topSongLabel.textColor = [UIColor whiteColor];
+    _topSongLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+    [_topSongLabel setAlpha:0.0];
     
-    //[topBar addSubview:title];
+    [topBar addSubview:_topSongLabel];
     
-    //[self.view addSubview:topBar];
-    [self.view addSubview:title];
+    [self.view addSubview:topBar];
+    //[self.view addSubview:title];
     
 }
 
@@ -165,7 +187,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         return kHeightHeaderCell;
     }
     
-    return 44.0f;
+    return 700.0f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -190,23 +212,43 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         return 1;
     }
     
-    return 50;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = nil;
     if (indexPath.section == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"headerCell"];
+        static NSString *identifier = @"HeaderCell";
+        
+        SongDetailHeaderPrototypeCell *cell = (SongDetailHeaderPrototypeCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SongInfoHeaderPrototypeCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+    
+        cell.song.text = t.song;
+        cell.artist.text = t.artist;
+        
         cell.tag = kTagHeaderCell;
-
+        
+        return cell;
         
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell"];
+        SongInfoDetailsPrototypeCell *cell = (SongInfoDetailsPrototypeCell *)[tableView dequeueReusableCellWithIdentifier:@"TableCell"];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SongInfoDetailsPrototypeCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
         cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithRed:229.0f/255.0f green:241.0f/255.0f blue:1.0f alpha:1.0f] : [UIColor colorWithRed:255.0f/96.0f green:255.0f/110.0f blue:255.0f/127.0f alpha:1.0f];
+        
+        return cell;
+        
     }
-    
-    return cell;
 }
 
 
@@ -222,7 +264,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     __block UITableViewCell *headerCell;
     
-    [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(UITableViewCell *cell, NSUInteger idx, BOOL *stop) {
+    [[_tableView visibleCells] enumerateObjectsUsingBlock:^(UITableViewCell *cell, NSUInteger idx, BOOL *stop) {
         if (cell.tag == kTagHeaderCell) {
             *stop = YES;
             headerCell = cell;
@@ -231,6 +273,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     if (contentMovingOffScreen) {
         CGFloat alpha = MAX(1 - (scrollView.contentOffset.y / kHeightHeaderCell), 0.0f);
+        CGFloat blur = 1.0f - alpha - .1;
+        
         headerCell.alpha = alpha;
         
         if (alpha > 0.0f) {
@@ -240,6 +284,15 @@ static CGFloat const kHeightHeaderCell = 140.0f;
             scrollView.clipsToBounds = YES;
             self.title = @"Title";
         }
+        
+        if (blur < 0.02)
+            blur = 0.02;
+        
+        if(blur < .9) {
+            [_placeholderImageView setImage:[u applyBlurOnImage:_albumImg withRadius:blur]];
+            [_topSongLabel setAlpha:blur];
+        }
+        NSLog(@"%f alpha: %f", blur, alpha);
         
         originY = CGRectGetMinY(self.placeholderImageView.frame);
     } else if (scrollDiff < 0.0f) {
@@ -258,5 +311,5 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     self.lastContentOffset = scrollView.contentOffset;
 }
 
-
 @end
+

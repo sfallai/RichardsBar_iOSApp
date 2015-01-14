@@ -78,6 +78,11 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     return track;
 }
 
+-(void) closeSettings_Click {
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+}
+
 #pragma mark - Initializers
 -(void) doInit {
     jc = [[JukeboxContent alloc] initWithJSONData];
@@ -89,7 +94,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 -(void) initTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [self getAlbumImageHeight] - 139 - 50, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
@@ -124,11 +129,13 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [topBar setBackgroundColor:[UIColor clearColor]];
     //[topBar setAlpha:.8];
     
-    _topSongLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 40, 10, 80, 44)];
+    _topSongLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, self.view.frame.size.width, 44)];
     //title.text = @"Settings";
     _topSongLabel.text = t.song;
     _topSongLabel.textColor = [UIColor whiteColor];
-    _topSongLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+    _topSongLabel.font = [UIFont fontWithName:@"Helvetica" size:19];
+    _topSongLabel.textAlignment = NSTextAlignmentCenter;
+    
     [_topSongLabel setAlpha:0.0];
     
     [topBar addSubview:_topSongLabel];
@@ -146,15 +153,22 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [_placeholderImageView setImage:_albumImg];
     
     _gradient = [[UIView alloc] initWithFrame:_placeholderImageView.bounds];
+    _topGradient = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
+    _topGradient.alpha = 0.0;
     
     AlphaGradientView *grad = [[AlphaGradientView alloc] initWithFrame:
                                CGRectMake(0, [self getAlbumImageHeight] - 200, self.view.frame.size.width, 200)];
     [grad setDirection:GRADIENT_DOWN];
     grad.color = [UIColor blackColor];
     
+    AlphaGradientView *topGrad = [[AlphaGradientView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+    [topGrad setDirection:GRADIENT_UP];
+    grad.color = [UIColor blackColor];
+    
     //HAVE TO ADD THE AlphaGradientView TO A REGULAR VIEW
     //IF YOU DON'T THEN WHEN YOU ADJUST THE ALPHA ON THE AlphaGradientView MEMORY USAGE BALLOONS AND CRASHES THE DEVICE
     [_gradient addSubview:grad];
+    [_topGradient addSubview:topGrad];
     
     //INITIALIZED BUT CURRENTLY NOT BEING USED
     _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self getAlbumImageHeight])];
@@ -165,13 +179,9 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [_placeholderImageView addSubview:_gradient];
     
     [self.view addSubview:_placeholderImageView];
-    
+    [self.view addSubview:_topGradient];
 }
 
--(void) closeSettings_Click {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
 /*
 #pragma mark - Navigation
 
@@ -190,7 +200,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         return 0.0f;
     }
     
-    return 70.0f;
+    return 50.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -207,8 +217,20 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     
-    return blurView;
+    UIButton *itunesButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 7, 100, 37)];
+    [itunesButton setBackgroundImage:[UIImage imageNamed:@"itunesButton.png"] forState:UIControlStateNormal];
     
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    [toolbar setBackgroundColor:[UIColor clearColor]];
+    
+    UIBarButtonItem *addToPlaylist = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
+    [toolbar setItems:[[NSArray alloc] initWithObjects:addToPlaylist, nil] animated:YES];
+    
+    //[blurView addSubview:toolbar];
+    [blurView addSubview:itunesButton];
+    
+    return blurView;
+
 }
 
 #pragma mark <UITableViewDataSource>
@@ -288,6 +310,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         CGFloat blur = (1 - alpha) * 10;
         
         [_topSongLabel setAlpha: (fabsf(scrollView.contentOffset.y) * .01)];
+        [_topGradient setAlpha: (fabsf(scrollView.contentOffset.y) * .01)];
         
         if (alpha > 0.0f) {
             scrollView.clipsToBounds = NO;
@@ -312,6 +335,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         originY = MIN(originY, 0.0f);
 
         [_topSongLabel setAlpha: 0.0];
+        _topGradient.alpha = 0.0;
         
     }
     

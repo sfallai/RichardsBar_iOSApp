@@ -22,5 +22,6 @@
 @property (nonatomic, assign) CGPoint lastContentOffset;
 @property (nonatomic, strong) UILabel *topSongLabel;
 @property (nonatomic, strong) UIView *gradient;
+@property (nonatomic, strong) UIView *topGradient;
 
 @end

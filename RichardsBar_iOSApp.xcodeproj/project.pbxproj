@@ -25,6 +25,8 @@
 		8D4156D41A65CD6900D3091A /* SongInfoDetailsPrototypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4156D31A65CD6900D3091A /* SongInfoDetailsPrototypeCell.xib */; };
 		8D4156D71A65CD9D00D3091A /* SongInfoDetailsPrototypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4156D61A65CD9D00D3091A /* SongInfoDetailsPrototypeCell.m */; };
 		8D44C0AF1A66A9AB0011B40C /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44C0AE1A66A9AB0011B40C /* FXBlurView.m */; };
+		8D44C0B51A66DF470011B40C /* itunesButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0B41A66DF470011B40C /* itunesButton@2x.png */; };
+		8D44C0B71A66DF9B0011B40C /* itunesButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0B61A66DF9B0011B40C /* itunesButton@3x.png */; };
 		8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */; };
 		8D4D70A31A5AE4E6000356A5 /* 0101.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A21A5AE4E6000356A5 /* 0101.jpg */; };
 		8D4D70A61A5AEA7F000356A5 /* 0102.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A51A5AEA7F000356A5 /* 0102.jpg */; };
@@ -117,6 +119,8 @@
 		8D4156D61A65CD9D00D3091A /* SongInfoDetailsPrototypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfoDetailsPrototypeCell.m; sourceTree = "<group>"; };
 		8D44C0AD1A66A9AB0011B40C /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		8D44C0AE1A66A9AB0011B40C /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		8D44C0B41A66DF470011B40C /* itunesButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itunesButton@2x.png"; sourceTree = "<group>"; };
+		8D44C0B61A66DF9B0011B40C /* itunesButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itunesButton@3x.png"; sourceTree = "<group>"; };
 		8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JukeboxPrototypeCell.xib; sourceTree = "<group>"; };
 		8D4D70A21A5AE4E6000356A5 /* 0101.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0101.jpg; sourceTree = "<group>"; };
 		8D4D70A51A5AEA7F000356A5 /* 0102.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0102.jpg; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 		8D4D709B1A5ADCE0000356A5 /* buttonImages */ = {
 			isa = PBXGroup;
 			children = (
+				8D44C0B61A66DF9B0011B40C /* itunesButton@3x.png */,
+				8D44C0B41A66DF470011B40C /* itunesButton@2x.png */,
 				8D67C3231A48CCE500BB6835 /* audiowave@2x.png */,
 				8DDB2CE51A51DF0800B1317B /* settings@2x.png */,
 			);
@@ -670,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D9D5DF81A48A3ED007437B6 /* Main.storyboard in Resources */,
+				8D44C0B51A66DF470011B40C /* itunesButton@2x.png in Resources */,
 				8DDB2CF51A53469A00B1317B /* JukeboxListing.json in Resources */,
 				8D4D70A61A5AEA7F000356A5 /* 0102.jpg in Resources */,
 				8DDB2CE61A51DF0800B1317B /* settings@2x.png in Resources */,
@@ -689,6 +696,7 @@
 				8D9D5DFA1A48A3ED007437B6 /* Images.xcassets in Resources */,
 				85C2B47C1A50686E005273A0 /* smoke.ped in Resources */,
 				8D4D70A31A5AE4E6000356A5 /* 0101.jpg in Resources */,
+				8D44C0B71A66DF9B0011B40C /* itunesButton@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

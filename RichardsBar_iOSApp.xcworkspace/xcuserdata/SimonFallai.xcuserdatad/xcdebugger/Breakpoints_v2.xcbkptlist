@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RichardsBar_iOSApp/SongInfo.m"
-            timestampString = "442880867.426333"
+            timestampString = "442939085.329607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-initTableView"
             landmarkType = "5">
          </BreakpointContent>

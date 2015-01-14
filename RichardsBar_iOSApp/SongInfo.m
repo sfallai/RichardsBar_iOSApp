@@ -14,6 +14,7 @@
 #import "SongDetailHeaderPrototypeCell.h"
 #import "SongInfoDetailsPrototypeCell.h"
 #import "AlphaGradientView.h"
+#import "FXBlurView.h"
 
 static NSInteger const kTagHeaderCell = 999;
 static CGFloat const kHeightHeaderCell = 140.0f;
@@ -50,23 +51,31 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
 }
 
--(void) initAlbumImgGradient {
-    AlphaGradientView* gradient = [[AlphaGradientView alloc] initWithFrame:
-                                   CGRectMake(0, 0, self.view.frame.size.width, 150)];
-    
-    gradient.color = [UIColor purpleColor];
-    [self.view addSubview:gradient];
-}
-
 -(void) initAlbumCover {
     _albumImg = [UIImage imageNamed:t.albumImgLarge];
     
-    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -75, self.view.frame.size.width, [self getAlbumImageHeight])];
+    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.view.frame.size.width, [self getAlbumImageHeight])];
     [_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
     [_placeholderImageView setImage:_albumImg];
     
+    _gradient = [[UIView alloc] initWithFrame:_placeholderImageView.bounds];
+    
+    AlphaGradientView *grad = [[AlphaGradientView alloc] initWithFrame:
+                 CGRectMake(0, [self getAlbumImageHeight] - 200, self.view.frame.size.width, 200)];
+    [grad setDirection:GRADIENT_DOWN];
+    grad.color = [UIColor blackColor];
+    //[_gradient setAlpha:.75];
+    [_gradient addSubview:grad];
+    
+    _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self getAlbumImageHeight])];
+    _blurView.blurRadius = 0.0;
+    _blurView.hidden = YES;
+    
+    [_placeholderImageView addSubview:_blurView];
+    [_placeholderImageView addSubview:_gradient];
+    
     [self.view addSubview:_placeholderImageView];
-    [self.view addSubview:_gradient];
+    //[self.view addSubview:_gradient];
     
 }
 
@@ -86,7 +95,6 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     t = [self getTrackFromCode:trackCode];
     u = [[Utilities alloc] init];
     
-    [self initAlbumImgGradient];
     [self initAlbumCover];
     [self initTableView];
 }
@@ -107,7 +115,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 -(void) initTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
@@ -273,30 +281,31 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     if (contentMovingOffScreen) {
         CGFloat alpha = MAX(1 - (scrollView.contentOffset.y / kHeightHeaderCell), 0.0f);
-        CGFloat blur = 1.0f - alpha - .1;
+        CGFloat blur = (1.0f - alpha) * 10;
         
         headerCell.alpha = alpha;
         
         if (alpha > 0.0f) {
             scrollView.clipsToBounds = NO;
-            self.title = nil;
         } else {
             scrollView.clipsToBounds = YES;
-            self.title = @"Title";
         }
         
-        if (blur < 0.02)
-            blur = 0.02;
-        
-        if(blur < .9) {
-            [_placeholderImageView setImage:[u applyBlurOnImage:_albumImg withRadius:blur]];
-            [_topSongLabel setAlpha:blur];
+        if (blur < 2.5) {
+            _blurView.hidden = YES;
+        } else {
+            _blurView.hidden = NO;
         }
-        NSLog(@"%f alpha: %f", blur, alpha);
+        
+        NSLog(@"blur: %f", blur);
+        
+        _blurView.blurRadius = blur;
+        [_topSongLabel setAlpha:blur * .1 - .1];
         
         originY = CGRectGetMinY(self.placeholderImageView.frame);
     } else if (scrollDiff < 0.0f) {
         originY = MAX(originY, self.placeholderMinimumY);
+        
     } else {
         originY = MIN(originY, 0.0f);
         headerCell.alpha = 1.0f;
@@ -309,6 +318,11 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     self.placeholderImageView.frame = newRect;
     self.lastContentOffset = scrollView.contentOffset;
+    
+    //NSLog(@"gradientAlpha: %f", fabsf(originY * .01));
+    [_gradient setAlpha:fabsf(originY * .01) + .5];
+    
+    //[headerCell setAlpha:1 - (fabsf(originY * .01))];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AlphaGradientView.h"
+#import "FXBlurView.h"
 
 @interface SongInfo : UIViewController
 
@@ -15,9 +16,11 @@
 @property (strong, nonatomic) UIImage *albumImg;
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *placeholderImageView;
+@property (nonatomic, strong) FXBlurView *blurView;
+
 @property (nonatomic, assign) CGFloat placeholderMinimumY;
 @property (nonatomic, assign) CGPoint lastContentOffset;
 @property (nonatomic, strong) UILabel *topSongLabel;
-@property (nonatomic, strong) AlphaGradientView *gradient;
+@property (nonatomic, strong) UIView *gradient;
 
 @end

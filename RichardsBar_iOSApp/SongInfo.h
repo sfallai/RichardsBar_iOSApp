@@ -10,7 +10,7 @@
 #import "AlphaGradientView.h"
 #import "FXBlurView.h"
 
-@interface SongInfo : UIViewController
+@interface SongInfo : UIViewController <UIActionSheetDelegate>
 
 @property(weak, nonatomic)  NSString* trackCode;
 @property (strong, nonatomic) UIImage *albumImg;
@@ -23,5 +23,6 @@
 @property (nonatomic, strong) UILabel *topSongLabel;
 @property (nonatomic, strong) UIView *gradient;
 @property (nonatomic, strong) UIView *topGradient;
+@property (nonatomic, strong) UIButton *topAddToPlaylistButton;
 
 @end

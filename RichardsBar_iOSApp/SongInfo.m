@@ -16,6 +16,7 @@
 #import "AlphaGradientView.h"
 #import "FXBlurView.h"
 
+
 static NSInteger const kTagHeaderCell = 999;
 static CGFloat const kHeightHeaderCell = 140.0f;
 
@@ -83,6 +84,34 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
 }
 
+#pragma mark - Button actions
+-(void) addPlaylistButton_Click {
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Add song to" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+                            @"Playlist",
+                            @"New Playlist",
+                            nil];
+    popup.tag = 1;
+    [popup showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (popup.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0: //add to playlist
+                    
+                case 1: //create new playlist and add to
+                    
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 #pragma mark - Initializers
 -(void) doInit {
     jc = [[JukeboxContent alloc] initWithJSONData];
@@ -91,6 +120,21 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     [self initAlbumCover];
     [self initTableView];
+    [self initControls];
+}
+
+-(void) initControls {
+    //ADD TO PLAYLIST BUTTON
+    float buttonWidHgt = 24;
+    
+    _topAddToPlaylistButton = [self createAddButtonWithX:self.view.frame.size.width - buttonWidHgt - 10 withY:buttonWidHgt];
+    [_topAddToPlaylistButton addTarget:self action:@selector(addPlaylistButton_Click) forControlEvents:UIControlEventTouchUpInside];
+    _topAddToPlaylistButton.alpha = 0.0;
+    [_topAddToPlaylistButton addTarget:self action:@selector(addPlaylistButton_Click) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_topAddToPlaylistButton];
+    
+
 }
 
 -(void) initTableView {
@@ -101,10 +145,29 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [_tableView setBackgroundColor:[UIColor clearColor]];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+        
+    _tableView.allowsSelection = NO;
     
     [_tableView reloadData];
     
     [self.view addSubview:_tableView];
+    
+}
+
+-(UIButton *) createAddButtonWithX:(float) x withY: (float) y {
+    float buttonWidHgt = 24;
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x, y, buttonWidHgt, buttonWidHgt)];
+    button.layer.cornerRadius = buttonWidHgt / 2;
+    button.layer.borderWidth = 1.0f;
+    button.layer.borderColor = [[UIColor whiteColor] CGColor];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    [button setTitle:@"+" forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:25.0f]];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(-3.5, .25, 0, 0)];
+    
+    return button;
     
 }
 
@@ -125,8 +188,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     [self.view addSubview:toolbar];
     
-    UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
-    [topBar setBackgroundColor:[UIColor clearColor]];
+//    UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+//    [topBar setBackgroundColor:[UIColor clearColor]];
     //[topBar setAlpha:.8];
     
     _topSongLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, self.view.frame.size.width, 44)];
@@ -138,9 +201,9 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     [_topSongLabel setAlpha:0.0];
     
-    [topBar addSubview:_topSongLabel];
+    //[topBar addSubview:_topSongLabel];
     
-    [self.view addSubview:topBar];
+    [self.view addSubview:_topSongLabel];
     //[self.view addSubview:title];
     
 }
@@ -220,13 +283,13 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     UIButton *itunesButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 7, 100, 37)];
     [itunesButton setBackgroundImage:[UIImage imageNamed:@"itunesButton.png"] forState:UIControlStateNormal];
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-    [toolbar setBackgroundColor:[UIColor clearColor]];
-    
-    UIBarButtonItem *addToPlaylist = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
-    [toolbar setItems:[[NSArray alloc] initWithObjects:addToPlaylist, nil] animated:YES];
-    
-    //[blurView addSubview:toolbar];
+    //ADD TO PLAYLIST BUTTON
+//    float buttonWidHgt = 24;
+//
+//    UIButton *button = [self createAddButtonWithX:self.view.frame.size.width - buttonWidHgt - 10 withY:25 - (buttonWidHgt/2)];
+//    [button addTarget:self action:@selector(addPlaylistButton_Click) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [blurView addSubview:button];
     [blurView addSubview:itunesButton];
     
     return blurView;
@@ -261,10 +324,14 @@ static CGFloat const kHeightHeaderCell = 140.0f;
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SongInfoHeaderPrototypeCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
         }
-    
+        
+        //ACCESS THE BUTTON THAT IS PROGRAMATICALLY CREATED IN THE .NIB
+        UIButton *button = (UIButton *)[cell viewWithTag:100];
+        [button addTarget:self action:@selector(addPlaylistButton_Click) forControlEvents:UIControlEventTouchUpInside];
+        
         cell.song.text = t.song;
         cell.artist.text = t.artist;
-        
+       
         cell.tag = kTagHeaderCell;
         
         return cell;
@@ -278,7 +345,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
             cell = [nib objectAtIndex:0];
         }
         
-        cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithRed:229.0f/255.0f green:241.0f/255.0f blue:1.0f alpha:1.0f] : [UIColor colorWithRed:255.0f/96.0f green:255.0f/110.0f blue:255.0f/127.0f alpha:1.0f];
+//        cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithRed:229.0f/255.0f green:241.0f/255.0f blue:1.0f alpha:1.0f] : [UIColor colorWithRed:255.0f/96.0f green:255.0f/110.0f blue:255.0f/127.0f alpha:1.0f];
         
         return cell;
         
@@ -307,10 +374,10 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     if (contentMovingOffScreen) {
         CGFloat alpha = MAX(1 - (scrollView.contentOffset.y / kHeightHeaderCell), 0.0f);
-        CGFloat blur = (1 - alpha) * 10;
         
         [_topSongLabel setAlpha: (fabsf(scrollView.contentOffset.y) * .01)];
         [_topGradient setAlpha: (fabsf(scrollView.contentOffset.y) * .01)];
+        _topAddToPlaylistButton.alpha = (fabsf(scrollView.contentOffset.y) * .01);
         
         if (alpha > 0.0f) {
             scrollView.clipsToBounds = NO;
@@ -336,6 +403,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 
         [_topSongLabel setAlpha: 0.0];
         _topGradient.alpha = 0.0;
+        _topAddToPlaylistButton.alpha = 0.0;
         
     }
     

@@ -1,13 +1,13 @@
 //
-//  sad.h
+//  AddButton.h
 //  RichardsBar_iOSApp
 //
-//  Created by Simon Fallai on 1/13/15.
+//  Created by Simon Fallai on 1/15/15.
 //  Copyright (c) 2015 RagingAlcoholics. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface sad : UIView
+@interface AddButton : UIButton
 
 @end

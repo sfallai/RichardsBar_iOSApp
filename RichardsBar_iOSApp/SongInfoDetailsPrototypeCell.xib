@@ -11,8 +11,10 @@
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pE8-gG-zh0" id="yEd-7g-n0J">
                 <autoresizingMask key="autoresizingMask"/>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="326" y="578"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="326" y="575"/>
         </tableViewCell>
     </objects>
 </document>

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SongInfoDetailsPrototypeCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *bgImage;
 
 @end

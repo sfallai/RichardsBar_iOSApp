@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    _bgImage.alpha = .2;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -94,6 +94,10 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [popup showInView:[UIApplication sharedApplication].keyWindow];
 }
 
+-(void) openiTunesLink {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:t.iTunesLink]];
+}
+
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (popup.tag) {
         case 1: {
@@ -133,6 +137,22 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [_topAddToPlaylistButton addTarget:self action:@selector(addPlaylistButton_Click) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_topAddToPlaylistButton];
+    
+    AlphaGradientView *gradient = [[AlphaGradientView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+    gradient.direction = GRADIENT_UP;
+    gradient.color = [UIColor blackColor];
+
+    //POSITION THE GRADIENT JUST UNDER THE SECTION HEADER
+    _lyricsGradient = [[UIView alloc] initWithFrame:CGRectMake(0, _tableView.frame.origin.y + [_tableView rectForSection:0].size.height + 50, self.view.frame.size.width, 100)];
+    [_lyricsGradient addSubview:gradient];
+    [self.view addSubview:_lyricsGradient];
+    
+    //GRADIENT AT BOTTOM, BOTH GIVE A FADE IN/OUT EFFECT ON THE TEXT
+    AlphaGradientView *bottomGradient = [[AlphaGradientView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 144, self.view.frame.size.width, 100)];
+    bottomGradient.direction = GRADIENT_DOWN;
+    bottomGradient.color = [UIColor blackColor];
+    
+    [self.view addSubview:bottomGradient];
     
 
 }
@@ -279,9 +299,14 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 {
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    blurView.tag = 10;
+    
+    UIView *topBarPart = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    [topBarPart addSubview:blurView];
     
     UIButton *itunesButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 7, 100, 37)];
     [itunesButton setBackgroundImage:[UIImage imageNamed:@"itunesButton.png"] forState:UIControlStateNormal];
+    [itunesButton addTarget:self action:@selector(openiTunesLink) forControlEvents:UIControlEventTouchUpInside];
     
     //ADD TO PLAYLIST BUTTON
 //    float buttonWidHgt = 24;
@@ -290,10 +315,10 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 //    [button addTarget:self action:@selector(addPlaylistButton_Click) forControlEvents:UIControlEventTouchUpInside];
 //    
 //    [blurView addSubview:button];
+    
     [blurView addSubview:itunesButton];
     
     return blurView;
-
 }
 
 #pragma mark <UITableViewDataSource>
@@ -416,6 +441,16 @@ static CGFloat const kHeightHeaderCell = 140.0f;
                                 CGRectGetHeight(self.placeholderImageView.frame));
     
     self.placeholderImageView.frame = newRect;
+    
+    CGRect rect = [_tableView convertRect:[_tableView rectForHeaderInSection:1] toView:[_tableView superview]];
+    
+    //NSLog(@"%f", rect.origin.y);
+//
+    if(rect.origin.y > 50.0f) {
+        NSLog(@"tabley: %f", [_tableView rectForSection:0].origin.y);
+        self.lyricsGradient.frame = CGRectMake(0, rect.origin.y + 50, self.view.frame.size.width, rect.size.height);
+    }
+//
     self.lastContentOffset = scrollView.contentOffset;
     
 }

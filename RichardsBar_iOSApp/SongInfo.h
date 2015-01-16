@@ -24,5 +24,6 @@
 @property (nonatomic, strong) UIView *gradient;
 @property (nonatomic, strong) UIView *topGradient;
 @property (nonatomic, strong) UIButton *topAddToPlaylistButton;
+@property (nonatomic, strong) UIView *lyricsGradient;
 
 @end

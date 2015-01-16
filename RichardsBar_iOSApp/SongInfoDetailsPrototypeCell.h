@@ -10,5 +10,6 @@
 
 @interface SongInfoDetailsPrototypeCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *bgImage;
+@property (weak, nonatomic) IBOutlet UIScrollView *masterScrollView;
 
 @end

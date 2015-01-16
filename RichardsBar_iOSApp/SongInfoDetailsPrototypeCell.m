@@ -8,13 +8,14 @@
 
 #import "SongInfoDetailsPrototypeCell.h"
 #import "Utilities.h"
+#import "AlphaGradientView.h"
 
 @implementation SongInfoDetailsPrototypeCell
 
 - (void)awakeFromNib {
     // Initialization code
-    Utilities *u = [[Utilities alloc] init];
-    [self.contentView setBackgroundColor:[u colorWithHexString:@"e3e5e6"]];
+    //Utilities *u = [[Utilities alloc] init];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

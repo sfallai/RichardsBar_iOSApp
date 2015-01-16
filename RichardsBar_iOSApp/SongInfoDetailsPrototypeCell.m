@@ -7,13 +7,14 @@
 //
 
 #import "SongInfoDetailsPrototypeCell.h"
+#import "Utilities.h"
 
 @implementation SongInfoDetailsPrototypeCell
 
 - (void)awakeFromNib {
     // Initialization code
-    _bgImage.alpha = .2;
-    
+    Utilities *u = [[Utilities alloc] init];
+    [self.contentView setBackgroundColor:[u colorWithHexString:@"e3e5e6"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

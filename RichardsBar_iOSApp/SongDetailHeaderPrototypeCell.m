@@ -7,6 +7,7 @@
 //
 
 #import "SongDetailHeaderPrototypeCell.h"
+#import "Utilities.h"
 
 @implementation SongDetailHeaderPrototypeCell
 
@@ -16,6 +17,7 @@
 - (void)awakeFromNib {
     // Initialization code
     float buttonWidHgt = 24;
+    Utilities *u = [[Utilities alloc] init];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - buttonWidHgt - 10, self.frame.size.height - 40, buttonWidHgt, buttonWidHgt)];
     button.layer.cornerRadius = buttonWidHgt / 2;
@@ -29,7 +31,6 @@
     button.tag = 100;
     
     [self addSubview:button];
-    
 
 }
 

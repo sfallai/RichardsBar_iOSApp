@@ -12,6 +12,8 @@
 
 @implementation SongInfoDetailsPrototypeCell
 
+@synthesize songLyrics = _songLyrics;
+
 - (void)awakeFromNib {
     // Initialization code
     //Utilities *u = [[Utilities alloc] init];

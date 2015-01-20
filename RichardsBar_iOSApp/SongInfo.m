@@ -15,7 +15,7 @@
 #import "SongInfoDetailsPrototypeCell.h"
 #import "AlphaGradientView.h"
 #import "FXBlurView.h"
-
+#import "sqlite3.h"
 
 static NSInteger const kTagHeaderCell = 999;
 static CGFloat const kHeightHeaderCell = 140.0f;
@@ -25,6 +25,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     JukeboxContent *jc;
     track *t;
     Utilities *u;
+    NSString *songLyrics;
 }
 
 @end
@@ -123,8 +124,36 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     u = [[Utilities alloc] init];
     
     [self initAlbumCover];
+    [self initSongLyrics];
     [self initTableView];
     [self initControls];
+    
+}
+
+-(void) initSongLyrics {
+    NSString *sqLiteDb = [[NSBundle mainBundle] pathForResource:@"jukebox.sqlite" ofType:nil];
+    sqlite3 *mySqliteDB;
+    
+    const char *dbpath = [sqLiteDb UTF8String];
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open(dbpath, &mySqliteDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:@"select `Lyrics` from `SongLyrics` where `JukeboxCode` = '%@'", trackCode];
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if (sqlite3_prepare_v2(mySqliteDB, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                songLyrics = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+             
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(mySqliteDB);
+    }
+    
 }
 
 -(void) initControls {
@@ -145,7 +174,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     //POSITION THE GRADIENT JUST UNDER THE SECTION HEADER
     _lyricsGradient = [[UIView alloc] initWithFrame:CGRectMake(0, _tableView.frame.origin.y + [_tableView rectForSection:0].size.height + 50, self.view.frame.size.width, 100)];
     [_lyricsGradient addSubview:gradient];
-    [self.view addSubview:_lyricsGradient];
+    //[self.view addSubview:_lyricsGradient];
     
     //GRADIENT AT BOTTOM, BOTH GIVE A FADE IN/OUT EFFECT ON THE TEXT
     AlphaGradientView *bottomGradient = [[AlphaGradientView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 144, self.view.frame.size.width, 100)];
@@ -158,7 +187,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 -(void) initTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [self getAlbumImageHeight] - 139 - 50, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [self getAlbumImageHeight] - 139 - 100, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
@@ -370,6 +399,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
             cell = [nib objectAtIndex:0];
         }
         
+        cell.songLyrics.text = songLyrics;
+        
 //        cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithRed:229.0f/255.0f green:241.0f/255.0f blue:1.0f alpha:1.0f] : [UIColor colorWithRed:255.0f/96.0f green:255.0f/110.0f blue:255.0f/127.0f alpha:1.0f];
         
         return cell;
@@ -399,7 +430,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     if (contentMovingOffScreen) {
         CGFloat alpha = MAX(1 - (scrollView.contentOffset.y / kHeightHeaderCell), 0.0f);
-        
+
         [_topSongLabel setAlpha: (fabsf(scrollView.contentOffset.y) * .01)];
         [_topGradient setAlpha: (fabsf(scrollView.contentOffset.y) * .01)];
         _topAddToPlaylistButton.alpha = (fabsf(scrollView.contentOffset.y) * .01);
@@ -442,14 +473,19 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     self.placeholderImageView.frame = newRect;
     
-    CGRect rect = [_tableView convertRect:[_tableView rectForHeaderInSection:1] toView:[_tableView superview]];
-    
-    //NSLog(@"%f", rect.origin.y);
-//
-    if(rect.origin.y > 50.0f) {
-        NSLog(@"tabley: %f", [_tableView rectForSection:0].origin.y);
-        self.lyricsGradient.frame = CGRectMake(0, rect.origin.y + 50, self.view.frame.size.width, rect.size.height);
-    }
+//    CGRect rect = [_tableView convertRect:[_tableView rectForHeaderInSection:1] toView:[_tableView superview]];
+//    UITableViewCell *c = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+//    
+//    CGRect r = [_tableView convertRect:[_tableView rectForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]] toView:[_tableView superview]];
+//    
+//    NSLog(@"cRectY: %f", c.contentScaleFactor);
+//    
+//    //NSLog(@"%f", rect.origin.y);
+////
+//    if(rect.origin.y > 50.0f) {
+//        //NSLog(@"originY: %f", originY);
+//        self.lyricsGradient.frame = CGRectMake(0, rect.origin.y + 50, self.view.frame.size.width, rect.size.height);
+//    }
 //
     self.lastContentOffset = scrollView.contentOffset;
     

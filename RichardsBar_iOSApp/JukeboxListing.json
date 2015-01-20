@@ -5,7 +5,7 @@
               "tracks": [
                          {
                          "albumImg": "0101.jpg",
-                         "albumImgLarge": "",
+                         "albumImgLarge": "0101lrg.jpg",
                          "artist": "Bob Seger & the Silver Bullet Band",
                          "song": "Night Moves",
                          "trackNumber": "1",
@@ -16,7 +16,7 @@
                          },
                          {
                          "albumImg": "0102.jpg",
-                         "albumImgLarge": "",
+                         "albumImgLarge": "0102lrg.jpg",
                          "artist": "Lionel Richie",
                          "song": "Dancing on the Ceiling",
                          "trackNumber": "2",
@@ -27,7 +27,7 @@
                          },
                          {
                          "albumImg": "0103.jpg",
-                         "albumImgLarge": "",
+                         "albumImgLarge": "0103lrg.jpg",
                          "artist": "Elton John",
                          "song": "Rocket Man",
                          "trackNumber": "3",
@@ -43,7 +43,7 @@
               "tracks": [
                          {
                          "albumImg": "0201.jpg",
-                         "albumImgLarge": "",
+                         "albumImgLarge": "0201lrg.jpg",
                          "artist": "The Rolling Stones",
                          "song": "Brown Sugar",
                          "trackNumber": "1",
@@ -54,10 +54,10 @@
                          },
                          {
                          "albumImg": "0202.jpg",
-                         "albumImgLarge": "",
+                         "albumImgLarge": "0202lrg.jpg",
                          "artist": "Billy Joel",
                          "song": "Piano Man",
-                         "trackNumber": "1",
+                         "trackNumber": "2",
                          "album": "The Essential Billy Joel",
                          "iTunesLink": "https://itunes.apple.com/us/album/piano-man/id158815463?i=158815547&uo=4",
                          "iTunesRadioLink": "https://itunes.apple.com/station/idra.158815547",

@@ -29,6 +29,13 @@
 		8D44C0B71A66DF9B0011B40C /* itunesButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0B61A66DF9B0011B40C /* itunesButton@3x.png */; };
 		8D44C0B91A6820DC0011B40C /* richardsHires.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0B81A6820DC0011B40C /* richardsHires.jpg */; };
 		8D44C0BF1A686CBC0011B40C /* AddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44C0BE1A686CBC0011B40C /* AddButton.m */; };
+		8D44C0CE1A6EE3BF0011B40C /* 0202lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0C91A6EE3BF0011B40C /* 0202lrg.jpg */; };
+		8D44C0CF1A6EE3BF0011B40C /* 0201lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0CA1A6EE3BF0011B40C /* 0201lrg.jpg */; };
+		8D44C0D01A6EE3BF0011B40C /* 0103lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0CB1A6EE3BF0011B40C /* 0103lrg.jpg */; };
+		8D44C0D11A6EE3BF0011B40C /* 0102lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0CC1A6EE3BF0011B40C /* 0102lrg.jpg */; };
+		8D44C0D21A6EE3BF0011B40C /* 0101lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0CD1A6EE3BF0011B40C /* 0101lrg.jpg */; };
+		8D44C0D41A6EE4F80011B40C /* 0301lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0D31A6EE4F80011B40C /* 0301lrg.jpg */; };
+		8D44C0D61A6EED750011B40C /* jukebox.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8D44C0D51A6EED750011B40C /* jukebox.sqlite */; };
 		8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */; };
 		8D4D70A31A5AE4E6000356A5 /* 0101.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A21A5AE4E6000356A5 /* 0101.jpg */; };
 		8D4D70A61A5AEA7F000356A5 /* 0102.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A51A5AEA7F000356A5 /* 0102.jpg */; };
@@ -36,7 +43,6 @@
 		8D4D70AA1A5B0FE4000356A5 /* 0201.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70A91A5B0FE4000356A5 /* 0201.jpg */; };
 		8D4D70AC1A5B1047000356A5 /* 0301.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70AB1A5B1047000356A5 /* 0301.jpg */; };
 		8D4D70AF1A5B49C4000356A5 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D70AE1A5B49C4000356A5 /* SongInfo.m */; };
-		8D4D70B41A5C2F28000356A5 /* 0301lrg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D70B31A5C2F28000356A5 /* 0301lrg.jpg */; };
 		8D4D70BF1A5C7360000356A5 /* JukeboxDiscPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D70BE1A5C7360000356A5 /* JukeboxDiscPickerView.m */; };
 		8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2951A48AFE400BB6835 /* richards-bar.jpg */; };
 		8D67C2981A48B26300BB6835 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D67C2971A48B26300BB6835 /* podfile */; };
@@ -125,6 +131,13 @@
 		8D44C0B81A6820DC0011B40C /* richardsHires.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = richardsHires.jpg; sourceTree = "<group>"; };
 		8D44C0BD1A686CBC0011B40C /* AddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddButton.h; sourceTree = "<group>"; };
 		8D44C0BE1A686CBC0011B40C /* AddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddButton.m; sourceTree = "<group>"; };
+		8D44C0C91A6EE3BF0011B40C /* 0202lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0202lrg.jpg; sourceTree = "<group>"; };
+		8D44C0CA1A6EE3BF0011B40C /* 0201lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0201lrg.jpg; sourceTree = "<group>"; };
+		8D44C0CB1A6EE3BF0011B40C /* 0103lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0103lrg.jpg; sourceTree = "<group>"; };
+		8D44C0CC1A6EE3BF0011B40C /* 0102lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0102lrg.jpg; sourceTree = "<group>"; };
+		8D44C0CD1A6EE3BF0011B40C /* 0101lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0101lrg.jpg; sourceTree = "<group>"; };
+		8D44C0D31A6EE4F80011B40C /* 0301lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0301lrg.jpg; sourceTree = "<group>"; };
+		8D44C0D51A6EED750011B40C /* jukebox.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = jukebox.sqlite; sourceTree = "<group>"; };
 		8D4D70A01A5ADDFB000356A5 /* JukeboxPrototypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JukeboxPrototypeCell.xib; sourceTree = "<group>"; };
 		8D4D70A21A5AE4E6000356A5 /* 0101.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0101.jpg; sourceTree = "<group>"; };
 		8D4D70A51A5AEA7F000356A5 /* 0102.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0102.jpg; sourceTree = "<group>"; };
@@ -133,7 +146,6 @@
 		8D4D70AB1A5B1047000356A5 /* 0301.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0301.jpg; sourceTree = "<group>"; };
 		8D4D70AD1A5B49C4000356A5 /* SongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfo.h; sourceTree = "<group>"; };
 		8D4D70AE1A5B49C4000356A5 /* SongInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfo.m; sourceTree = "<group>"; };
-		8D4D70B31A5C2F28000356A5 /* 0301lrg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0301lrg.jpg; sourceTree = "<group>"; };
 		8D4D70BD1A5C7360000356A5 /* JukeboxDiscPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxDiscPickerView.h; sourceTree = "<group>"; };
 		8D4D70BE1A5C7360000356A5 /* JukeboxDiscPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxDiscPickerView.m; sourceTree = "<group>"; };
 		8D67C2951A48AFE400BB6835 /* richards-bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "richards-bar.jpg"; path = "images/richards-bar.jpg"; sourceTree = SOURCE_ROOT; };
@@ -285,6 +297,15 @@
 			name = PrototypeCells;
 			sourceTree = "<group>";
 		};
+		8D44C0D71A6EED7E0011B40C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				8D44C0D51A6EED750011B40C /* jukebox.sqlite */,
+				8DDB2CF41A53469A00B1317B /* JukeboxListing.json */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		8D4D709A1A5ADCD0000356A5 /* albumImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,7 +367,12 @@
 		8D4D70B01A5C2EBF000356A5 /* songDetail */ = {
 			isa = PBXGroup;
 			children = (
-				8D4D70B31A5C2F28000356A5 /* 0301lrg.jpg */,
+				8D44C0D31A6EE4F80011B40C /* 0301lrg.jpg */,
+				8D44C0C91A6EE3BF0011B40C /* 0202lrg.jpg */,
+				8D44C0CA1A6EE3BF0011B40C /* 0201lrg.jpg */,
+				8D44C0CB1A6EE3BF0011B40C /* 0103lrg.jpg */,
+				8D44C0CC1A6EE3BF0011B40C /* 0102lrg.jpg */,
+				8D44C0CD1A6EE3BF0011B40C /* 0101lrg.jpg */,
 			);
 			name = songDetail;
 			sourceTree = "<group>";
@@ -489,12 +515,12 @@
 		8D9D5DEC1A48A3ED007437B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D44C0D71A6EED7E0011B40C /* data */,
 				85C2B47B1A50686E005273A0 /* smoke.ped */,
 				8D9D5DF01A48A3ED007437B6 /* AppDelegate.h */,
 				8D9D5DF11A48A3ED007437B6 /* AppDelegate.m */,
 				8D9D5DED1A48A3ED007437B6 /* Info.plist */,
 				8D9D5DEE1A48A3ED007437B6 /* main.m */,
-				8DDB2CF41A53469A00B1317B /* JukeboxListing.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -680,23 +706,29 @@
 			files = (
 				8D9D5DF81A48A3ED007437B6 /* Main.storyboard in Resources */,
 				8D44C0B51A66DF470011B40C /* itunesButton@2x.png in Resources */,
+				8D44C0CF1A6EE3BF0011B40C /* 0201lrg.jpg in Resources */,
+				8D44C0D41A6EE4F80011B40C /* 0301lrg.jpg in Resources */,
 				8DDB2CF51A53469A00B1317B /* JukeboxListing.json in Resources */,
 				8D4D70A61A5AEA7F000356A5 /* 0102.jpg in Resources */,
+				8D44C0D21A6EE3BF0011B40C /* 0101lrg.jpg in Resources */,
 				8DDB2CE61A51DF0800B1317B /* settings@2x.png in Resources */,
 				85C2B4731A5067AA005273A0 /* SmokeShape.png in Resources */,
 				8D67C2961A48AFE400BB6835 /* richards-bar.jpg in Resources */,
 				8D67C2981A48B26300BB6835 /* podfile in Resources */,
-				8D4D70B41A5C2F28000356A5 /* 0301lrg.jpg in Resources */,
+				8D44C0D11A6EE3BF0011B40C /* 0102lrg.jpg in Resources */,
 				8D4D70A81A5AEB13000356A5 /* 0103.jpg in Resources */,
 				8D44C0B91A6820DC0011B40C /* richardsHires.jpg in Resources */,
 				8D4156D21A65BDFE00D3091A /* SongInfoHeaderPrototypeCell.xib in Resources */,
 				8D4D70A11A5ADDFB000356A5 /* JukeboxPrototypeCell.xib in Resources */,
 				8D4D70AA1A5B0FE4000356A5 /* 0201.jpg in Resources */,
+				8D44C0D61A6EED750011B40C /* jukebox.sqlite in Resources */,
 				8D4156D41A65CD6900D3091A /* SongInfoDetailsPrototypeCell.xib in Resources */,
 				8DC5311C1A645E7400ABDD70 /* 0202.jpg in Resources */,
 				8D67C3241A48CCE500BB6835 /* audiowave@2x.png in Resources */,
 				8D4D70AC1A5B1047000356A5 /* 0301.jpg in Resources */,
+				8D44C0D01A6EE3BF0011B40C /* 0103lrg.jpg in Resources */,
 				8D9D5DFD1A48A3ED007437B6 /* LaunchScreen.xib in Resources */,
+				8D44C0CE1A6EE3BF0011B40C /* 0202lrg.jpg in Resources */,
 				8D9D5DFA1A48A3ED007437B6 /* Images.xcassets in Resources */,
 				85C2B47C1A50686E005273A0 /* smoke.ped in Resources */,
 				8D4D70A31A5AE4E6000356A5 /* 0101.jpg in Resources */,

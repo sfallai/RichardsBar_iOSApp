@@ -1,7 +1,7 @@
 PODS:
   - MBProgressHUD (0.9)
   - SWTableViewCell (0.3.7)
-  - UICKeyChainStore (1.1.0)
+  - UICKeyChainStore (2.0.1)
 
 DEPENDENCIES:
   - MBProgressHUD (~> 0.8)
@@ -11,6 +11,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
-  UICKeyChainStore: 257d869d42527b9853ebb11d6dc3ac377b270e72
+  UICKeyChainStore: 779de9c089920a79d8755e7ba887e51c745819a8
 
 COCOAPODS: 0.35.0

@@ -26,6 +26,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     track *t;
     Utilities *u;
     NSString *songLyrics;
+    float albumImageHeight;
 }
 
 @end
@@ -122,6 +123,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     jc = [[JukeboxContent alloc] initWithJSONData];
     t = [self getTrackFromCode:trackCode];
     u = [[Utilities alloc] init];
+    albumImageHeight = [self getAlbumImageHeight];
     
     [self initAlbumCover];
     [self initSongLyrics];
@@ -187,7 +189,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 -(void) initTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [self getAlbumImageHeight] - 139 - 100, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, albumImageHeight - 139 - 100, self.view.frame.size.width, self.view.frame.size.height - 60) style: UITableViewStylePlain];
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
@@ -200,23 +202,6 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [_tableView reloadData];
     
     [self.view addSubview:_tableView];
-    
-}
-
--(UIButton *) createAddButtonWithX:(float) x withY: (float) y {
-    float buttonWidHgt = 24;
-    
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x, y, buttonWidHgt, buttonWidHgt)];
-    button.layer.cornerRadius = buttonWidHgt / 2;
-    button.layer.borderWidth = 1.0f;
-    button.layer.borderColor = [[UIColor whiteColor] CGColor];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [button setTitle:@"+" forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:25.0f]];
-    [button setTitleEdgeInsets:UIEdgeInsetsMake(-3.5, .25, 0, 0)];
-    
-    return button;
     
 }
 
@@ -258,24 +243,24 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 -(void) initAlbumCover {
-    _albumImg = [UIImage imageNamed:t.albumImgLarge];
+    UIImage *albumImg = [UIImage imageNamed:t.albumImgLarge];
     
-    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.view.frame.size.width, [self getAlbumImageHeight])];
+    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.view.frame.size.width, albumImageHeight)];
     [_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
-    [_placeholderImageView setImage:_albumImg];
+    [_placeholderImageView setImage:albumImg];
     
     _gradient = [[UIView alloc] initWithFrame:_placeholderImageView.bounds];
     _topGradient = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
     _topGradient.alpha = 0.0;
     
     AlphaGradientView *grad = [[AlphaGradientView alloc] initWithFrame:
-                               CGRectMake(0, [self getAlbumImageHeight] - 200, self.view.frame.size.width, 200)];
+                               CGRectMake(0, albumImageHeight - 200, self.view.frame.size.width, 200)];
     [grad setDirection:GRADIENT_DOWN];
     grad.color = [UIColor blackColor];
     
     AlphaGradientView *topGrad = [[AlphaGradientView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
     [topGrad setDirection:GRADIENT_UP];
-    grad.color = [UIColor blackColor];
+    topGrad.color = [UIColor blackColor];
     
     //HAVE TO ADD THE AlphaGradientView TO A REGULAR VIEW
     //IF YOU DON'T THEN WHEN YOU ADJUST THE ALPHA ON THE AlphaGradientView MEMORY USAGE BALLOONS AND CRASHES THE DEVICE
@@ -283,15 +268,35 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     [_topGradient addSubview:topGrad];
     
     //INITIALIZED BUT CURRENTLY NOT BEING USED
-    _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, [self getAlbumImageHeight])];
-    _blurView.blurRadius = 0.0;
-    _blurView.hidden = YES;
+//    _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, albumImageHeight)];
+//    _blurView.blurRadius = 0.0;
+//    _blurView.hidden = YES;
+//    
+//    [_placeholderImageView addSubview:_blurView];
     
-    [_placeholderImageView addSubview:_blurView];
     [_placeholderImageView addSubview:_gradient];
     
     [self.view addSubview:_placeholderImageView];
     [self.view addSubview:_topGradient];
+    NSLog(@"placeholderImage height: %f:", _placeholderImageView.frame.size.height);
+    
+}
+
+-(UIButton *) createAddButtonWithX:(float) x withY: (float) y {
+    float buttonWidHgt = 24;
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x, y, buttonWidHgt, buttonWidHgt)];
+    button.layer.cornerRadius = buttonWidHgt / 2;
+    button.layer.borderWidth = 1.0f;
+    button.layer.borderColor = [[UIColor whiteColor] CGColor];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    [button setTitle:@"+" forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:25.0f]];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(-3.5, .25, 0, 0)];
+    
+    return button;
+    
 }
 
 /*
@@ -321,7 +326,16 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         return kHeightHeaderCell;
     }
     
-    return 700.0f;
+    return [self heightOfLabel:songLyrics withFontSize:15.0] + 10;
+}
+
+- (NSInteger) heightOfLabel:(NSString*) string withFontSize:(float) fontSize {
+    
+    CGSize maximumLabelSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width - 10, FLT_MAX);
+    
+    CGSize expectedLabelSize = [string sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:maximumLabelSize lineBreakMode:NSLineBreakByWordWrapping];
+    
+    return expectedLabelSize.height;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -399,7 +413,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
             cell = [nib objectAtIndex:0];
         }
         
-        cell.songLyrics.text = songLyrics;
+        [cell setSongLyrics:songLyrics];
+        
         
 //        cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithRed:229.0f/255.0f green:241.0f/255.0f blue:1.0f alpha:1.0f] : [UIColor colorWithRed:255.0f/96.0f green:255.0f/110.0f blue:255.0f/127.0f alpha:1.0f];
         
@@ -407,8 +422,6 @@ static CGFloat const kHeightHeaderCell = 140.0f;
         
     }
 }
-
-
 
 #pragma mark <UIScrollViewDelegate>
 

@@ -11,7 +11,6 @@
 #import "MPFlipTransition.h"
 #import "AppDelegate.h"
 #import "MPFoldSegue.h"
-#import <QuartzCore/QuartzCore.h>
 #import "JukeboxContent.h"
 #import "disc.h"
 #import "track.h"
@@ -42,6 +41,7 @@
     UITapGestureRecognizer * tap;
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     UITableView *tableView;
+    CGRect jukeboxDefaultBounds;
 }
 
 @end
@@ -64,6 +64,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+//    UITableView *table = (UITableView *) [_contentView viewWithTag:1000];
+//    table.frame = CGRectMake(_contentView.frame.origin.x, _contentView.frame.origin.y, table.frame.size.width, table.frame.size.height);
+//    
 }
 
 #pragma mark -- ViewController initialization
@@ -195,7 +201,7 @@
     maxDiscNumber = jc.discs.count;
     
     [self.contentView addSubview:[self getLabelForIndex:0]];
-    
+
     UIView *previousView = [[self.contentView subviews] objectAtIndex:0];
     [previousView addSubview:[self getTrackListingForIndex:0]];
     
@@ -512,13 +518,14 @@
     UIView *container = [[UIView alloc] initWithFrame:self.contentView.bounds];
     container.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
-    tableView = [[UITableView alloc] initWithFrame: CGRectMake(0, 0, container.frame.size.width, container.frame.size.height) style: UITableViewStylePlain];
+    tableView = [[UITableView alloc] initWithFrame: self.contentView.bounds style: UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [tableView setBackgroundColor:[UIColor blackColor]];
     [tableView addGestureRecognizer:longPressGestureRecognizer];
+    tableView.tag = 1000;
     
     [[UITableViewCell appearance] setBackgroundColor:[UIColor clearColor]];
     
@@ -585,18 +592,6 @@
     return 78;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    // The header for the section is the region name -- get this from the region at the section index.
-    //Region *region = [regions objectAtIndex:section];
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return @"Search Results";
-    } else {
-        return [@"Disc " stringByAppendingString:[@(discNumber) stringValue]];
-    }
-
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     JukeboxTrackCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [self hidePicker];
@@ -621,45 +616,12 @@
         
         
     } else {
-        
+        JukeboxTrackCell *cell = (JukeboxTrackCell *)[tableView cellForRowAtIndexPath:indexPath];
+        [self setCellColor:[UIColor blackColor] ForCell:cell];  //highlight colour
+
         [self performSegueWithIdentifier:@"segueSongDetail" sender:cell];
         
     }
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    static NSString *header = @"customHeader";
-    
-    UITableViewHeaderFooterView *vHeader;
-    
-    vHeader = [tableView dequeueReusableHeaderFooterViewWithIdentifier:header];
-    
-    if (!vHeader) {
-        vHeader = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:header];
-        [vHeader.textLabel setTextColor:[UIColor whiteColor]];
-
-    }
-    
-    vHeader.textLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-    
-    [vHeader addGestureRecognizer:tap];
-    
-    return vHeader;
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
-{
-    // Background color
-    view.tintColor = [UIColor grayColor];
-    
-    // Text Color
-    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    [header.textLabel setTextColor:[UIColor whiteColor]];
-    
-    // Another way to set the background color
-    // Note: does not preserve gradient effect of original header
-    // header.contentView.backgroundColor = [UIColor blackColor];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -701,6 +663,39 @@
     //cell.textLabel.textColor = [UIColor whiteColor];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, tableView.frame.size.width, 20)];
+    label.textColor = [UIColor whiteColor];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        label.text = @"Search Results";
+    } else {
+        label.text =  [@"Disc " stringByAppendingString:[@(discNumber) stringValue]];
+    }
+    
+    [blurView addSubview:label];
+    
+    return blurView;
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)setCellColor:(UIColor *)color ForCell:(UITableViewCell *)cell {
+    cell.contentView.backgroundColor = color;
+    cell.backgroundColor = color;
 }
 
 @end

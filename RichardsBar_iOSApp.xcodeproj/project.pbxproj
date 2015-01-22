@@ -306,6 +306,13 @@
 			name = data;
 			sourceTree = "<group>";
 		};
+		8D44C0D81A7054AC0011B40C /* Echoprint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Echoprint;
+			sourceTree = "<group>";
+		};
 		8D4D709A1A5ADCD0000356A5 /* albumImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +424,7 @@
 		8D67C2A11A48C88B00BB6835 /* ExternalLibs */ = {
 			isa = PBXGroup;
 			children = (
+				8D44C0D81A7054AC0011B40C /* Echoprint */,
 				85ADD2381A661C4600C54C60 /* FXBlurView */,
 				8D69BC6E1A65D3EF0062C7BF /* AlphaGradient */,
 				85C2B4741A5067D1005273A0 /* UIEffectDesignerView */,

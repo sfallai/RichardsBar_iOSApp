@@ -13,7 +13,6 @@
 @interface SongInfo : UIViewController <UIActionSheetDelegate>
 
 @property(weak, nonatomic)  NSString* trackCode;
-@property (strong, nonatomic) UIImage *albumImg;
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *placeholderImageView;
 @property (nonatomic, strong) FXBlurView *blurView;
@@ -25,5 +24,7 @@
 @property (nonatomic, strong) UIView *topGradient;
 @property (nonatomic, strong) UIButton *topAddToPlaylistButton;
 @property (nonatomic, strong) UIView *lyricsGradient;
+
+@property (weak, nonatomic) IBOutlet UISwitch *swSmokeEffects;
 
 @end

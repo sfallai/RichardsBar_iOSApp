@@ -10,6 +10,7 @@
 #import "MPFoldEnumerations.h"
 #import "MPFlipEnumerations.h"
 #import "DefaultAppearanceViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 enum {
     MPTransitionModeFold,

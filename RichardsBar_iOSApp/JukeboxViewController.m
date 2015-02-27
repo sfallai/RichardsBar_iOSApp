@@ -17,6 +17,7 @@
 #import "JukeboxTrackCell.h"
 #import "SongInfo.h"
 #import "JukeboxDiscPickerView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #define ABOUT_IDENTIFIER		@"AboutID"
 #define DETAILS_IDENTIFIER		@"DetailsID"
@@ -42,6 +43,9 @@
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     UITableView *tableView;
     CGRect jukeboxDefaultBounds;
+    UIImage *loading;
+    NSString *singleDisc;
+    track *selectedTrack;
 }
 
 @end
@@ -83,6 +87,7 @@
     _searchResults = [[NSMutableArray alloc] init];
     u = [[Utilities alloc] init];
     ad = [[UIApplication sharedApplication] delegate];
+    loading = [UIImage animatedImageNamed:@"loading2-" duration:1.0f];
     
     [self initGestureRecognizer];
     [self initJukeBox];
@@ -565,6 +570,8 @@
         JukeboxTrackCell *cell = sender;
         SongInfo *vc = [segue destinationViewController];
         vc.trackCode = cell.code.text;
+        vc.singleDisc = singleDisc;
+        vc.track = selectedTrack;
         
     }
     
@@ -618,7 +625,13 @@
     } else {
         JukeboxTrackCell *cell = (JukeboxTrackCell *)[tableView cellForRowAtIndexPath:indexPath];
         [self setCellColor:[UIColor blackColor] ForCell:cell];  //highlight colour
-
+        
+        disc *d = [jc getDiscFromIndex:discNumber - 1];
+        track *track = [d.tracks objectAtIndex:0];
+        
+        singleDisc = d.singleDisc;
+        selectedTrack = track;
+        
         [self performSegueWithIdentifier:@"segueSongDetail" sender:cell];
         
     }
@@ -634,24 +647,60 @@
 //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:MyIdentifier];
     }
     
+    NSString *imgName = @"";
+    
     if(tableView == self.searchDisplayController.searchResultsTableView) {
         disc *d = [_searchResults objectAtIndex:indexPath.row];
         track *track = [d.tracks objectAtIndex:0];
+    
+        imgName = [d.singleDisc isEqualToString:@"NO"] ? [NSString stringWithFormat:@"%@%@.jpg", d.discNumber, track.trackNumber] : [NSString stringWithFormat:@"%@.jpg", d.discNumber];
         
         cell.artist.text = track.artist;
         cell.song.text = track.song;
         cell.code.text = [self getAlbumCodeWithDiscNumber:d.discNumber andTrackNum:track.trackNumber];
-        cell.albumImg.image = [UIImage imageNamed:track.albumImg];
+        //cell.albumImg.image = [UIImage imageNamed:track.albumImg];
         
     } else {
         disc *disc = [jc getDiscFromIndex:discNumber - 1];
         track *track = [disc.tracks objectAtIndex:indexPath.row];
+        //NSLog(@"disc number: %@", @([disc.singleDisc stringValue]);
+
+        imgName = [disc.singleDisc isEqualToString:@"NO"] ? [NSString stringWithFormat:@"%@%@.jpg", disc.discNumber, track.trackNumber] : [NSString stringWithFormat:@"%@.jpg", disc.discNumber];
         
         cell.artist.text = track.artist;
         cell.song.text = track.song;
         cell.code.text = [self getAlbumCodeWithDiscNumber:disc.discNumber andTrackNum:track.trackNumber];
-        cell.albumImg.image = [UIImage imageNamed:track.albumImg];
+        //cell.albumImg.image = [UIImage imageNamed:track.albumImg];
     }
+    
+    NSString *imgUrl = [NSString stringWithFormat:@"https://s3.amazonaws.com/richardsbarapp/76414B19-7A94-458E-ACF6-F6226BAE2751/albumImages/small/%@", imgName];
+    
+    cell.albumImg.image = loading;
+    
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadWithURL:(NSURL*)imgUrl
+                     options:0
+                    progress:^(NSInteger receivedSize, NSInteger expectedSize)
+     {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             cell.loadingPercentage.text = [NSString stringWithFormat:@"%@%%", [@((int)ceilf(((float)receivedSize / (float)expectedSize) * 100)) stringValue]];
+             
+         });
+         
+     }
+                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished)
+     {
+         if (image)
+         {
+             cell.albumImg.image = image;
+             
+         } else {
+             cell.albumImg.image = [UIImage imageNamed:@"variousArtists.png"];
+         }
+         
+         cell.loadingPercentage.text = @"";
+         
+     }];
     
     //cell.textLabel.text = [[@(discNumber) stringValue] stringByAppendingString:track.song];
     //UIImage *img = [[UIImage alloc] initWithContentsOfFile:@"audiowave"];

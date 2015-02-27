@@ -1,89 +1,588 @@
 {
     "discs": [
               {
-              "discNumber": "1",
+              "discNumber": "95",
+              "singleDisc": "NO",
               "tracks": [
                          {
-                         "albumImg": "0101.jpg",
-                         "albumImgLarge": "0101lrg.jpg",
-                         "artist": "Bob Seger & the Silver Bullet Band",
-                         "song": "Night Moves",
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Dinah Washington",
+                         "song": "So In Love",
                          "trackNumber": "1",
-                         "album": "Ultimate Hits: Rock and Roll Never Forgets",
-                         "iTunesLink": "https://itunes.apple.com/us/album/night-moves/id766439510?i=766439521&uo=4",
+                         "album": "",
+                         "iTunesLink": "",
                          "iTunesRadioLink": "",
                          "lyricsId": ""
                          },
                          {
-                         "albumImg": "0102.jpg",
-                         "albumImgLarge": "0102lrg.jpg",
-                         "artist": "Lionel Richie",
-                         "song": "Dancing on the Ceiling",
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Bing Crosby",
+                         "song": "The Song Is In You",
                          "trackNumber": "2",
-                         "album": "20th Century Masters - The Millennium Collection: The Best of Lionel Richie",
-                         "iTunesLink": "https://itunes.apple.com/us/album/dancing-on-the-ceiling/id2872246?i=2872210&uo=4",
+                         "album": "",
+                         "iTunesLink": "",
                          "iTunesRadioLink": "",
                          "lyricsId": ""
                          },
                          {
-                         "albumImg": "0103.jpg",
-                         "albumImgLarge": "0103lrg.jpg",
-                         "artist": "Elton John",
-                         "song": "Rocket Man",
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Helen Merrill",
+                         "song": "All of You",
                          "trackNumber": "3",
-                         "album": "Elton John: Greatest Hits",
-                         "iTunesLink": "https://itunes.apple.com/us/album/rocket-man-i-think-its-going/id3451744?i=3451732&uo=4",
-                         "iTunesRadioLink": "",
-                         "lyricsId": ""
-                         }
-                         ]
-              },
-              {
-              "discNumber": "2",
-              "tracks": [
-                         {
-                         "albumImg": "0201.jpg",
-                         "albumImgLarge": "0201lrg.jpg",
-                         "artist": "The Rolling Stones",
-                         "song": "Brown Sugar",
-                         "trackNumber": "1",
-                         "album": "Hot Rocks 1964-1971",
-                         "iTunesLink": "https://itunes.apple.com/us/album/brown-sugar/id656801179?i=656801383&uo=4",
+                         "album": "",
+                         "iTunesLink": "",
                          "iTunesRadioLink": "",
                          "lyricsId": ""
                          },
                          {
-                         "albumImg": "0202.jpg",
-                         "albumImgLarge": "0202lrg.jpg",
-                         "artist": "Billy Joel",
-                         "song": "Piano Man",
-                         "trackNumber": "2",
-                         "album": "The Essential Billy Joel",
-                         "iTunesLink": "https://itunes.apple.com/us/album/piano-man/id158815463?i=158815547&uo=4",
-                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.158815547",
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Louis Armstrong",
+                         "song": "La Vie En Rose",
+                         "trackNumber": "4",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Dinah Washington",
+                         "song": "Is You Is Or Is You Ain't My Baby",
+                         "trackNumber": "5",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Betty Hutton",
+                         "song": "It Had To Be You",
+                         "trackNumber": "6",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Frank Sinatra/Sammy Davis, Jr.",
+                         "song": "My And My Shadow",
+                         "trackNumber": "7",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Dean Martin",
+                         "song": "Bye Bye Blackbird",
+                         "trackNumber": "8",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Dean Martin",
+                         "song": "When You're Smiling",
+                         "trackNumber": "9",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Elvis Presley",
+                         "song": "Can't Help Falling In Love",
+                         "trackNumber": "10",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Frank Sinatra",
+                         "song": "(Love Is) The Tender Trap",
+                         "trackNumber": "11",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Jimmy Roselli",
+                         "song": "Te Purtavo'na Rosa",
+                         "trackNumber": "12",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Johnny Mathis",
+                         "song": "Someone",
+                         "trackNumber": "13",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Frank Sinatra",
+                         "song": "You Make Me Feel So Young",
+                         "trackNumber": "14",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Anita O'Day",
+                         "song": "My Heart Belongs to Daddy",
+                         "trackNumber": "15",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Mel Torme",
+                         "song": "Too Darn Hot",
+                         "trackNumber": "16",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Dean Martin/Sammy Davis, Jr.",
+                         "song": "Sam's Song",
+                         "trackNumber": "17",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Frank Sinatra",
+                         "song": "Mr. Success",
+                         "trackNumber": "18",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Billy Eckstine",
+                         "song": "I Hear a Rhapsody",
+                         "trackNumber": "19",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Dean Martin",
+                         "song": "I Love You Much Too Much",
+                         "trackNumber": "20",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Joe Williams",
+                         "song": "Summertime",
+                         "trackNumber": "21",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Dean Martin",
+                         "song": "I'd Cry Like a Baby",
+                         "trackNumber": "22",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Sylvia Sims",
+                         "song": "Comes Love",
+                         "trackNumber": "23",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Let Me Entertain You",
+                         "song": "Ann Margaret",
+                         "trackNumber": "24",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Bobby Darin",
+                         "song": "The Goodlife",
+                         "trackNumber": "25",
+                         "album": "",
+                         "iTunesLink": "",
+                         "iTunesRadioLink": "",
                          "lyricsId": ""
                          }
+                         ]
+              },
 
+              {
+              "discNumber": "96",
+              "singleDisc": "YES",
+              "tracks": [
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Do It To Me",
+                         "trackNumber": "1",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/do-it-to-me/id297870?i=297546&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297546",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "My Destiny",
+                         "trackNumber": "2",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/my-destiny/id297870?i=297749&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297749",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Love, Oh Love",
+                         "trackNumber": "3",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/love-oh-love/id297870?i=297755&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297755",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "All Night Long",
+                         "trackNumber": "4",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/all-night-long-all-night-single/id297870?i=297767&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297767",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Commodores",
+                         "song": "Easy",
+                         "trackNumber": "5",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/easy/id297870?i=297773&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297773",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Commodores",
+                         "song": "Still",
+                         "trackNumber": "6",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/still-single/id297870?i=297780&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297780",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie & Diana Ross",
+                         "song": "Endless Love",
+                         "trackNumber": "7",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/endless-love-soundtrack-version/id297870?i=297784&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297784",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Running With The Night",
+                         "trackNumber": "8",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/running-with-the-night-single/id297870?i=297795&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297795",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Commodores",
+                         "song": "Sail On",
+                         "trackNumber": "9",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/sail-on-single/id297870?i=297801&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297801",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Hello",
+                         "trackNumber": "10",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/hello/id297870?i=297806&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297806",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Truly",
+                         "trackNumber": "11",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/truly/id297870?i=297825&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297825",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Penny Lover",
+                         "trackNumber": "12",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/penny-lover-single/id297870?i=297836&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297836",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Say You, Say Me",
+                         "trackNumber": "13",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/say-you-say-me/id297870?i=297845&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297845",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lionel Richie",
+                         "song": "Three Times a Lady",
+                         "trackNumber": "14",
+                         "album": "Back to Front",
+                         "iTunesLink": "https://itunes.apple.com/us/album/three-times-a-lady-single/id297870?i=297857&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.297857",
+                         "lyricsId": ""
+                         }
                          ]
               },
               {
-              "discNumber": "3",
+              "discNumber": "97",
+              "singleDisc": "YES",
               "tracks": [
                          {
-                         "albumImg": "0301.jpg",
-                         "albumImgLarge": "0301lrg.jpg",
-                         "artist": "Frank Sinatra",
-                         "song": "My Way",
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Billie Holiday",
+                         "song": "The Man I Love",
                          "trackNumber": "1",
-                         "album": "Nothing But the Best (Remastered)",
-                         "iTunesLink": "itms-apps://itunes.apple.com/us/album/my-way/id717552717?i=717552739&uo=4",
-                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.717552739",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/the-man-i-love/id157334618?i=157334673&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334673",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Ella Fitzgerald",
+                         "song": "My Melancholy Baby",
+                         "trackNumber": "2",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/my-melancholy-baby/id157334618?i=157334678&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334678",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lena Horne",
+                         "song": "Prisoner of Love",
+                         "trackNumber": "3",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/prisoner-of-love/id157334618?i=157334681&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334681",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Sarah Vaughan",
+                         "song": "Nice Work If You Can Get It",
+                         "trackNumber": "4",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/nice-work-if-you-can-get-it/id157334618?i=157334689&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334689",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Billie Holiday",
+                         "song": "I Will Never Be The Same",
+                         "trackNumber": "5",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/ill-never-be-the-same/id157334618?i=157334720&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334720",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Sarah Vaughan",
+                         "song": "East of the Sun",
+                         "trackNumber": "6",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/east-sun-west-moon/id157334618?i=157334727&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.2558582",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Billie Holiday",
+                         "song": "What a Little Moonlight Can Do",
+                         "trackNumber": "7",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/what-a-little-moonlight-can-do/id157334618?i=157334732&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334732",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Sarah Vaughan",
+                         "song": "Ain't Misbehavin'",
+                         "trackNumber": "8",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/aint-misbehavin/id157334618?i=157334735&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.387052",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Lena Horne",
+                         "song": "Out of Nowhere",
+                         "trackNumber": "9",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/out-of-nowhere/id157334618?i=157334741&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334741",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Ella Fitzgerald",
+                         "song": "All My Life",
+                         "trackNumber": "10",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/all-my-life/id157334618?i=157334743&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334743",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Billie Holiday",
+                         "song": "I'm Gonna Lock My Heart",
+                         "trackNumber": "11",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/im-gonna-lock-my-heart-throw/id157334618?i=157334750&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.157334750",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "Sarah Vaughan",
+                         "song": "Goodnight My Love",
+                         "trackNumber": "12",
+                         "album": "Billie, Ella, Lena, Sarah",
+                         "iTunesLink": "https://itunes.apple.com/us/album/goodnight-my-love/id283208613?i=283208708&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.283208708",
                          "lyricsId": ""
                          }
                          ]
-              }
+              },
               {
               "discNumber": "98",
+              "singleDisc": "NO",
               "tracks": [
                          {
                          "albumImg": "",
@@ -250,7 +749,122 @@
                          "iTunesRadioLink": "https://itunes.apple.com/station/idra.153443578",
                          "lyricsId": ""
                          }
-
+                         ]
+              },
+              {
+              "discNumber": "99",
+              "singleDisc": "YES",
+              "tracks": [
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "My Girl",
+                         "trackNumber": "1",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/my-girl/id291182713?i=291182719&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.291182719",
+                         "lyricsId": "6"
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "Ain't Too Proud to Beg",
+                         "trackNumber": "2",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/aint-too-proud-to-beg/id1523060?i=1523020&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.1523020",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "I Wish It Would Rain",
+                         "trackNumber": "3",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/i-wish-it-would-rain-single/id523246?i=523239&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.523239",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "Cloud Nine",
+                         "trackNumber": "4",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/cloud-nine-stereo/id523246?i=523228&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.523228",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "Runaway Child",
+                         "trackNumber": "5",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/runaway-child-running-wild/id65212132?i=65212232&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.65212232",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "I Can't Get Next to You",
+                         "trackNumber": "6",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/i-cant-get-next-to-you-single/id523246?i=523242&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.523242",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "Psychedelic Shack",
+                         "trackNumber": "7",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/psychedelic-shack-stereo-mix/id101373?i=101351&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.101351",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "Ball of Confusion",
+                         "trackNumber": "8",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/ball-confusion-thats-what/id101373?i=101349&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.101349",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "Just My Imagination",
+                         "trackNumber": "9",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/just-my-imagination-running/id101373?i=101353&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.101353",
+                         "lyricsId": ""
+                         },
+                         {
+                         "albumImg": "",
+                         "albumImgLarge": "",
+                         "artist": "The Temptations",
+                         "song": "Papa Was a Rolling Stone",
+                         "trackNumber": "10",
+                         "album": "The Temptations: All The Million Sellers",
+                         "iTunesLink": "https://itunes.apple.com/us/album/papa-was-rolling-stone-instrumental/id5278024?i=5278022&uo=4",
+                         "iTunesRadioLink": "https://itunes.apple.com/station/idra.5278022",
+                         "lyricsId": ""
+                         }
                          ]
               }
               ]

@@ -15,6 +15,7 @@
 
 
 @property (strong, nonatomic) NSString *discNumber;
+@property (strong, nonatomic) NSString *singleDisc;
 @property (strong, nonatomic) NSMutableArray *tracks;
 
 @end

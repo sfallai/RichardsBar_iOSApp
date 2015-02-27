@@ -7,6 +7,7 @@
 //
 
 #import "JukeboxTrackCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation JukeboxTrackCell
 
@@ -14,6 +15,7 @@
 @synthesize song = _song;
 @synthesize artist = _artist;
 @synthesize albumImg = _albumImg;
+@synthesize loadingPercentage = _loadingPercentage;
 
 - (void)awakeFromNib {
     // Initialization code

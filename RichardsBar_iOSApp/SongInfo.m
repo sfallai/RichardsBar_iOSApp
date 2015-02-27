@@ -7,15 +7,12 @@
 //
 
 #import "SongInfo.h"
-#import "JukeboxContent.h"
-#import "disc.h"
-#import "track.h"
-#import "Utilities.h"
 #import "SongDetailHeaderPrototypeCell.h"
 #import "SongInfoDetailsPrototypeCell.h"
 #import "AlphaGradientView.h"
 #import "FXBlurView.h"
 #import "sqlite3.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static NSInteger const kTagHeaderCell = 999;
 static CGFloat const kHeightHeaderCell = 140.0f;
@@ -27,6 +24,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     Utilities *u;
     NSString *songLyrics;
     float albumImageHeight;
+    NSString *discNumber;
+    NSString *trackNumber;
 }
 
 @end
@@ -36,7 +35,6 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 @synthesize trackCode;
 
 -(void) viewWillAppear:(BOOL)animated {
-    [self initSettingsView];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -60,9 +58,7 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 #pragma mark - Helper methods
--(float) getAlbumImageHeight {
-    UIImage *img = [UIImage imageNamed:t.albumImgLarge];
-    
+-(float) getAlbumImageHeight: (UIImage*) img {
     float w = img.size.width;
     float h = img.size.height;
     NSLog(@"w:%f h:%f screenw: %f imgH:%f", w, h, self.view.frame.size.width, (h / w) * self.view.frame.size.width );
@@ -72,13 +68,13 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 -(track *) getTrackFromCode:(NSString *) code {
-    NSString *discNum = [code substringToIndex:2];
-    NSString *trackNum = [code substringFromIndex:2];
-    
-    disc *disc = [jc getDiscFromIndex:[discNum intValue] - 1];
-    track *track = [disc.tracks objectAtIndex:[trackNum intValue] - 1];
-    
-    return track;
+    discNumber = [code substringToIndex:2];
+    trackNumber = [code substringFromIndex:2];
+//    
+//    disc *disc = [jc getDiscFromIndex:[discNum intValue] - 1];
+//    track *track = [disc.tracks objectAtIndex:[trackNum intValue] - 1];
+//    
+    return _track;
 }
 
 -(void) closeSettings_Click {
@@ -123,12 +119,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     jc = [[JukeboxContent alloc] initWithJSONData];
     t = [self getTrackFromCode:trackCode];
     u = [[Utilities alloc] init];
-    albumImageHeight = [self getAlbumImageHeight];
     
     [self initAlbumCover];
-    [self initSongLyrics];
-    [self initTableView];
-    [self initControls];
     
 }
 
@@ -243,41 +235,75 @@ static CGFloat const kHeightHeaderCell = 140.0f;
 }
 
 -(void) initAlbumCover {
-    UIImage *albumImg = [UIImage imageNamed:t.albumImgLarge];
+    __block UIImage *albumImg = [UIImage animatedImageNamed:@"loading2-" duration:1.0f];//[UIImage imageNamed:t.albumImgLarge];
+    NSString *imgUrl = [_singleDisc isEqualToString:@"YES"] ? [NSString stringWithFormat:@"https://s3.amazonaws.com/richardsbarapp/76414B19-7A94-458E-ACF6-F6226BAE2751/albumImages/large/%@.jpg", discNumber] : @"https://s3.amazonaws.com/richardsbarapp/76414B19-7A94-458E-ACF6-F6226BAE2751/albumImages/large/variousArtistsLrg.png";
     
-    _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.view.frame.size.width, albumImageHeight)];
-    [_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
-    [_placeholderImageView setImage:albumImg];
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadWithURL:(NSURL*)imgUrl
+                     options:0
+                    progress:^(NSInteger receivedSize, NSInteger expectedSize)
+     {
+         dispatch_async(dispatch_get_main_queue(), ^{
+//             cell.loadingPercentage.text = [NSString stringWithFormat:@"%@%%", [@((int)ceilf(((float)receivedSize / (float)expectedSize) * 100)) stringValue]];
+             
+         });
+         
+     }
+                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished)
+     {
+         if (image)
+         {
+             albumImg = image;
+             albumImageHeight = [self getAlbumImageHeight:image];
+             
+         } else {
+             albumImg = [UIImage imageNamed:@"variousArtistsLrg.png"];
+             albumImageHeight = [self getAlbumImageHeight:albumImg];
+         }
+         
+         _placeholderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.view.frame.size.width, albumImageHeight)];
+         
+         [_placeholderImageView setContentMode:UIViewContentModeScaleAspectFit];
+         [_placeholderImageView setImage:albumImg];
+
+         _gradient = [[UIView alloc] initWithFrame:_placeholderImageView.bounds];
+         _topGradient = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
+         _topGradient.alpha = 0.0;
+         
+         AlphaGradientView *grad = [[AlphaGradientView alloc] initWithFrame:
+                                    CGRectMake(0, albumImageHeight - 200, self.view.frame.size.width, 200)];
+         [grad setDirection:GRADIENT_DOWN];
+         grad.color = [UIColor blackColor];
+         
+         AlphaGradientView *topGrad = [[AlphaGradientView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+         [topGrad setDirection:GRADIENT_UP];
+         topGrad.color = [UIColor blackColor];
+         
+         //HAVE TO ADD THE AlphaGradientView TO A REGULAR VIEW
+         //IF YOU DON'T THEN WHEN YOU ADJUST THE ALPHA ON THE AlphaGradientView MEMORY USAGE BALLOONS AND CRASHES THE DEVICE
+         [_gradient addSubview:grad];
+         [_topGradient addSubview:topGrad];
+         
+         //INITIALIZED BUT CURRENTLY NOT BEING USED
+         //    _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, albumImageHeight)];
+         //    _blurView.blurRadius = 0.0;
+         //    _blurView.hidden = YES;
+         //
+         //    [_placeholderImageView addSubview:_blurView];
+         
+         [_placeholderImageView addSubview:_gradient];
+         
+         [self.view addSubview:_placeholderImageView];
+         [self.view addSubview:_topGradient];
+         //cell.loadingPercentage.text = @"";
+         
+         [self initTableView];
+         [self initSongLyrics];
+         [self initControls];
+         [self initSettingsView];
+     }];
     
-    _gradient = [[UIView alloc] initWithFrame:_placeholderImageView.bounds];
-    _topGradient = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
-    _topGradient.alpha = 0.0;
     
-    AlphaGradientView *grad = [[AlphaGradientView alloc] initWithFrame:
-                               CGRectMake(0, albumImageHeight - 200, self.view.frame.size.width, 200)];
-    [grad setDirection:GRADIENT_DOWN];
-    grad.color = [UIColor blackColor];
-    
-    AlphaGradientView *topGrad = [[AlphaGradientView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
-    [topGrad setDirection:GRADIENT_UP];
-    topGrad.color = [UIColor blackColor];
-    
-    //HAVE TO ADD THE AlphaGradientView TO A REGULAR VIEW
-    //IF YOU DON'T THEN WHEN YOU ADJUST THE ALPHA ON THE AlphaGradientView MEMORY USAGE BALLOONS AND CRASHES THE DEVICE
-    [_gradient addSubview:grad];
-    [_topGradient addSubview:topGrad];
-    
-    //INITIALIZED BUT CURRENTLY NOT BEING USED
-//    _blurView = [[FXBlurView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, albumImageHeight)];
-//    _blurView.blurRadius = 0.0;
-//    _blurView.hidden = YES;
-//    
-//    [_placeholderImageView addSubview:_blurView];
-    
-    [_placeholderImageView addSubview:_gradient];
-    
-    [self.view addSubview:_placeholderImageView];
-    [self.view addSubview:_topGradient];
     NSLog(@"placeholderImage height: %f:", _placeholderImageView.frame.size.height);
     
 }
@@ -478,6 +504,8 @@ static CGFloat const kHeightHeaderCell = 140.0f;
     
     headerCell.alpha = 1 - (fabsf(scrollView.contentOffset.y) * .01);
     [_gradient setAlpha:fabsf(_placeholderImageView.frame.origin.y * .01) * 2];
+    
+    NSLog(@"scrollDiff: %f", scrollDiff);
     
     CGRect newRect = CGRectMake(CGRectGetMinX(self.placeholderImageView.frame),
                                 originY,

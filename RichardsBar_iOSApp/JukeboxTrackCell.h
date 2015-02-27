@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *code;
 @property (weak, nonatomic) IBOutlet UILabel *song;
 @property (weak, nonatomic) IBOutlet UILabel *artist;
+@property (weak, nonatomic) IBOutlet UILabel *loadingPercentage;
 @property (weak, nonatomic) IBOutlet UIImageView *albumImg;
 
 @end

@@ -27,6 +27,7 @@
         
         NSArray *ary = [disc allValues];
         _discNumber = [ary objectAtIndex:0];
+        _singleDisc = [ary objectAtIndex:2];
         
         for (NSDictionary *dict in [ary objectAtIndex:1]) {
             [_tracks addObject:[[track alloc] initWithTrack:dict]];

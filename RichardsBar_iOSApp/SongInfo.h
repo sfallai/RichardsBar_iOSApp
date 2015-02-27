@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "AlphaGradientView.h"
 #import "FXBlurView.h"
+#import "JukeboxContent.h"
+#import "disc.h"
+#import "track.h"
+#import "Utilities.h"
 
 @interface SongInfo : UIViewController <UIActionSheetDelegate>
 
 @property(weak, nonatomic)  NSString* trackCode;
+@property (strong, nonatomic) track *track;
+@property (strong, nonatomic) NSString *singleDisc;
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *placeholderImageView;
 @property (nonatomic, strong) FXBlurView *blurView;
